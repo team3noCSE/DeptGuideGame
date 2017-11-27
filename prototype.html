@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prototype</title>
+    <h1>POSTECH 학과 선택 시뮬레이션 2018</h1>
+  </head>
+  <body>
+    <!-- 1. 초기메뉴화면 -->
+    <div id="initialMenuScreen" class="hiding">
+      <div id="gameStartButton" class="button">게임 시작</div>
+      <div id="achievementButton" class="button">업적</div>
+    </div>
+    <!-- 2. 로딩화면 -->
+    <div id="loadingScreen" class="hiding">
+      <div class="gameTip">Tip: 1</div>
+      <div class="gameTip">Tip: 2</div>
+      <div class="gameTip">Tip: 3</div>
+      <div class="gameTip">Tip: 4</div>
+      <div class="gameTip">Tip: 5</div>
+      <div class="gameTip">Tip: 6</div>
+      <div class="gameTip">Tip: 7</div>
+      <div class="gameTip">Tip: 8</div>
+      <div class="gameTip">Tip: 9</div>
+      <div class="gameTip">Tip: 10</div>
+    </div>
+    <!-- 3. 업적화면 -->
+    <div id="achievementScreen" class="hiding">
+      <div class="achievementCell">업적 1</div>
+      <div class="achievementCell">업적 2</div>
+      <div class="achievementCell">업적 3</div>
+      <div class="achievementCell">업적 4</div>
+      <div class="achievementCell">업적 5</div>
+    </div>
+    <!-- 4. 게임진행 -->
+    <div id="inGameScreen" class="hiding">
+      <p>게임캐릭터 생성을 위해 성향테스트 - 학과선택 - 시간표구성 순서대로 파라미터를 설정합니다.</p>
+      <!-- 4-1. 성향테스트 -->
+      <div id="personalityTestScreen">
+        <div class="personalityCard">성향 1-1</div>
+        <div class="personalityCard">성향 1-2</div>
+        <div class="personalityCard">성향 2-1</div>
+        <div class="personalityCard">성향 2-2</div>
+        <div class="personalityCard">성향 3-1</div>
+        <div class="personalityCard">성향 3-2</div>
+      </div>
+      <!-- 4-2. 학과선택 -->
+      <div id="departmentChoiceScreen">
+        <div class="departmentCell">컴퓨터공학과</div>
+      </div>
+      <!-- 4-3. 시간표구성 -->
+      <div id="lectureSchedulingScreen">
+        <div class="lectureSchdule">시간표 1</div>
+        <div class="lectureSchdule">시간표 2</div>
+        <div class="lectureSchdule">시간표 3</div>
+        <div class="lectureSchdule">시간표 4</div>
+        <div class="lectureSchdule">시간표 5</div>
+        <div class="lectureSchdule">시간표 6</div>
+      </div>
+      <!-- 4-4. 학기진행화면(진행상황 관찰) -->
+      <div id="inSession">
+        <p id="usingVar"> </p>
+        <script type="text/javascript">
+        var d = new Date();
+        var localeDate  =  d.toLocaleDateString();
+        var localeTime  =  d.toLocaleTimeString();
+        document.getElementById ( 'usingVar' ).innerHTML = localeDate  +  " / "  +  localeTime;
+        </script>
+      </div>
+      <!-- 4-5. 선택이벤트 -->
+      <div id="optionEvent">
+        <div>선택이벤트</div>
+      </div>
+      <!-- 4-5. 비선택이벤트 -->
+      <div id="nonOptionEvent">
+        <div>비선택이벤트</div>
+      </div>
+      <!-- 4-5. 미니게임 -->
+      <div id="miniGame">
+        <div>미니게임</div>
+      </div>
+      <!-- 4-5. 결과발표 -->
+      <div id="result">
+        <div>결과발표</div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
