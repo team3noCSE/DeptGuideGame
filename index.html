@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8" />
     <title>Prototype</title>
@@ -12,38 +13,46 @@
         display: inline-block;
         margin: 5px;
         text-align: center;
-        font-size:20px
+        vertical-align: middle;
+        line-height: 100px;
+        font-size: 20px;
       }
+      
       .enabled {
         background-color: limegreen;
         border: 1px solid black;
+        opacity: 0.5;
       }
+
     </style>
   </head>
   <script src="pixi.min.js"></script>
   <script src="howler.js"></script>
+
   <body>
     <!-- 성호의 코드 -->
     <div id="display" />
     <script type="text/javascript" src="scripts/sketch.js">
-        console.log("ang");
+      console.log("ang");
+
     </script>
     <!-- 정우의 코드 -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <style type="text/css">
-        #progressbar1 {
-            height: 23px;
-            width: 400px;
-        }
+      #progressbar1 {
+        height: 23px;
+        width: 400px;
+      }
+      
+      #progressbar1 .ui-progressbar-value {
+        margin-top: -23px;
+      }
+      
+      #progressbar1 span.caption {
+        display: block;
+        text-align: center;
+      }
 
-        #progressbar1 .ui-progressbar-value {
-            margin-top: -23px;
-        }
-
-        #progressbar1 span.caption {
-            display: block;
-            text-align: center;
-        }
     </style>
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -51,9 +60,12 @@
     <script type="text/javascript" src="scripts/progressbar.js"></script>
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen" class="hiding">
-      <div id="gameStartButton" class="button" type="button" onclick="buttonStartgame()">start game</div> <br>
-      <div id="loadGameButton" class="button" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
-      <div id="achievementButton" class="button" type="button" onclick="buttonAchievement()">Achievement</div> <br>
+      <div id="gameStartButton" class="button" type="button" onclick="buttonStartgame()">start game</div>
+      <br>
+      <div id="loadGameButton" class="button" type="button" onclick="buttonLoadgame()">Load Game</div>
+      <br>
+      <div id="achievementButton" class="button" type="button" onclick="buttonAchievement()">Achievement</div>
+      <br>
     </div>
     <!-- 2. 로딩화면 -->
     <div id="loadingScreen" class="hiding">
@@ -105,10 +117,11 @@
       <div id="inSession">
         <p id="usingVar"> </p>
         <script type="text/javascript">
-        var d = new Date();
-        var localeDate  =  d.toLocaleDateString();
-        var localeTime  =  d.toLocaleTimeString();
-        document.getElementById ( 'usingVar' ).innerHTML = localeDate  +  " / "  +  localeTime;
+          var d = new Date();
+          var localeDate = d.toLocaleDateString();
+          var localeTime = d.toLocaleTimeString();
+          document.getElementById('usingVar').innerHTML = localeDate + " / " + localeTime;
+
         </script>
       </div>
       <!-- 4-5. 선택이벤트 -->
@@ -138,47 +151,64 @@
     <section class="row2">
       <div class="square"> friend </div>
       <div class="square"> fun </div>
-      <div class="square"> experience </div>
+      <div class="square"> exp </div>
     </section>
     <section class="buttons">
       <button onclick="reset()">Reset</button>
-      <button type= "button">Confirm</button>
-    </section>
-    <script>
-      var prior=1;
-      var row1Squares = document.querySelectorAll('.row1 .square');
-      var latest=row1Squares[1];
-      for(var i = 0; i < row1Squares.length; i++) {
-        var node = row1Squares[i];
-        node.onclick=function(){
-          if(this.classList.contains('enabled')&&this==latest){
-            this.classList.toggle('enabled');
-            prior--;
-          }
-          else if (!this.classList.contains('enabled')){
-            this.classList.toggle('enabled');
-            this.appendChild(document.createTextNode(prior));
-            latest=this;
-            if(prior!=6)
-              prior++;
+      <button type="button">Confirm</button>
+      <section>
+        <p id="demo"></p>
+      </section>
+      <script>
+        var prior = 0;
+        var stack = new Array();
+        var row1Squares = document.querySelectorAll('.row1 .square');
+        var latest = row1Squares[1];
+        for (var i = 0; i < row1Squares.length; i++) {
+          var node = row1Squares[i];
+          node.onclick = function() {
+            if (!this.classList.contains('enabled')) {
+              this.classList.add('enabled');
+              stack.push(this.textContent);
+              var text = document.createTextNode(stack[prior]);
+              document.getElementById("demo").appendChild(text);
+              prior++
+            }
           }
         }
-      }
-      var row2Squares = document.querySelectorAll('.row2 .square');
-      for(var i = 0; i < row2Squares.length; i++) {
-        var node = row2Squares[i];
-        node.onclick=function(){
-          if(this.classList.contains('enabled')&&this==latest){
-            this.classList.toggle('enabled');
-            prior--;
-          }
-          else if (!this.classList.contains('enabled')){
-            this.classList.toggle('enabled');
-            this.appendChild(document.createTextNode(prior));
-            latest=this;
-            if(prior!=6)
+        var row2Squares = document.querySelectorAll('.row2 .square');
+        for (var i = 0; i < row2Squares.length; i++) {
+          var node = row2Squares[i];
+          node.onclick = function() {
+            if (!this.classList.contains('enabled')) {
+              this.classList.add('enabled');
+              stack.push(this.textContent);
+              var text = document.createTextNode(stack[prior]);
+              document.getElementById("demo").appendChild(text);
               prior++;
+            }
           }
+        }
+
+        function reset() {
+          for (var i = 0; i < row1Squares.length; i++) {
+            var node = row1Squares[i];
+            if (node.classList.contains('enabled')) {
+              node.classList.toggle('enabled');
+            }
+          }
+          for (var i = 0; i < row2Squares.length; i++) {
+            var node = row2Squares[i];
+            if (node.classList.contains('enabled')) {
+              node.classList.toggle('enabled');
+            }
+
+          }
+          for (var i = 0; i < prior; i++) {
+            stack.pop()
+          }
+          prior = 0;
+          document.getElementById("demo").innerHTML = "";
         }
       }
       function reset(){
@@ -188,56 +218,43 @@
           if(node.classList.contains('enabled')){
             node.classList.toggle('enabled');
 
-          }
-        }
-        for(var i = 0; i < row2Squares.length; i++) {
-          var node = row2Squares[i];
-          if(node.classList.contains('enabled')){
-            node.classList.toggle('enabled');
-
-          }
-
-        }
-      }
-    </script>
-    <!--정우의 코드-->
-    <div>
+      </script>
+      <!--정우의 코드-->
+      <div>
         <p>학기진행 화면입니다.</p>
-    </div>
-    <div id="progressbar1"><span class="caption"></span></div>
-    <!--은서의 코드-->
-    <script>
-    function buttonStartgame()
-    {
-    	var x = document.getElementsByClassName("loadingScreen");
-          for (var i = 0; i < x.length; i++)
-            {
-              x[i].style.display = "block";
-            }
-    }
-    function buttonLoadgame()
-    {
-    	//document.getElementById('a').style.display='block';
-    	var x = document.getElementsByClassName("loadingScreen2");
-          for (var i = 0; i < x.length; i++)
-            {
-              x[i].style.display = "block";
-            }
-    }
-    function buttonAchievement()
-    {
-    	//document.getElementById('a').style.display='block';
-    	var x = document.getElementsByClassName("achievementScreen");
-          for (var i = 0; i < x.length; i++)
-            {
-              x[i].style.display = "block";
-            }
-    }
-    </script>
+      </div>
+      <div id="progressbar1"><span class="caption"></span></div>
+      <!--은서의 코드-->
+      <script>
+        function buttonStartgame() {
+          var x = document.getElementsByClassName("loadingScreen");
+          for (var i = 0; i < x.length; i++) {
+            x[i].style.display = "block";
+          }
+        }
+
+        function buttonLoadgame() {
+          //document.getElementById('a').style.display='block';
+          var x = document.getElementsByClassName("loadingScreen2");
+          for (var i = 0; i < x.length; i++) {
+            x[i].style.display = "block";
+          }
+        }
+
+        function buttonAchievement() {
+          //document.getElementById('a').style.display='block';
+          var x = document.getElementsByClassName("achievementScreen");
+          for (var i = 0; i < x.length; i++) {
+            x[i].style.display = "block";
+          }
+        }
+
+      </script>
 
       <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
       <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
       <div id="demo3" style="display:none" class="achievementScreen">This is ahievementScreen</div>
 
   </body>
+
 </html>
