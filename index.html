@@ -28,6 +28,27 @@
     <script type="text/javascript" src="scripts/sketch.js">
         console.log("ang");
     </script>
+    <!-- 정우의 코드 -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <style type="text/css">
+        #progressbar1 {
+            height: 23px;
+            width: 400px;
+        }
+
+        #progressbar1 .ui-progressbar-value {
+            margin-top: -23px;
+        }
+
+        #progressbar1 span.caption {
+            display: block;
+            text-align: center;
+        }
+    </style>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="scripts/progressbar.js"></script>
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen" class="hiding">
       <div id="gameStartButton" class="button">게임 시작</div>
@@ -178,5 +199,10 @@
         }
       }
     </script>
+    <!--정우의 코드-->
+    <div>
+        <p>학기진행 화면입니다.</p>
+    </div>
+    <div id="progressbar1"><span class="caption"></span></div>
   </body>
 </html>
