@@ -2,8 +2,8 @@ var app = new PIXI.Application(1600, 1200, {transparent : true});
 document.body.appendChild(app.view);
 
 // create a new Sprite from an image path
-var bunny = PIXI.Sprite.fromImage('https://github.com/team3noCSE/DeptGuideGame/blob/master/images/ang.png?raw=true');
-var effect = PIXI.Texture.fromImage('https://github.com/team3noCSE/DeptGuideGame/blob/master/images/sibal.png?raw=true');
+var bunny = PIXI.Sprite.fromImage('images/ang.png');
+var effect = PIXI.Texture.fromImage('images/sibal.png');
 
 // center the sprite's anchor point
 bunny.anchor.set(0.5);
