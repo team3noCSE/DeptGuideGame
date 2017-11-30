@@ -2,15 +2,15 @@ var icons = document.querySelectorAll('.Dep img');
 var active=0;
 function selected(clicked) {
   var icons = document.querySelectorAll('.Dep img');
-  if (clicked.style.border != "1px solid red") {
+  if (clicked.style.outline != "1px solid red") {
     for (var i = 0; i < icons.length; i++) {
-      document.getElementById(i).style.border = "none";
+      document.getElementById(i).style.outline = "none";
     }
-    clicked.style.border = "1px solid red";
+    clicked.style.outline = "1px solid red";
     active=1;
   }
   else {
-    clicked.style.border = "none";
+    clicked.style.outline = "none";
     active=0;
   }
 }
