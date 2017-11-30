@@ -90,12 +90,9 @@
         </section>
         <section class="buttons">
           <button onclick="reset()">Reset</button>
-          <button onclick="confirm()">Confirm</button>
+          <button onclick="confirm_personal(6)">Confirm</button>
           <button onclick="fromPersonalityToDepartment()" type= "button">Next</button>
         </section>
-        <section>
-			    <p id="demo"></p>
-		    </section>
       </div>
       <!-- 4-2. 학과선택 -->
       <div id="departmentChoiceScreen" style="display: none !important">
@@ -114,7 +111,10 @@
   	  <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
   	  <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
   	  <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
-	</section>
+	     </section>
+       <section class="buttons">
+         <button onclick="confirm_department(1)">Confirm</button>
+       </section>
       </div>
       <!-- 4-3. 시간표구성 -->
       <div id="lectureSchedulingScreen" style="display: none !important">

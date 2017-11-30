@@ -1,4 +1,4 @@
-var prior=0;
+var active=0;
 var stack=new Array();
 var personalityTestScreen=document.getElementById("personalityTestScreen");
 
@@ -6,9 +6,8 @@ function personal(clicked){
   if(!clicked.classList.contains('enabled')){
     clicked.classList.add('enabled');
     stack.push(clicked.textContent);
-    var text=document.createTextNode(stack[prior]);
-    document.getElementById("demo").appendChild(text);
-    prior++
+    var text=document.createTextNode(stack[active]);
+    active++
   }
 }
 function reset(){
@@ -27,14 +26,15 @@ function reset(){
 		}
 
 	}
-	for(var i=0;i<prior;i++){
+	for(var i=0;i<active;i++){
 		stack.pop()
 	}
-	prior=0;
+	active=0;
 	document.getElementById("demo").innerHTML="";
 }
-function confirm(){
-  if(prior==6){
+function confirm_personal(num){
+  console.log(active);
+  if(active==num){
     return true;
   }
   else{
