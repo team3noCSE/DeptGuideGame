@@ -51,13 +51,15 @@
             text-align: center;
         }
     </style>
-
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen" class="hiding">
       <div type="button" onclick="buttonStartgame()">start game</div> <br>
       <div type="button" onclick="buttonLoadgame()">Load Game</div> <br>
       <div type="button" onclick="buttonAchievement()">Achievement</div> <br>
     </div>
+    <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
+    <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
+    <div id="demo3" style="display:none" class="achievementScreen">This is ahievementScreen</div>
     <!-- 2. 로딩화면 -->
     <div id="loadingScreen" class="hiding" style="display: none !important">
       <div class="gameTip">Tip: 1</div>
@@ -145,8 +147,5 @@
         <p>학기진행 화면입니다.</p>
     </div>
     <div id="progressbar1"><span class="caption"></span></div>
-    <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
-    <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
-    <div id="demo3" style="display:none" class="achievementScreen">This is ahievementScreen</div>
   </body>
 </html>
