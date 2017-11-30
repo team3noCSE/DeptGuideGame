@@ -12,14 +12,16 @@ var miniGame = document.getElementById("miniGame");
 var result = document.getElementById("result");
 
 var everyElement = document.getElementsByClassName("hiding");
+/*
 for ( var i=0; i<everyElement.length; i++ ) {
   everyElement[i].style.display = "none";
 //  if( everyElement[i].id == "initialMenuScreen" )
 //    everyElement[i].style.display = "block";
-}
+}*/
 
 var initialMenuScreen = document.getElementById("initialMenuScreen");
 var initialMenuBotton = initialMenuScreen.getElementsByClassName("button");
+
 
 initialMenuScreen.style.display = "";
 for ( var i=0; i<initialMenuBotton.length; i++ ) {
