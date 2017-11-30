@@ -36,29 +36,16 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
     <script type="text/javascript" src="scripts/progressbar.js"></script>
-=======
-    <style type="text/css">
-        #progressbar1 {
-            height: 23px;
-            width: 400px;
-        }
 
-        #progressbar1 .ui-progressbar-value {
-            margin-top: -23px;
-        }
-
-        #progressbar1 span.caption {
-            display: block;
-            text-align: center;
-        }
-    </style>
->>>>>>> 1b6438d7e034b3c6d162da8613522dd47227671e
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen" class="hiding">
       <div type="button" onclick="buttonStartgame()">start game</div> <br>
       <div type="button" onclick="buttonLoadgame()">Load Game</div> <br>
       <div type="button" onclick="buttonAchievement()">Achievement</div> <br>
     </div>
+    <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
+    <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
+    <div id="demo3" style="display:none" class="achievementScreen">This is ahievementScreen</div>
     <!-- 2. 로딩화면 -->
     <div id="loadingScreen" class="hiding" style="display: none !important">
       <div class="gameTip">Tip: 1</div>
