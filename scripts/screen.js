@@ -1,33 +1,37 @@
 function buttonStartgame()
 {
-    var x = document.getElementsByClassName("loadingScreen");
-    for (var i = 0; i < x.length; i++)
-    {
-      x[i].style.display = "block";
-    }
-
-    var y = document.getElementById("initialMenuScreen");
-    y.style.display = "none";
+  document.getElementById("initialScreen").style.display = "none";
+  document.getElementById("loadingScreen").style.display = "block";
+  var x = document.getElementsByClassName("gameTip");
+  for(var i=0;i<10;i++)
+  {
+    x[i].style.display="none"
+  }
+  var result = Math.floor(Math.random() * 10);
+  x[result].style.display = "block";    
 }
 function buttonLoadgame()
 {
-  var x = document.getElementsByClassName("loadingScreen2");
-  for (var i = 0; i < x.length; i++)
+  document.getElementById("initialScreen").style.display = "none";
+  document.getElementById("loadingScreen").style.display='block';
+  var x = document.getElementsByClassName("gameTip");
+  for(var i=0;i<10;i++)
   {
-    x[i].style.display = "block";
+    x[i].style.display="none"
   }
-
-  var y = document.getElementById("initialMenuScreen");
-  y.style.display = "none";
+  var result = Math.floor(Math.random() * 10);
+  x[result].style.display = "block";    
 }
 function buttonAchievement()
 {
-  var x = document.getElementsByClassName("achievementScreen");
-  for (var i = 0; i < x.length; i++)
+  document.getElementById("initialScreen").style.display = "none";
+  document.getElementById("achievementScreen").style.display='block';
+  var x = document.getElementsByClassName("achievementCell");
+  for(var i=0;i<5;i++)
   {
-    x[i].style.display = "block";
+    x[i].style.display="none"
   }
-
-  var y = document.getElementById("initialMenuScreen");
-  y.style.display = "none";
+  var result = Math.floor(Math.random() * 5);
+  x[result].style.display = "block";    
+  
 }
