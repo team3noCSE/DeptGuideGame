@@ -23,6 +23,12 @@
   <script src="pixi.min.js"></script>
   <script src="howler.js"></script>
   <body>
+    <script src="scripts/screen.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="scripts/progressbar.js"></script>
+    <script src="scripts/personality.js"></script>
+    <script src="scripts/app.js"></script>
     <!-- 성호의 코드 -->
     <div id="display" />
     <script type="text/javascript" src="scripts/sketch.js">
@@ -45,10 +51,7 @@
             text-align: center;
         }
     </style>
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
-    <script type="text/javascript" src="scripts/progressbar.js"></script>
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen" class="hiding">
       <div type="button" onclick="buttonStartgame()">start game</div> <br>
@@ -104,12 +107,6 @@
       <!-- 4-4. 학기진행화면(진행상황 관찰) -->
       <div id="inSession" style="display: none !important">
         <p id="usingVar"> </p>
-        <script type="text/javascript">
-        var d = new Date();
-        var localeDate  =  d.toLocaleDateString();
-        var localeTime  =  d.toLocaleTimeString();
-        document.getElementById ( 'usingVar' ).innerHTML = localeDate  +  " / "  +  localeTime;
-        </script>
       </div>
       <!-- 4-5. 선택이벤트 -->
       <div id="optionEvent" style="display: none !important">
@@ -128,7 +125,6 @@
         <div>결과발표</div>
       </div>
     </div>
-    <script src="scripts/app.js"></script>
     <section class="row1">
       <div class="square"> love </div>
       <div class="square"> study </div>
@@ -144,18 +140,13 @@
       <button onclick="reset()">Reset</button>
       <button type= "button">Confirm</button>
     </section>
-    <script src="scripts/personality.js"></script>
     <!--정우의 코드-->
     <div>
         <p>학기진행 화면입니다.</p>
     </div>
     <div id="progressbar1"><span class="caption"></span></div>
-    <!--범준의 코드-->
-    <script src="scripts/screen.js"></script>
-
-      <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
-      <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
-      <div id="demo3" style="display:none" class="achievementScreen">This is ahievementScreen</div>
-
+    <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
+    <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
+    <div id="demo3" style="display:none" class="achievementScreen">This is ahievementScreen</div>
   </body>
 </html>
