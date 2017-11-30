@@ -35,10 +35,11 @@
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/screen.js"></script>
-    <script type="text/javascript" src="scripts/progressbar.js"></script>
+    <script type="text/javascript" src="scripts/semester.js"></script>
 
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
+<<<<<<< HEAD
       <div id="startGameButton" type="button" onclick="buttonStartgame()">start game</div> <br>
       <div id="loadGameButton" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
       <div id="achievementButton" type="button" onclick="buttonAchievement()">Achievement</div> <br>
@@ -46,6 +47,17 @@
     </div>
     <!-- 2. 로딩화면 -->
     <div id="loadingScreen" style="display: none !important">
+=======
+      <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
+      <div id="buttonLoadgame" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
+      <div id="buttonAchievement" type="button" onclick="buttonAchievement()">Achievement</div> <br>
+    </div>
+    <!-- 2. 로딩화면 -->
+    <div id="loadingScreen" class="hiding" style="display: none !important">
+      <div id="demo1" style="display: none" class="loadingScreen">This is loadingScreen</div>
+      <div id="demo2" style="display: none" class="loadingScreen2">This is loadingScreen</div>
+      <div id="demo3" style="display: none" class="achievementScreen">This is ahievementScreen</div>
+>>>>>>> b43b7d52a82bae619509c49961da33630a5861ad
       <div class="gameTip">Tip: 1</div>
       <div class="gameTip">Tip: 2</div>
       <div class="gameTip">Tip: 3</div>
