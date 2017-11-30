@@ -18,9 +18,6 @@
         background-color: limegreen;
         border: 1px solid black;
       }
-      .hiding{
-        display:"none";
-      }
     </style>
   </head>
   <script src="pixi.min.js"></script>
@@ -62,10 +59,7 @@
       <div id="buttonAchievement" type="button" onclick="buttonAchievement()">Achievement</div> <br>
     </div>
     <!-- 2. 로딩화면 -->
-    <div id="loadingScreen" class="hiding" style="display: none !important">
-      <div id="demo1" style="display: none" class="loadingScreen">This is loadingScreen</div>
-      <div id="demo2" style="display: none" class="loadingScreen2">This is loadingScreen</div>
-      <div id="demo3" style="display: none" class="achievementScreen">This is ahievementScreen</div>
+    <div id="loadingScreen" style="display: none !important">
       <div class="gameTip">Tip: 1</div>
       <div class="gameTip">Tip: 2</div>
       <div class="gameTip">Tip: 3</div>
@@ -78,7 +72,7 @@
       <div class="gameTip">Tip: 10</div>
     </div>
     <!-- 3. 업적화면 -->
-    <div id="achievementScreen" class="hiding" style="display: none !important">
+    <div id="achievementScreen" style="display: none !important">
       <div class="achievementCell">업적 1</div>
       <div class="achievementCell">업적 2</div>
       <div class="achievementCell">업적 3</div>
@@ -86,7 +80,7 @@
       <div class="achievementCell">업적 5</div>
     </div>
     <!-- 4. 게임진행 -->
-    <div id="inGameScreen" class="hiding" style="display: none !important">
+    <div id="inGameScreen" style="display: none !important">
       <p>게임캐릭터 생성을 위해 성향테스트 - 학과선택 - 시간표구성 순서대로 파라미터를 설정합니다.</p>
       <!-- 4-1. 성향테스트 -->
       <div id="personalityTestScreen">
