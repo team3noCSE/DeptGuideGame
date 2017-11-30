@@ -37,12 +37,10 @@ function buttonAchievement()
 {
   document.getElementById("initialMenuScreen").style.display = "none";
   document.getElementById("achievementScreen").style.display='block';
-  var x = document.getElementsByClassName("achievementCell");
-  for(var i=0;i<5;i++)
-  {
-    x[i].style.display="block"
-  }
+
 }
+
+
 
 function fromPersonalityToDepartment() {
   document.getElementById("personalityTestScreen").style.display = "none";
