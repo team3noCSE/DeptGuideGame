@@ -206,34 +206,7 @@
     </div>
     <div id="progressbar1"><span class="caption"></span></div>
     <!--범준의 코드-->
-    <script>
-    function buttonStartgame()
-    {
-    	var x = document.getElementsByClassName("loadingScreen");
-          for (var i = 0; i < x.length; i++)
-            {
-              x[i].style.display = "block";
-            }
-    }
-    function buttonLoadgame()
-    {
-    	//document.getElementById('a').style.display='block';
-    	var x = document.getElementsByClassName("loadingScreen2");
-          for (var i = 0; i < x.length; i++)
-            {
-              x[i].style.display = "block";
-            }
-    }
-    function buttonAchievement()
-    {
-    	//document.getElementById('a').style.display='block';
-    	var x = document.getElementsByClassName("achievementScreen");
-          for (var i = 0; i < x.length; i++)
-            {
-              x[i].style.display = "block";
-            }
-    }
-    </script>
+    <script src="scripts/screen.js"></script>
 
       <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
       <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
