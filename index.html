@@ -24,43 +24,48 @@
   <script src="pixi.min.js"></script>
   <script src="howler.js"></script>
   <body>
-    <!-- 성호의 코드 -->
     <div id="display" />
     <script type="text/javascript" src="scripts/sketch.js">
         console.log("ang");
     </script>
-    <!-- 정우의 코드 -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="jquery/jquery-ui-themes-1.12.1/themes/smoothness/jquery-ui.css">
 
+<<<<<<< HEAD
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="scripts/screen.js"></script>
     <script type="text/javascript" src="scripts/progressbar.js"></script>
+=======
+    <link rel="stylesheet" href="style/progressbar.css">
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="scripts/screen.js"></script>
+    <script type="text/javascript" src="scripts/semester.js"></script>
+>>>>>>> master
 
     <!-- 1. 초기메뉴화면 -->
-    <div id="initialMenuScreen" class="hiding">
-      <div type="button" onclick="buttonStartgame()">start game</div> <br>
-      <div type="button" onclick="buttonLoadgame()">Load Game</div> <br>
-      <div type="button" onclick="buttonAchievement()">Achievement</div> <br>
+    <div id="initialMenuScreen">
+      <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
+      <div id="buttonLoadgame" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
+      <div id="buttonAchievement" type="button" onclick="buttonAchievement()">Achievement</div> <br>
+
     </div>
-    <div id="demo1" style="display:none" class="loadingScreen">This is loadingScreen</div>
-    <div id="demo2" style="display:none" class="loadingScreen2">This is loadingScreen</div>
-    <div id="demo3" style="display:none" class="achievementScreen">This is ahievementScreen</div>
     <!-- 2. 로딩화면 -->
-    <div id="loadingScreen" class="hiding" style="display: none !important">
-      <div class="gameTip">Tip: 1</div>
-      <div class="gameTip">Tip: 2</div>
-      <div class="gameTip">Tip: 3</div>
-      <div class="gameTip">Tip: 4</div>
-      <div class="gameTip">Tip: 5</div>
-      <div class="gameTip">Tip: 6</div>
-      <div class="gameTip">Tip: 7</div>
-      <div class="gameTip">Tip: 8</div>
-      <div class="gameTip">Tip: 9</div>
-      <div class="gameTip">Tip: 10</div>
+    <div id="loadingScreen" style="display: none !important">
+      <div class="gameTip" style="font-size: 200%">Tip 1: 휴학을 조심해!<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 2: 학기 말은 몸에 해롭습니다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 3: 계획은 어긋나기 위해 존재합니다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 4: CSED232를 조심해!<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 5: 윤은영 교수님을 멀리하세요.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 6: 친구가 없어도 휴학각<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 7: 익스트림 포스텍!<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 8: 기말도 망할 것 같을땐 휴학하는 것이 좋다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 9: 다음 학기를 노린다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 10: 연애는 해도 문제 안해도 문제<br></div>
+      <div> 로딩 중입니다 5초 동안 기다리세욥 :) </div>
     </div>
     <!-- 3. 업적화면 -->
-    <div id="achievementScreen" class="hiding" style="display: none !important">
+    <div id="achievementScreen" style="display: none !important">
       <div class="achievementCell">업적 1</div>
       <div class="achievementCell">업적 2</div>
       <div class="achievementCell">업적 3</div>
@@ -68,16 +73,26 @@
       <div class="achievementCell">업적 5</div>
     </div>
     <!-- 4. 게임진행 -->
-    <div id="inGameScreen" class="hiding" style="display: none !important">
+    <div id="inGameScreen" style="display: none !important">
       <p>게임캐릭터 생성을 위해 성향테스트 - 학과선택 - 시간표구성 순서대로 파라미터를 설정합니다.</p>
       <!-- 4-1. 성향테스트 -->
       <div id="personalityTestScreen">
-        <div class="personalityCard">성향 1-1</div>
-        <div class="personalityCard">성향 1-2</div>
-        <div class="personalityCard">성향 2-1</div>
-        <div class="personalityCard">성향 2-2</div>
-        <div class="personalityCard">성향 3-1</div>
-        <div class="personalityCard">성향 3-2</div>
+        <section class="row1">
+          <div class="square"> love </div>
+          <div class="square"> study </div>
+          <div class="square"> drink </div>
+        </section>
+
+        <section class="row2">
+          <div class="square"> friend </div>
+          <div class="square"> fun </div>
+          <div class="square"> experience </div>
+        </section>
+        <section class="buttons">
+          <button onclick="reset()">Reset</button>
+          <button type= "button">Confirm</button>
+          <button onclick="fromPersonalityToDepartment()" type= "button">Next</button>
+        </section>
       </div>
       <!-- 4-2. 학과선택 -->
       <div id="departmentChoiceScreen" style="display: none !important">
@@ -119,82 +134,15 @@
         <div>결과발표</div>
       </div>
     </div>
-    <script src="scripts/app.js"></script>
-    <section class="row1">
-      <div class="square"> love </div>
-      <div class="square"> study </div>
-      <div class="square"> drink </div>
-    </section>
 
-    <section class="row2">
-      <div class="square"> friend </div>
-      <div class="square"> fun </div>
-      <div class="square"> experience </div>
-    </section>
-    <section class="buttons">
-      <button onclick="reset()">Reset</button>
-      <button type= "button">Confirm</button>
-    </section>
-    <script>
-      var prior=1;
-      var row1Squares = document.querySelectorAll('.row1 .square');
-      var latest=row1Squares[1];
-      for(var i = 0; i < row1Squares.length; i++) {
-        var node = row1Squares[i];
-        node.onclick=function(){
-          if(this.classList.contains('enabled')&&this==latest){
-            this.classList.toggle('enabled');
-            prior--;
-          }
-          else if (!this.classList.contains('enabled')){
-            this.classList.toggle('enabled');
-            this.appendChild(document.createTextNode(prior));
-            latest=this;
-            if(prior!=6)
-              prior++;
-          }
-        }
-      }
-      var row2Squares = document.querySelectorAll('.row2 .square');
-      for(var i = 0; i < row2Squares.length; i++) {
-        var node = row2Squares[i];
-        node.onclick=function(){
-          if(this.classList.contains('enabled')&&this==latest){
-            this.classList.toggle('enabled');
-            prior--;
-          }
-          else if (!this.classList.contains('enabled')){
-            this.classList.toggle('enabled');
-            this.appendChild(document.createTextNode(prior));
-            latest=this;
-            if(prior!=6)
-              prior++;
-          }
-        }
-      }
-      function reset(){
-        prior=1;
-        for(var i = 0; i < row1Squares.length; i++) {
-          var node = row1Squares[i];
-          if(node.classList.contains('enabled')){
-            node.classList.toggle('enabled');
-
-          }
-        }
-        for(var i = 0; i < row2Squares.length; i++) {
-          var node = row2Squares[i];
-          if(node.classList.contains('enabled')){
-            node.classList.toggle('enabled');
-
-          }
-
-        }
-      }
-    </script>
     <!--정우의 코드-->
-    <div>
-        <p>학기진행 화면입니다.</p>
+    <div style="display: none !important">
+      <div id="semester" style="display: none !important;">
+        <div>
+          <p>학기진행 화면입니다.</p>
+        </div>
+        <div id="progressbar1"><span class="caption"></span></div>
     </div>
-    <div id="progressbar1"><span class="caption"></span></div>
+  </div>
   </body>
 </html>
