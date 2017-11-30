@@ -1,0 +1,13 @@
+#progressbar1 {
+    height: 23px;
+    width: 400px;
+}
+
+#progressbar1 .ui-progressbar-value {
+    margin-top: -23px;
+}
+
+#progressbar1 span.caption {
+    display: block;
+    text-align: center;
+}
