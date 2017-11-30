@@ -27,12 +27,10 @@
   <script src="howler.js"></script>
   <script src="script/startgame.js"></script>
   <body>
-    <!-- 성호의 코드 -->
     <div id="display" />
     <script type="text/javascript" src="scripts/sketch.js">
         console.log("ang");
     </script>
-    <!-- 정우의 코드 -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href="style/progressbar.css">
@@ -49,19 +47,17 @@
     </div>
     <!-- 2. 로딩화면 -->
     <div id="loadingScreen" class="hiding" style="display: none !important">
-      <div id="demo1" style="display: none" class="loadingScreen">This is loadingScreen</div>
-      <div id="demo2" style="display: none" class="loadingScreen2">This is loadingScreen</div>
-      <div id="demo3" style="display: none" class="achievementScreen">This is ahievementScreen</div>
-      <div class="gameTip">Tip: 1</div>
-      <div class="gameTip">Tip: 2</div>
-      <div class="gameTip">Tip: 3</div>
-      <div class="gameTip">Tip: 4</div>
-      <div class="gameTip">Tip: 5</div>
-      <div class="gameTip">Tip: 6</div>
-      <div class="gameTip">Tip: 7</div>
-      <div class="gameTip">Tip: 8</div>
-      <div class="gameTip">Tip: 9</div>
-      <div class="gameTip">Tip: 10</div>
+      <div class="gameTip" style="font-size: 200%">Tip 1: 휴학을 조심해!<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 2: 학기 말은 몸에 해롭습니다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 3: 계획은 어긋나기 위해 존재합니다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 4: CSED232를 조심해!<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 5: 윤은영 교수님을 멀리하세요.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 6: 친구가 없어도 휴학각<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 7: 익스트림 포스텍!<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 8: 기말도 망할 것 같을땐 휴학하는 것이 좋다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 9: 다음 학기를 노린다.<br></div>
+      <div class="gameTip" style="font-size: 200%">Tip 10: 연애는 해도 문제 안해도 문제<br></div>
+      <div> 로딩 중입니다 5초 동안 기다리세욥 :) </div>
     </div>
     <!-- 3. 업적화면 -->
     <div id="achievementScreen" class="hiding" style="display: none !important">
@@ -90,6 +86,7 @@
         <section class="buttons">
           <button onclick="reset()">Reset</button>
           <button type= "button">Confirm</button>
+          <button onclick="fromPersonalityToDepartment()"type= "button">Next</button>
         </section>
       </div>
       <!-- 4-2. 학과선택 -->
@@ -134,10 +131,10 @@
     </div>
 
     <!--정우의 코드-->
-    <div>
+    <div style="display: none !important">
         <p>학기진행 화면입니다.</p>
     </div>
-    <div id="progressbar1"><span class="caption"></span></div>
+    <div id="progressbar1" style="display: none !important"><span class="caption"></span></div>
 
   </body>
 </html>
