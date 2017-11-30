@@ -20,8 +20,6 @@ for ( var i=0; i<everyElement.length; i++ ) {
 }*/
 
 var initialMenuScreen = document.getElementById("initialMenuScreen");
-var initialMenuBotton = initialMenuScreen.getElementsByClassName("button");
-
 
 initialMenuScreen.style.display = "";
 for ( var i=0; i<initialMenuBotton.length; i++ ) {
