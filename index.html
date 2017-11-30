@@ -72,12 +72,21 @@
       <p>게임캐릭터 생성을 위해 성향테스트 - 학과선택 - 시간표구성 순서대로 파라미터를 설정합니다.</p>
       <!-- 4-1. 성향테스트 -->
       <div id="personalityTestScreen">
-        <div class="personalityCard">성향 1-1</div>
-        <div class="personalityCard">성향 1-2</div>
-        <div class="personalityCard">성향 2-1</div>
-        <div class="personalityCard">성향 2-2</div>
-        <div class="personalityCard">성향 3-1</div>
-        <div class="personalityCard">성향 3-2</div>
+        <section class="row1">
+          <div class="square"> love </div>
+          <div class="square"> study </div>
+          <div class="square"> drink </div>
+        </section>
+
+        <section class="row2">
+          <div class="square"> friend </div>
+          <div class="square"> fun </div>
+          <div class="square"> experience </div>
+        </section>
+        <section class="buttons">
+          <button onclick="reset()">Reset</button>
+          <button type= "button">Confirm</button>
+        </section>
       </div>
       <!-- 4-2. 학과선택 -->
       <div id="departmentChoiceScreen" style="display: none !important">
@@ -119,77 +128,7 @@
         <div>결과발표</div>
       </div>
     </div>
-    <section class="row1">
-      <div class="square"> love </div>
-      <div class="square"> study </div>
-      <div class="square"> drink </div>
-    </section>
 
-    <section class="row2">
-      <div class="square"> friend </div>
-      <div class="square"> fun </div>
-      <div class="square"> experience </div>
-    </section>
-    <section class="buttons">
-      <button onclick="reset()">Reset</button>
-      <button type= "button">Confirm</button>
-    </section>
-    <script>
-      var prior=1;
-      var row1Squares = document.querySelectorAll('.row1 .square');
-      var latest=row1Squares[1];
-      for(var i = 0; i < row1Squares.length; i++) {
-        var node = row1Squares[i];
-        node.onclick=function(){
-          if(this.classList.contains('enabled')&&this==latest){
-            this.classList.toggle('enabled');
-            prior--;
-          }
-          else if (!this.classList.contains('enabled')){
-            this.classList.toggle('enabled');
-            this.appendChild(document.createTextNode(prior));
-            latest=this;
-            if(prior!=6)
-              prior++;
-          }
-        }
-      }
-      var row2Squares = document.querySelectorAll('.row2 .square');
-      for(var i = 0; i < row2Squares.length; i++) {
-        var node = row2Squares[i];
-        node.onclick=function(){
-          if(this.classList.contains('enabled')&&this==latest){
-            this.classList.toggle('enabled');
-            prior--;
-          }
-          else if (!this.classList.contains('enabled')){
-            this.classList.toggle('enabled');
-            this.appendChild(document.createTextNode(prior));
-            latest=this;
-            if(prior!=6)
-              prior++;
-          }
-        }
-      }
-      function reset(){
-        prior=1;
-        for(var i = 0; i < row1Squares.length; i++) {
-          var node = row1Squares[i];
-          if(node.classList.contains('enabled')){
-            node.classList.toggle('enabled');
-
-          }
-        }
-        for(var i = 0; i < row2Squares.length; i++) {
-          var node = row2Squares[i];
-          if(node.classList.contains('enabled')){
-            node.classList.toggle('enabled');
-
-          }
-
-        }
-      }
-    </script>
     <!--정우의 코드-->
     <div>
         <p>학기진행 화면입니다.</p>
