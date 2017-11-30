@@ -25,15 +25,8 @@ function buttonLoadgame()
 function buttonAchievement()
 {
   document.getElementById("initialScreen").style.display = "none";
+  document.getElementById("achievementScreen").style.display='none';
   document.getElementById("achievementScreen").style.display='block';
-  var x = document.getElementsByClassName("achievementCell");
-  for(var i=0;i<5;i++)
-  {
-    x[i].style.display="none"
-  }
-  var result = Math.floor(Math.random() * 5);
-  x[result].style.display = "block";    
-  
 }
 
 function settimeout_startgame()
