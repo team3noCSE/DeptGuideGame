@@ -35,7 +35,6 @@ function buttonLoadgame()
 }
 function buttonAchievement()
 {
-<<<<<<< HEAD
   document.getElementById("initialMenuScreen").style.display = "none";
   document.getElementById("achievementScreen").style.display='block';
   var x = document.getElementsByClassName("achievementCell");
@@ -49,18 +48,3 @@ function fromPersonalityToDepartment() {
   document.getElementById("personalityTestScreen").style.display = "none";
   document.getElementById("departmentChoiceScreen").style.display = "block";
 }
-=======
-  document.getElementById("initialScreen").style.display = "none";
-  document.getElementById("achievementScreen").style.display='none';
-  document.getElementById("achievementScreen").style.display='block';
-}
-
-function settimeout_startgame()
-{
-  setTimeout(buttonStartgame,3000);
-}
-function settimeout_loadgame()
-{
-  setTimeout(buttonLoadgame,3000);
-}
->>>>>>> fbf51b6574129eda457d418eb9ee52068258a9a9

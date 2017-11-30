@@ -22,7 +22,6 @@
   </head>
   <script src="pixi.min.js"></script>
   <script src="howler.js"></script>
-  <script src="script/startgame.js"></script>
   <body>
     <div id="display" />
     <script type="text/javascript" src="scripts/sketch.js">
@@ -38,17 +37,13 @@
 
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
-      <div id="startGameButton" type="button" onclick="settimeout_startgame()">start game</div> <br>
-      <div id="loadGameButton" type="button" onclick="settimeout_loadgame()">Load Game</div> <br>
-      <div id="achievementButton" type="button" onclick="buttonAchievement()">Achievement</div> <br>
+      <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
+      <div id="buttonLoadgame" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
+      <div id="buttonAchievement" type="button" onclick="buttonAchievement()">Achievement</div> <br>
 
     </div>
     <!-- 2. 로딩화면 -->
     <div id="loadingScreen" style="display: none !important">
-      <div id="buttonStartgame" type="button" onclick="settimeout_startgame()">start game</div> <br>
-      <div id="buttonLoadgame" type="button" onclick="settimeout_loadgame()">Load Game</div> <br>
-      <div id="buttonAchievement" type="button" onclick="buttonAchievement()">Achievement</div> <br>
-
       <div class="gameTip" style="font-size: 200%">Tip 1: 휴학을 조심해!<br></div>
       <div class="gameTip" style="font-size: 200%">Tip 2: 학기 말은 몸에 해롭습니다.<br></div>
       <div class="gameTip" style="font-size: 200%">Tip 3: 계획은 어긋나기 위해 존재합니다.<br></div>
