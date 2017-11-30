@@ -33,3 +33,12 @@ function reset(){
 	prior=0;
 	document.getElementById("demo").innerHTML="";
 }
+function confirm(){
+  if(prior==6){
+    return true;
+  }
+  else{
+    alert("선택 덜했네?");
+    return false;
+  }
+}
