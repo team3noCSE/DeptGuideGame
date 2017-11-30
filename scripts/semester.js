@@ -22,4 +22,7 @@ $(function() {
     });
     refresh_bar();
     timer = setInterval(refresh_bar, refresh_interval);
+    if (current_time == total_time / 2){
+      alert("이벤트 발생");
+    }
 });
