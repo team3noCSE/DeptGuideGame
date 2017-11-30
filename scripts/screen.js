@@ -35,3 +35,12 @@ function buttonAchievement()
   x[result].style.display = "block";    
   
 }
+
+function settimeout_startgame()
+{
+  setTimeout(buttonStartgame,3000);
+}
+function settimeout_loadgame()
+{
+  setTimeout(buttonLoadgame,3000);
+}
