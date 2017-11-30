@@ -19,7 +19,7 @@
       .enabled {
         background-color: limegreen;
         border: 1px solid black;
-	opacity:0.2;
+	opacity:0.5;
       }
     </style>
   </head>
@@ -30,13 +30,18 @@
     <script type="text/javascript" src="scripts/sketch.js">
         console.log("ang");
     </script>
+    <!--
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href="style/progressbar.css">
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  -->
+
     <script type="text/javascript" src="scripts/screen.js"></script>
+    <script type="text/javascript" src="scripts/personality.js"></script>
     <script type="text/javascript" src="scripts/semester.js"></script>
+    <script type="text/javascript" src="scripts/department.js"></script>
 
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
@@ -73,39 +78,42 @@
       <!-- 4-1. 성향테스트 -->
       <div id="personalityTestScreen">
         <section class="row1">
-          <div class="square"> love </div>
-          <div class="square"> study </div>
-          <div class="square"> drink </div>
+          <div onclick="personal(this)" class="square"> love </div>
+          <div onclick="personal(this)" class="square"> study </div>
+          <div onclick="personal(this)" class="square"> drink </div>
         </section>
 
         <section class="row2">
-          <div class="square"> friend </div>
-          <div class="square"> fun </div>
-          <div class="square"> experience </div>
+          <div onclick="personal(this)" class="square"> friend </div>
+          <div onclick="personal(this)" class="square"> fun </div>
+          <div onclick="personal(this)" class="square"> experience </div>
         </section>
         <section class="buttons">
           <button onclick="reset()">Reset</button>
           <button type= "button">Confirm</button>
           <button onclick="fromPersonalityToDepartment()" type= "button">Next</button>
         </section>
+        <section>
+			    <p id="demo"></p>
+		    </section>
       </div>
       <!-- 4-2. 학과선택 -->
       <div id="departmentChoiceScreen" style="display: none !important">
         <section class="Dep">
-	  <img id="0" src="01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
-	  <img id="1" src="02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
- 	  <img id="2" src="03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
- 	  <img id="3" src="04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
+	  <img id="0" src="images/departments/01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
+	  <img id="1" src="images/departments/02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
+ 	  <img id="2" src="images/departments/03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
+ 	  <img id="3" src="images/departments/04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
  	  <br>
-	  <img id="4" src="05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
-	  <img id="5" src="06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
- 	  <img id="6" src="07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
- 	  <img id="7" src="08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
+	  <img id="4" src="images/departments/05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
+	  <img id="5" src="images/departments/06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
+ 	  <img id="6" src="images/departments/07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
+ 	  <img id="7" src="images/departments/08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
  	  <br>
-   	  <img id="8" src="09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
-  	  <img id="9" src="10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
-  	  <img id="10" src="12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
-  	  <img id="11" src="12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
+   	  <img id="8" src="images/departments/09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
+  	  <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
+  	  <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
+  	  <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
 	</section>
       </div>
       <!-- 4-3. 시간표구성 -->
