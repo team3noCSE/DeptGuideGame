@@ -22,6 +22,7 @@
 	opacity:0.5;
       }
     </style>
+    <link rel="stylesheet" href="style/progressbar.css">
   </head>
   <script src="pixi.min.js"></script>
   <script src="howler.js"></script>
@@ -32,7 +33,6 @@
     </script>
 <<<<<<< HEAD
     <link rel="stylesheet" href="jquery/jquery-ui-themes-1.12.1/themes/smoothness/jquery-ui.css">
-
     <link rel="stylesheet" href="style/progressbar.css">
     <script src="jquery/jquery-3.2.1.min.js"></script>
     <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
@@ -47,15 +47,21 @@
 
 >>>>>>> New_Hyeong
     <script type="text/javascript" src="scripts/screen.js"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="scripts/personality.js"></script>
     <script type="text/javascript" src="scripts/semester.js"></script>
     <script type="text/javascript" src="scripts/department.js"></script>
+=======
+    <script type="text/javascript" src="scripts/session.js"></script>
+
+>>>>>>> Branch_semester
 
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
       <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
       <div id="buttonLoadgame" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
       <div id="buttonAchievement" type="button" onclick="buttonAchievement()">Achievement</div> <br>
+      <div id="buttonSession" type="button" onclick="buttonSession()">Session(temp)</div> <br>
 
     </div>
     <!-- 2. 로딩화면 -->
@@ -84,7 +90,7 @@
     <div id="inGameScreen" style="display: none !important">
       <p>게임캐릭터 생성을 위해 성향테스트 - 학과선택 - 시간표구성 순서대로 파라미터를 설정합니다.</p>
       <!-- 4-1. 성향테스트 -->
-      <div id="personalityTestScreen">
+      <div id="personalityTestScreen" style="display: none !important">
         <section class="row1">
           <div onclick="personal(this)" class="square"> love </div>
           <div onclick="personal(this)" class="square"> study </div>
@@ -134,14 +140,17 @@
         <div class="lectureSchdule">시간표 6</div>
       </div>
       <!-- 4-4. 학기진행화면(진행상황 관찰) -->
-      <div id="inSession" style="display: none !important">
-        <p id="usingVar"> </p>
-        <script type="text/javascript">
-        var d = new Date();
-        var localeDate  =  d.toLocaleDateString();
-        var localeTime  =  d.toLocaleTimeString();
-        document.getElementById ( 'usingVar' ).innerHTML = localeDate  +  " / "  +  localeTime;
-        </script>
+      <div id="sessionScreen" style="display: none !important">
+        <div>
+          <p>학기진행 화면입니다.</p>
+          <div id="humanstate">
+            <p>햄볶하다</p>
+          </div>
+          <div id="dayChange">
+            <p>오늘은 월요일입니다.</p>
+          </div>
+        </div>
+        <div id="progressbar1"><span class="caption"></span></div>
       </div>
       <!-- 4-5. 선택이벤트 -->
       <div id="optionEvent" style="display: none !important">
@@ -160,15 +169,5 @@
         <div>결과발표</div>
       </div>
     </div>
-
-    <!--정우의 코드-->
-    <div style="display: none !important">
-      <div id="semester" style="display: none !important;">
-        <div>
-          <p>학기진행 화면입니다.</p>
-        </div>
-        <div id="progressbar1"><span class="caption"></span></div>
-    </div>
-  </div>
   </body>
 </html>
