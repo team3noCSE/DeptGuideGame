@@ -1,151 +1,64 @@
-//  class Session, routineList: list<Event>
-function Session(_routineList) {
-  this.routineList = _routineList;
+var thisGame = { };
+thisGame.department;
+  //  이번 게임에서 선택한 학과
+thisGame.timeTable;
+  //  이번 게임에서 선택한 이벤트들로 구성된 시간표
+thisGame.status = [1, 1, 1];
+  //  이번 게임의 스탯
+
+let Period = {
+  // 시간 : 교시
+  "AM 8:00" : 0, 0 : "AM 8:00",
+  "AM 9:30" : 1, 1 : "AM 9:30",
+  "AM 11:00" : 2, 2 : "AM 11:00",
+  "PM 12:30" : 3, 3 : "AM 12:30",
+  "PM 2:00" : 4, 4 : "PM 2:30",
+  "PM 3:30" : 5, 5 : "PM 3:30",
+  "PM 5:00" : 6, 6 : "PM 5:00",
+  "PM 6:30" : 7, 7 : "PM 6:30",
+  "PM 8:00" : 8, 8 : "PM 8:00",
+  "PM 9:30" : 9, 9 : "PM 9:30",
+  "PM 10~" : 10, 10 : "PM 10~"
 }
 
 //  이름, 요일, 걸리는시간, 시간표의 가이드라인 안에 있는지, 몇교시
-function Event(_name, _day, _period, _duration, _guideline) {
-  this.name = _name;
-  this.day = _day;
-  this.period = _period;
-  this.duration = _duration;
-  this.guideline = _guideline;
-}
+class SingleEvent {
+  constructor(
+    _name,      //  String
+    _day,       //  dayofweek
+    _period,    //  Period
+    _duration,  //  float
+    _deltaHealth, //  float
+    _deltaRelationship, //  float
+    _isLecture, //  boolean
+    _load,      //  float
+    _lectureNumber  //  String
+  ) {
+    //  event
+    this.name = _name;  //  이벤트 이름
+    this.day = _day;  //  요일
+    this.period = _period;  //  시작 시간(교시), 만약
+    this.duration = _duration;  //  한 번 수행하는데 걸리는 시간 (분)
+    this.deltaHealth = _deltaHealth;  //  체력 스탯 변화량
+    this.deltaRelationship = _deltaRelationship;  //  인간관계 스탯 변화량
 
-Event.prototype.showDetail = function () {
-  if(document.getElementById("screen") != null){
-    document.getElementById("screen").innerHTML += ("이벤트 이름: "+this.name+"<br/>");
-    var dayTemp;
-    switch (this.day) {
-      case 0:
-        dayTemp = "월요일";
-        break;
-      case 1:
-        dayTemp = "화요일";
-        break;
-      case 2:
-        dayTemp = "수요일";
-        break;
-      case 3:
-        dayTemp = "목요일";
-        break;
-      case 4:
-        dayTemp = "금요일";
-        break;
-      case 5:
-        dayTemp = "토요일";
-        break;
-      case 6:
-        dayTemp = "일요일";
-        break;
-      default:
-        break;
-    }
-    document.getElementById("screen").innerHTML += ("요일: "+dayTemp+"<br/>");
-    document.getElementById("screen").innerHTML += ("소요 시간: "+this.duration+"분<br/>");
-    document.getElementById("screen").innerHTML += ("In Guideline: "+this.guideline+"<br/>");
-    document.getElementById("screen").innerHTML += ("What period: "+this.period+"교시<br/>");
-    document.getElementById("screen").innerHTML += "<br/>";
+    //  lecture
+    this.isLecture = _isLecture;  //  lecture ? true : false
+    this.load = _load;  //  duration이랑 구분해야됨, 한 학기 전체 로드
+    this.lectureNumber = _lectureNumber;  //  학수번호
   }
-};
 
-//  personality, department, status
-var personality = Array();  //  stack array로 받음
-var department = 9;  //  integer
-var health = 1;
-var relationship = 1;
-var grade = 1;
-
-//  잠에 드는 시간 - 일어나는 시간 (분)
-var capacity = 200;
-
-document.getElementById("screen").innerHTML += "*initial status <br/>";
-document.getElementById("screen").innerHTML += health + "<br/>";
-document.getElementById("screen").innerHTML += relationship + "<br/>";
-document.getElementById("screen").innerHTML += grade + "<br/>";
-document.getElementById("screen").innerHTML += "<br/>";
-
-personality.push("health");
-personality.push("health");
-personality.push("relationship");
-personality.push("relationship");
-personality.push("grade");
-personality.push("grade");
-document.getElementById("screen").innerHTML += "<br/>";
-
-document.getElementById("screen").innerHTML += "*personality <br/>";
-document.getElementById("screen").innerHTML += personality[0] + "<br/>";
-document.getElementById("screen").innerHTML += personality[1] + "<br/>";
-document.getElementById("screen").innerHTML += personality[2] + "<br/>";
-document.getElementById("screen").innerHTML += personality[3] + "<br/>";
-document.getElementById("screen").innerHTML += personality[4] + "<br/>";
-document.getElementById("screen").innerHTML += personality[5] + "<br/>";
-document.getElementById("screen").innerHTML += "<br/>";
-
-//  priority 0, 1, 2, 3, 4, 5 -> +0.36, +0.30, +0.24, +0.18, +0.12, +0.06
-for (var i=0; i<6; i++) {
-    if(personality[i] === "health") {
-      health += (2.5-i)*0.06;
-    } else if(personality[i] === "relationship") {
-      relationship += (2.5-i)*0.06;
-    } else if(personality[i] === "grade") {
-      grade += (2.5-i)*0.06;
-    }
-}
-
-document.getElementById("screen").innerHTML += "*status after personality <br/>";
-document.getElementById("screen").innerHTML += health + "<br/>";
-document.getElementById("screen").innerHTML += relationship + "<br/>";
-document.getElementById("screen").innerHTML += grade + "<br/>";
-document.getElementById("screen").innerHTML += "<br/>";
-
-document.getElementById("screen").innerHTML += "*department <br/>";
-document.getElementById("screen").innerHTML += department+"<br/>";
-document.getElementById("screen").innerHTML += "<br/>";
-
-//  eventList 만들기
-var eventList = new Array();
-for( var i=0; i<10; i++ ) {
-  eventList[i] = new Array();
-}
-
-document.getElementById("screen").innerHTML += "*event list<br/>";
-
-var event = new Event("월요일 수업 1", 0, 2, 90, 1);
-event.showDetail();
-eventList[event.day][event.period] = event;
-
-event = new Event("화요일 수업 1", 1, 2, 90, 2);
-event.showDetail();
-eventList[event.day][event.period] = event;
-
-event = new Event("수요일 수업 1", 2, 2, 90, 1);
-event.showDetail();
-eventList[event.day][event.period] = event;
-
-event = new Event("목요일 수업 1", 3, 2, 90, 2);
-event.showDetail();
-eventList[event.day][event.period] = event;
-
-event = new Event("금요일 수업 1", 4, 2, 90, 1);
-event.showDetail();
-eventList[event.day][event.period] = event;
-
-event = new Event("토요일 동아리 1", 5, 5, 90, 0);
-event.showDetail();
-eventList[event.day][event.period] = event;
-
-event = new Event("일요일 조모임 1", 6, 7, 90, 0);
-event.showDetail();
-eventList[event.day][event.period] = event;
-
-document.getElementById("screen").innerHTML += "*event list array<br/>";
-for( var i=0; i<7; i++){
-  for( var j=0; j<10; j++) {
-    if( eventList[i][j] === undefined )
-      document.getElementById("screen").innerHTML += eventList[i][j]+"  | ";
-    else
-      document.getElementById("screen").innerHTML += eventList[i][j].name+" | ";
+  //  해당 이벤트를 처리했을 때 스탯 변화
+  updateStatus(_thisGame) {
+    _thisGame.status[0] += this.deltaHealth;
+    _thisGame.status[1] += this.deltaRelationship;
   }
-  document.getElementById("screen").innerHTML += "<br/>";
+
+  //  model 만드시는 분께서 capacity(남은 가용시간)를 받아 load를 업데이트 시키는 메소드도 만들어 주세요
+}
+
+//  SingleEvent pool
+let Event = {
+  "객체지향프로그래밍A" : new SingleEvent("객체지향프로그래밍", dayofweek[0], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232"),
+  "객체지향프로그래밍B" : new SingleEvent("객체지향프로그래밍", dayofweek[2], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232")
 }
