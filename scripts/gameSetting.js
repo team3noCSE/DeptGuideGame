@@ -21,23 +21,22 @@ let Period = {
   "PM 10~" : 10, 10 : "PM 10~"
 }
 
-//  이름, 요일, 걸리는시간, 시간표의 가이드라인 안에 있는지, 몇교시
 class SingleEvent {
   constructor(
-    _name,      //  String
-    _day,       //  dayofweek
-    _period,    //  Period
-    _duration,  //  float
-    _deltaHealth, //  float
-    _deltaRelationship, //  float
-    _isLecture, //  boolean
-    _load,      //  float
-    _lectureNumber  //  String
+    _name,                //  String
+    _day,                 //  dayofweek
+    _period,              //  Period
+    _duration,            //  float
+    _deltaHealth,         //  float
+    _deltaRelationship,   //  float
+    _isLecture,           //  boolean
+    _load,                //  float
+    _lectureNumber        //  String
   ) {
     //  event
     this.name = _name;  //  이벤트 이름
     this.day = _day;  //  요일
-    this.period = _period;  //  시작 시간(교시), 만약
+    this.period = _period;  //  시작 시간(교시)
     this.duration = _duration;  //  한 번 수행하는데 걸리는 시간 (분)
     this.deltaHealth = _deltaHealth;  //  체력 스탯 변화량
     this.deltaRelationship = _deltaRelationship;  //  인간관계 스탯 변화량
