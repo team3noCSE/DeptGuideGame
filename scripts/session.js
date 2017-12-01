@@ -15,7 +15,7 @@ function refresh_bar() {
 
     for (var i = 1; i <= 7; i++){
       if(current_time < total_time * i / 7 + 15 && current_time > total_time * i / 7 - 15){
-      alert("이벤트가 발생했습니다!!!");
+      //alert("이벤트가 발생했습니다!!!");
       document.getElementById("dayChange").innerHTML = "오늘은 " + dayofweek[i] + "요일 입니다.";
       break;
     }
@@ -30,8 +30,9 @@ function refresh_bar() {
 
 function buttonSession()
 {
-  document.getElementById("initialMenuScreen").style.display = "none";
-    document.getElementById("inGameScreen").style.display='block';
+  document.getElementById("departmentChoiceScreen").style.display = "none";
+  document.getElementById("inGameScreen").style.display='block';
+  document.getElementById("inSession").style.display='block';
   document.getElementById("sessionScreen").style.display='block';
 
   $("#progressbar1").progressbar({

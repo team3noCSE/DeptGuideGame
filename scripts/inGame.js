@@ -9,7 +9,7 @@ for(var i=0; i<7; i++)
   routine();
 
 function routine() {
-  document.getElementById("screen2").innerHTML += "<"+today+"요일 시작> <br/>";
+  document.getElementById("screen2").innerHTML += "<"+dayofweek[today]+"요일 시작> <br/>";
   document.getElementById("screen2").innerHTML += "*가용 시간: "+capacity+"분 <br/>";
   document.getElementById("screen2").innerHTML += "<br/>";
 
@@ -23,7 +23,7 @@ function routine() {
       document.getElementById("screen2").innerHTML += "<br/>";
     }
   }
-  document.getElementById("screen2").innerHTML += "- "+today+"요일이 끝났습니다<br/>";
+  document.getElementById("screen2").innerHTML += "- "+dayofweek[today]+"요일이 끝났습니다<br/>";
   document.getElementById("screen2").innerHTML += "*남은 가용시간:"+capacity+"분<br/>";
   document.getElementById("screen2").innerHTML += "<br/>";
   today += 1;

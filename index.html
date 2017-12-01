@@ -33,8 +33,7 @@
     </script>
     <link rel="stylesheet" href="jquery/jquery-ui-themes-1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="style/progressbar.css">
-    <script src="jquery/jquery-3.2.1.min.js"></script>
-    <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
 
     <!--
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -45,21 +44,18 @@
   -->
 
     <script type="text/javascript" src="scripts/screen.js"></script>
-<<<<<<< HEAD
-    <script type="text/javascript" src="scripts/semester.js"></script>
+
     <script type="text/javascript" src="scripts/app.js"></script>
-=======
+
     <script type="text/javascript" src="scripts/personality.js"></script>
     <script type="text/javascript" src="scripts/department.js"></script>
     <script type="text/javascript" src="scripts/session.js"></script>
->>>>>>> d658eba8dc614f0d99fdde1be8802f7cc267b6cd
 
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
       <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
       <div id="buttonLoadgame" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
       <div id="buttonAchievement" type="button" onclick="buttonAchievement()">Achievement</div> <br>
-      <div id="buttonSession" type="button" onclick="buttonSession()">Session(temp)</div> <br>
 
     </div>
     <!-- 2. 로딩화면 -->
@@ -126,7 +122,7 @@
   	     </section>
          <section class="buttons">
            <button onclick="confirm_department(1)">Confirm</button>
-           <button onclick="fromDepartmentToInSession()">Next</button>
+           <button onclick="buttonSession()">Next</button>
          </section>
       </div>
       <!-- 4-3. 시간표구성 -->
@@ -139,7 +135,6 @@
         <div class="lectureSchdule">시간표 6</div>
       </div>
       <!-- 4-4. 학기진행화면(진행상황 관찰) -->
-<<<<<<< HEAD
       <div id="inSession" style="display: none !important">
         <p id="usingVar"> </p>
         <script type="text/javascript">
@@ -151,8 +146,8 @@
         <button id="startButton" type="Button" onclick="StartGame()">StartGame</button>
         <div id="screen"></div>
         <div id="screen2" style="display: none !important">게임이 시작되었습니다!<br/><br/></div>
-=======
-      <div id="buttonSession()" style="display: none !important">
+
+      <div id="sessionScreen" style="display: none !important">
         <div>
           <p>학기진행 화면입니다.</p>
           <div id="humanstate">
@@ -163,7 +158,6 @@
           </div>
         </div>
         <div id="progressbar1"><span class="caption"></span></div>
->>>>>>> d658eba8dc614f0d99fdde1be8802f7cc267b6cd
       </div>
       <!-- 4-5. 선택이벤트 -->
       <div id="optionEvent" style="display: none !important">
@@ -181,21 +175,18 @@
       <div id="result" style="display: none !important">
         <div>결과발표</div>
       </div>
-    </div>
-<<<<<<< HEAD
-
-    <!--정우의 코드-->
-    <div style="display: none !important">
-      <div id="semester" style="display: none !important;">
-        <div>
-          <p>학기진행 화면입니다.</p>
-        </div>
-        <div id="progressbar1"><span class="caption"></span></div>
-    </div>
   </div>
+  <script src="jquery/jquery-3.2.1.min.js"></script>
+  <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="scripts/screen.js" charset="UTF-8"></script>
+
+  <script type="text/javascript" src="scripts/app.js" charset="UTF-8"></script>
+
+  <script type="text/javascript" src="scripts/personality.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="scripts/department.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="scripts/session.js" charset="UTF-8"></script>
   <script src="scripts/gameSetting.js" charset="UTF-8"></script>
   <script src="scripts/inGame.js" charset="UTF-8"></script>
-=======
->>>>>>> d658eba8dc614f0d99fdde1be8802f7cc267b6cd
+
   </body>
 </html>

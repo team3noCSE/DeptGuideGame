@@ -42,9 +42,7 @@ Event.prototype.showDetail = function () {
         break;
     }
     document.getElementById("screen").innerHTML += ("요일: "+dayTemp+"<br/>");
-    var hourTemp = Math.floor(this.duration/100);
-    var minTemp = this.duration%100;
-    document.getElementById("screen").innerHTML += ("소요 시간: "+hourTemp+"시간 "+minTemp+"분<br/>");
+    document.getElementById("screen").innerHTML += ("소요 시간: "+this.duration+"분<br/>");
     document.getElementById("screen").innerHTML += ("In Guideline: "+this.guideline+"<br/>");
     document.getElementById("screen").innerHTML += ("What period: "+this.period+"교시<br/>");
     document.getElementById("screen").innerHTML += "<br/>";
