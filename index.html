@@ -34,6 +34,7 @@
     <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/screen.js"></script>
     <script type="text/javascript" src="scripts/semester.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
 
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
@@ -108,6 +109,9 @@
         var localeTime  =  d.toLocaleTimeString();
         document.getElementById ( 'usingVar' ).innerHTML = localeDate  +  " / "  +  localeTime;
         </script>
+        <button id="startButton" type="Button" onclick="StartGame()">StartGame</button>
+        <div id="screen"></div>
+        <div id="screen2" style="display: none !important">게임이 시작되었습니다!<br/><br/></div>
       </div>
       <!-- 4-5. 선택이벤트 -->
       <div id="optionEvent" style="display: none !important">
@@ -136,5 +140,7 @@
         <div id="progressbar1"><span class="caption"></span></div>
     </div>
   </div>
+  <script src="scripts/gameSetting.js" charset="UTF-8"></script>
+  <script src="scripts/inGame.js" charset="UTF-8"></script>
   </body>
 </html>
