@@ -31,12 +31,11 @@
     <script type="text/javascript" src="scripts/sketch.js">
         console.log("ang");
     </script>
-<<<<<<< HEAD
     <link rel="stylesheet" href="jquery/jquery-ui-themes-1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="style/progressbar.css">
     <script src="jquery/jquery-3.2.1.min.js"></script>
     <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-=======
+
     <!--
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
@@ -45,16 +44,10 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
   -->
 
->>>>>>> New_Hyeong
     <script type="text/javascript" src="scripts/screen.js"></script>
-<<<<<<< HEAD
     <script type="text/javascript" src="scripts/personality.js"></script>
-    <script type="text/javascript" src="scripts/semester.js"></script>
     <script type="text/javascript" src="scripts/department.js"></script>
-=======
     <script type="text/javascript" src="scripts/session.js"></script>
-
->>>>>>> Branch_semester
 
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
@@ -111,24 +104,25 @@
       <!-- 4-2. 학과선택 -->
       <div id="departmentChoiceScreen" style="display: none !important">
         <section class="Dep">
-	  <img id="0" src="images/departments/01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
-	  <img id="1" src="images/departments/02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
- 	  <img id="2" src="images/departments/03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
- 	  <img id="3" src="images/departments/04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
- 	  <br>
-	  <img id="4" src="images/departments/05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
-	  <img id="5" src="images/departments/06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
- 	  <img id="6" src="images/departments/07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
- 	  <img id="7" src="images/departments/08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
- 	  <br>
-   	  <img id="8" src="images/departments/09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
-  	  <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
-  	  <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
-  	  <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
-	     </section>
-       <section class="buttons">
-         <button onclick="confirm_department(1)">Confirm</button>
-       </section>
+      	  <img id="0" src="images/departments/01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
+      	  <img id="1" src="images/departments/02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
+       	  <img id="2" src="images/departments/03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
+       	  <img id="3" src="images/departments/04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
+       	  <br>
+      	  <img id="4" src="images/departments/05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
+      	  <img id="5" src="images/departments/06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
+       	  <img id="6" src="images/departments/07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
+       	  <img id="7" src="images/departments/08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
+       	  <br>
+       	  <img id="8" src="images/departments/09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
+      	  <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
+      	  <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
+      	  <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
+  	     </section>
+         <section class="buttons">
+           <button onclick="confirm_department(1)">Confirm</button>
+           <button onclick="fromDepartmentToInSession()">Next</button>
+         </section>
       </div>
       <!-- 4-3. 시간표구성 -->
       <div id="lectureSchedulingScreen" style="display: none !important">
@@ -140,7 +134,7 @@
         <div class="lectureSchdule">시간표 6</div>
       </div>
       <!-- 4-4. 학기진행화면(진행상황 관찰) -->
-      <div id="sessionScreen" style="display: none !important">
+      <div id="buttonSession()" style="display: none !important">
         <div>
           <p>학기진행 화면입니다.</p>
           <div id="humanstate">

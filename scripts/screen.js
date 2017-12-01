@@ -16,6 +16,7 @@ function buttonStartgame()
   function fromLoadingToGame() {
     document.getElementById("loadingScreen").style.display = "none";
     document.getElementById("inGameScreen").style.display = "block";
+    document.getElementById("personalityTestScreen").style.display = "block"
   }
 
 }
@@ -45,4 +46,9 @@ function buttonAchievement()
 function fromPersonalityToDepartment() {
   document.getElementById("personalityTestScreen").style.display = "none";
   document.getElementById("departmentChoiceScreen").style.display = "block";
+}
+
+function fromDepartmentToInSession() {
+  document.getElementById("departmentChoiceScreen").style.display = "none";
+  document.getElementById("sessionScreen").style.display = "block";
 }
