@@ -16,6 +16,7 @@ function buttonStartgame()
   function fromLoadingToGame() {
     document.getElementById("loadingScreen").style.display = "none";
     document.getElementById("inGameScreen").style.display = "block";
+    document.getElementById("personalityTestScreen").style.display = "block"
   }
 
 }
@@ -37,14 +38,17 @@ function buttonAchievement()
 {
   document.getElementById("initialMenuScreen").style.display = "none";
   document.getElementById("achievementScreen").style.display='block';
-  var x = document.getElementsByClassName("achievementCell");
-  for(var i=0;i<5;i++)
-  {
-    x[i].style.display="block"
-  }
+
 }
+
+
 
 function fromPersonalityToDepartment() {
   document.getElementById("personalityTestScreen").style.display = "none";
   document.getElementById("departmentChoiceScreen").style.display = "block";
+}
+
+function fromDepartmentToInSession() {
+  document.getElementById("departmentChoiceScreen").style.display = "none";
+  document.getElementById("sessionScreen").style.display = "block";
 }
