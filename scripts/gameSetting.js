@@ -1,10 +1,18 @@
-var thisGame = { };
+var thisGame = {};
+
 thisGame.department;
   //  이번 게임에서 선택한 학과
 thisGame.timeTable;
   //  이번 게임에서 선택한 이벤트들로 구성된 시간표
-thisGame.status = [1, 1, 1];
+thisGame.status = {};
+thisGame.status.health = 1;
+thisGame.status.grade = 1;
+thisGame.status.relationship = 1;
   //  이번 게임의 스탯
+thisGame.status.load;
+  // 학기 전체의 load;
+
+var dayofweek = ["월", "화", "수", "목", "금", "토", "일"];
 
 let Period = {
   // 시간 : 교시
@@ -20,6 +28,7 @@ let Period = {
   "PM 9:30" : 9, 9 : "PM 9:30",
   "PM 10~" : 10, 10 : "PM 10~"
 }
+
 
 class SingleEvent {
   constructor(
@@ -46,18 +55,11 @@ class SingleEvent {
     this.load = _load;  //  duration이랑 구분해야됨, 한 학기 전체 로드
     this.lectureNumber = _lectureNumber;  //  학수번호
   }
-
-  //  해당 이벤트를 처리했을 때 스탯 변화
-  updateStatus(_thisGame) {
-    _thisGame.status[0] += this.deltaHealth;
-    _thisGame.status[1] += this.deltaRelationship;
-  }
-
-  //  model 만드시는 분께서 capacity(남은 가용시간)를 받아 load를 업데이트 시키는 메소드도 만들어 주세요
+//  model 만드시는 분께서 capacity(남은 가용시간)를 받아 load를 업데이트 시키는 메소드도 만들어 주세요
 }
 
 //  SingleEvent pool
 let Event = {
   "객체지향프로그래밍A" : new SingleEvent("객체지향프로그래밍", dayofweek[0], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232"),
   "객체지향프로그래밍B" : new SingleEvent("객체지향프로그래밍", dayofweek[2], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232")
-}
+} // 전체 과목(Period 단위)를 저장
