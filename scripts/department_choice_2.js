@@ -1,4 +1,4 @@
-var app_simulator = new PIXI.Application(1920, 1080, {transparent : true, antialias : true});
+var app_simulator = new PIXI.Application(1920, 1080, {transparent : true});
 document.body.appendChild(app_simulator.view);
 
 app_simulator.stage.position.set(
@@ -7,6 +7,21 @@ app_simulator.stage.position.set(
 /* 해야 하는 것
     버튼 제대로 작동하도록: 
 */
+
+// 10x5
+let this_stat = {
+    health          :   0,
+    relationship    :   0,
+    grade           :   0
+}
+
+let timetable = [[1, 0], [2, 3]];
+
+let thisGame = {
+    department  :   'none',
+    timetable   :   timetable,
+    stat        :   [100, 100, 100]
+}
 
 let Department = {
 // DEPARTMENT   :   VALUE
@@ -68,6 +83,28 @@ let color_Template = {
     RAND            :   [0xADF7B6, 0xFCF5C7, 0xFFC09F, 0x79ADDC]
 }
 
+let question_List = {
+//  QUESTION        :   [QUESTION,  
+//                       ANSWER-AFFECT-VALUE ARRAY]
+    0               :   [   '가장 중요한 것 두개를 고르면?',
+                            [['학점', 'grade', +3],
+                            ['인간관계', 'relationship', +2],
+                            ['체력', 'health', +1]
+                            ],
+                            2
+                        ],
+    1               :   [   '내 인생?',
+                            [['조졌따리', 'grade', -10],
+                            ['망했따리', 'relationship', -20],
+                            ['띠용~!', 'health', -30],
+                            ['기모리~', 'grade', -30]
+                            ],
+                            3
+                        ]
+}   
+
+console.log(question_List[1]);
+
 var back_temp = new PIXI.Graphics();
 back_temp.lineStyle(2, 0x0000FF, 0);
 back_temp.beginFill(0xE5E4E0, 1);
@@ -75,9 +112,8 @@ back_temp.drawRect(-app_simulator.renderer.width/2, -app_simulator.renderer.heig
                   app_simulator.renderer.width, app_simulator.renderer.height);
 app_simulator.stage.addChild(back_temp);
     
-let save_department_choice = 'none';
+//let thisGame['department'] = 'none';
 // thisGame.department = 'none';
-
 
 class Department_choice {
     constructor(name, 
@@ -147,14 +183,14 @@ class Department_choice {
         function department_onButtonDown(){
             this.isdown = true;
             this.texture = icons_Texture[name+'_labeled']; 
-            save_department_choice = _thisclass._name;
-            console.log(save_department_choice);
+            thisGame['department'] = _thisclass._name;
+            console.log(thisGame['department']);
             _thisclass._select_button.interactive = true;
             _thisclass._select_button.alpha = 1;
             _thisclass._return_button.interactive = true;
             _thisclass._return_button.alpha = 1;
             for (let i = 0; i < list.length; i++){
-                if (list[i]._name != save_department_choice){
+                if (list[i]._name != thisGame['department']){
                     console.log('hi');
                     list[i]._department_button.alpha = 0;
                     list[i]._department_button.interactive = false;
@@ -184,7 +220,7 @@ class Department_choice {
                 return;
             }
             this.texture = icons_Texture[name];
-            console.log(save_department_choice);
+            console.log(thisGame['department']);
 
         }
         
@@ -200,8 +236,8 @@ class Department_choice {
         function select_onButtonDown(){
             this.isdown = true;
             //this.texture = icons_Texture[name+'_labeled']; 
-            //save_department_choice = _thisclass._name;
-            console.log(save_department_choice + 'confirmed');
+            //thisGame['department'] = _thisclass._name;
+            console.log(thisGame['department'] + 'confirmed');
             for (let i = 0; i < list.length; i++){
                 app_simulator.stage.removeChild(list[i]._department_button);
                 app_simulator.stage.removeChild(list[i]._select_button);
@@ -231,7 +267,7 @@ class Department_choice {
                 return;
             }
             //this.texture = icons_Texture[name];
-            console.log(save_department_choice);
+            console.log(thisGame['department']);
 
         }
         
@@ -247,10 +283,10 @@ class Department_choice {
         function return_onButtonDown(){
             this.isdown = true;
             //this.texture = icons_Texture[name+'_labeled']; 
-            //save_department_choice = _thisclass._name;
-            console.log(save_department_choice + 'confirmed');
+            //thisGame['department'] = _thisclass._name;
+            console.log(thisGame['department'] + 'confirmed');
             for (let i = 0; i < list.length; i++){
-                if (list[i]._name != save_department_choice){
+                if (list[i]._name != thisGame['department']){
                     list[i]._department_button.interactive = true;
                     list[i]._department_button.alpha = 1;
                 }
@@ -283,33 +319,681 @@ class Department_choice {
                 return;
             }
             //this.texture = icons_Texture[name];
-            console.log(save_department_choice);
+            console.log(thisGame['department']);
 
         }
         
-        app_simulator.stage.addChild(this._department_button);
-        app_simulator.stage.addChild(this._select_button);
-        app_simulator.stage.addChild(this._return_button);
+        //app_simulator.stage.addChild(this._department_button);
+        //app_simulator.stage.addChild(this._select_button);
+        //app_simulator.stage.addChild(this._return_button);
         
     }
 }
 
-let button = [];
-button.push(new Department_choice(Department[0], -0.66, -0.2, -0.3, 0.05, button));
-button.push(new Department_choice(Department[1], -0.22, -0.2, 0.14, 0.05, button));
-button.push(new Department_choice(Department[2], 0.22, -0.2, 0.58, 0.05, button));
-button.push(new Department_choice(Department[3], 0.66, -0.2, 0.24, 0.05, button));
-button.push(new Department_choice(Department[4], -0.66, 0.15, -0.3, 0.4, button));
-button.push(new Department_choice(Department[5], -0.22, 0.15, 0.14, 0.4, button));
-button.push(new Department_choice(Department[6], 0.22, 0.15, 0.58, 0.4, button));
-button.push(new Department_choice(Department[7], 0.66, 0.15, 0.24, 0.4, button));
-button.push(new Department_choice(Department[8], -0.66, 0.5, -0.3, 0.75, button));
-button.push(new Department_choice(Department[9], -0.22, 0.5, 0.14, 0.75, button));
-button.push(new Department_choice(Department[10], 0.22, 0.5, 0.58, 0.75, button));
-button.push(new Department_choice('RAND', 0.66, 0.5, 0.24, 0.75, button));
-
-for(let i = 0; i < Object.keys(Department).length/2; i++){
-    if(button[i]._name == save_department_choice){
-        console.log('sibal');
-    }   
+let Department_choice_button = [];
+{
+Department_choice_button.push(new Department_choice(Department[0], -0.66, -0.2, -0.3, 0.05, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[1], -0.22, -0.2, 0.14, 0.05, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[2], 0.22, -0.2, 0.58, 0.05, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[3], 0.66, -0.2, 0.24, 0.05, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[4], -0.66, 0.15, -0.3, 0.4, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[5], -0.22, 0.15, 0.14, 0.4, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[6], 0.22, 0.15, 0.58, 0.4, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[7], 0.66, 0.15, 0.24, 0.4, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[8], -0.66, 0.5, -0.3, 0.75, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[9], -0.22, 0.5, 0.14, 0.75, Department_choice_button));
+Department_choice_button.push(new Department_choice(Department[10], 0.22, 0.5, 0.58, 0.75, Department_choice_button));
+Department_choice_button.push(new Department_choice('RAND', 0.66, 0.5, 0.24, 0.75, Department_choice_button));
 }
+
+
+// TEST
+
+class Character_test {
+    constructor(question,
+                 answer,
+                 selected_num_available,
+                 list
+                ){
+        
+        let _thisclass = this;
+        this._question = question;
+        this._answer = answer;
+        this._selected_num_available = selected_num_available;
+        this._list = list;
+        
+        //////////////////////////////////////////////////////////
+        this._question_center = new PIXI.Graphics();
+        this._num_of_answers = this._answer.length;
+        this._selected_num = 0;
+        this._i = 0;
+  
+        this._question_center.beginFill(color_Template[Department[4]][2]);
+        this._question_center.lineStyle(10, color_Template[Department[4]][3], 1);        
+        this._random_angle = Math.random()*2*Math.PI;
+        for (this._i = 0; this._i<this._num_of_answers; this._i++){
+            console.log(this._i);
+            if (this._i == 0){                
+                this._question_center.moveTo(
+                    250*Math.cos((this._i*2*Math.PI + this._random_angle)/this._num_of_answers),
+                    250*Math.sin((this._i*2*Math.PI + this._random_angle)/this._num_of_answers)
+                );   
+            } else {                
+                this._question_center.lineTo(
+                    250*Math.cos((this._i*2*Math.PI + this._random_angle)/this._num_of_answers),
+                    250*Math.sin((this._i*2*Math.PI + this._random_angle)/this._num_of_answers)
+                ); 
+            }        
+        }
+        this._question_center.lineTo(
+                250*Math.cos(this._random_angle/this._num_of_answers),
+                250*Math.sin(this._random_angle/this._num_of_answers)
+            );    
+        this._question_center.endFill();
+        
+        //////////////////////////////////////////////////////////
+        
+        //this._answer_buttons = [];
+        
+        this._temp_index = 0;
+        
+        if (this._num_of_answers > 0){
+            this._answer_buttons_0 = new PIXI.Graphics();
+            //this._answer_buttons.push(new PIXI.Graphics()); 
+            this._answer_buttons_0.beginFill(color_Template[Department[0]][2]);
+            this._answer_buttons_0.lineStyle(0, color_Template[Department[0]][2], 0);  
+            this._answer_buttons_0.moveTo(0,0);
+            this._answer_buttons_0.lineTo(1102, 0); 
+            this._answer_buttons_0.arc(
+                0, 0, 1102, 
+                0,
+                (2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_0.endFill();
+            
+            this._answer_buttons_0.buttonMode = true;
+            this._answer_buttons_0.interactive = true;
+            this._answer_buttons_0.alpha = 0.6;
+            app_simulator.stage.addChild(this._answer_buttons_0);
+            
+            this._answer_buttons_0
+                .on('pointerdown', answer_onButtonDown_0)
+                .on('pointerup', answer_onButtonUp_0)
+                .on('pointerupoutside', answer_onButtonUp_0)
+                .on('pointerover', answer_onButtonOver_0)
+                .on('pointerout', answer_onButtonOut_0); 
+            
+            function answer_onButtonDown_0(){
+                this.isdown = true;
+                _thisclass._answer_buttons_0.alpha = 1;
+                if(_thisclass._answer[0][1] == 'grade'){
+                    thisGame['stat'][2] += _thisclass._answer[0][2];
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[0][1] == 'relationship'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                    thisGame['stat'][1] += _thisclass._answer[0][2];
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[0][1] == 'health'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += _thisclass._answer[0][2];
+                } else {
+                    thisGame['stat'][2] += (Math.random()-0.5)*4;
+                    thisGame['stat'][1] += (Math.random()-0.5)*4;
+                    thisGame['stat'][0] += (Math.random()-0.5)*4;
+                }
+                console.log(thisGame['stat'][0]);
+                console.log(thisGame['stat'][1]);
+                console.log(thisGame['stat'][2]);
+                _thisclass._selected_num = _thisclass._selected_num + 1;
+                if (_thisclass._selected_num == _thisclass._selected_num_available){
+                    console.log('ang');
+                }
+            }
+            function answer_onButtonUp_0(){
+                if (this.isOver){
+                } else {
+                }
+            }
+            function answer_onButtonOver_0(){    
+                this.isOver = true;
+                if (this.isdown){
+                    return;
+                }
+            }
+            function answer_onButtonOut_0(){
+                this.isOver = false;
+                if (this.isdown){
+                    return;
+                }
+            }
+        }
+        
+        if (this._num_of_answers > 1){
+            this._answer_buttons_1 = new PIXI.Graphics();
+            //this._answer_buttons.push(new PIXI.Graphics()); 
+            this._answer_buttons_1.beginFill(color_Template[Department[1]][2]);
+            this._answer_buttons_1.lineStyle(0, color_Template[Department[1]][2], 0);  
+            this._answer_buttons_1.moveTo(0,0);
+            this._answer_buttons_1.lineTo(
+                1102*Math.cos((2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((2*Math.PI + this._random_angle)/this._num_of_answers)
+            ); 
+            this._answer_buttons_1.arc(
+                0, 0, 1102, 
+                (2*Math.PI + this._random_angle)/this._num_of_answers,
+                (2*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_1.endFill();
+            
+            this._answer_buttons_1.buttonMode = true;
+            this._answer_buttons_1.interactive = true;
+            this._answer_buttons_1.alpha = 0.6;
+            app_simulator.stage.addChild(this._answer_buttons_1);
+            
+            this._answer_buttons_1
+                .on('pointerdown', answer_onButtonDown_1)
+                .on('pointerup', answer_onButtonUp_1)
+                .on('pointerupoutside', answer_onButtonUp_1)
+                .on('pointerover', answer_onButtonOver_1)
+                .on('pointerout', answer_onButtonOut_1); 
+            
+            function answer_onButtonDown_1(){
+                this.isdown = true;
+                _thisclass._answer_buttons_1.alpha = 1;
+                if(_thisclass._answer[1][1] == 'grade'){
+                    thisGame['stat'][2] += _thisclass._answer[1][2];
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[1][1] == 'relationship'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                    thisGame['stat'][1] += _thisclass._answer[1][2];
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[1][1] == 'health'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += _thisclass._answer[1][2];
+                } else {
+                    thisGame['stat'][2] += (Math.random()-0.5)*4;
+                    thisGame['stat'][1] += (Math.random()-0.5)*4;
+                    thisGame['stat'][0] += (Math.random()-0.5)*4;
+                }
+                console.log(thisGame['stat'][0]);
+                console.log(thisGame['stat'][1]);
+                console.log(thisGame['stat'][2]);
+                _thisclass._selected_num = _thisclass._selected_num + 1;
+                if (_thisclass._selected_num == _thisclass._selected_num_available){
+                    console.log('ang');
+                }
+            }
+            function answer_onButtonUp_1(){
+                if (this.isOver){
+                } else {
+                }
+            }
+            function answer_onButtonOver_1(){    
+                this.isOver = true;
+                if (this.isdown){
+                    return;
+                }
+            }
+            function answer_onButtonOut_1(){
+                this.isOver = false;
+                if (this.isdown){
+                    return;
+                }
+            }
+        }
+        
+        if (this._num_of_answers > 2){
+            this._answer_buttons_2 = new PIXI.Graphics();
+            //this._answer_buttons.push(new PIXI.Graphics()); 
+            this._answer_buttons_2.beginFill(color_Template[Department[2]][2]);
+            this._answer_buttons_2.lineStyle(0, color_Template[Department[2]][2], 0);  
+            this._answer_buttons_2.moveTo(0,0);
+            this._answer_buttons_2.lineTo(
+                1102*Math.cos((2*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((2*2*Math.PI + this._random_angle)/this._num_of_answers)
+            ); 
+            this._answer_buttons_2.arc(
+                0, 0, 1102, 
+                (2*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (3*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_2.endFill();
+            
+            this._answer_buttons_2.buttonMode = true;
+            this._answer_buttons_2.interactive = true;
+            this._answer_buttons_2.alpha = 0.6;
+            app_simulator.stage.addChild(this._answer_buttons_2);
+            
+            this._answer_buttons_2
+                .on('pointerdown', answer_onButtonDown_2)
+                .on('pointerup', answer_onButtonUp_2)
+                .on('pointerupoutside', answer_onButtonUp_2)
+                .on('pointerover', answer_onButtonOver_2)
+                .on('pointerout', answer_onButtonOut_2); 
+            
+            function answer_onButtonDown_2(){
+                this.isdown = true;
+                _thisclass._answer_buttons_2.alpha = 1;
+                if(_thisclass._answer[2][1] == 'grade'){
+                    thisGame['stat'][2] += _thisclass._answer[2][2];
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[2][1] == 'relationship'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                    thisGame['stat'][1] += _thisclass._answer[2][2];
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[2][1] == 'health'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += _thisclass._answer[2][2];
+                } else {
+                    thisGame['stat'][2] += (Math.random()-0.5)*4;
+                    thisGame['stat'][1] += (Math.random()-0.5)*4;
+                    thisGame['stat'][0] += (Math.random()-0.5)*4;
+                }
+                console.log(thisGame['stat'][0]);
+                console.log(thisGame['stat'][1]);
+                console.log(thisGame['stat'][2]);
+                _thisclass._selected_num = _thisclass._selected_num + 1;
+                if (_thisclass._selected_num == _thisclass._selected_num_available){
+                    console.log('ang');
+                }
+            }
+            function answer_onButtonUp_2(){
+                if (this.isOver){
+                } else {
+                }
+            }
+            function answer_onButtonOver_2(){    
+                this.isOver = true;
+                if (this.isdown){
+                    return;
+                }
+            }
+            function answer_onButtonOut_2(){
+                this.isOver = false;
+                if (this.isdown){
+                    return;
+                }
+            }
+        }
+        
+        if (this._num_of_answers > 3){
+            this._answer_buttons_3 = new PIXI.Graphics();
+            //this._answer_buttons.push(new PIXI.Graphics()); 
+            this._answer_buttons_3.beginFill(color_Template[Department[3]][2]);
+            this._answer_buttons_3.lineStyle(0, color_Template[Department[3]][2], 0);  
+            this._answer_buttons_3.moveTo(0,0);
+            this._answer_buttons_3.lineTo(
+                1102*Math.cos((3*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((3*2*Math.PI + this._random_angle)/this._num_of_answers)
+            ); 
+            this._answer_buttons_3.arc(
+                0, 0, 1102, 
+                (3*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (4*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_3.endFill();
+            
+            this._answer_buttons_3.buttonMode = true;
+            this._answer_buttons_3.interactive = true;
+            this._answer_buttons_3.alpha = 0.6;
+            app_simulator.stage.addChild(this._answer_buttons_3);
+            
+            this._answer_buttons_3
+                .on('pointerdown', answer_onButtonDown_3)
+                .on('pointerup', answer_onButtonUp_3)
+                .on('pointerupoutside', answer_onButtonUp_3)
+                .on('pointerover', answer_onButtonOver_3)
+                .on('pointerout', answer_onButtonOut_3); 
+            
+            function answer_onButtonDown_3(){
+                this.isdown = true;
+                _thisclass._answer_buttons_3.alpha = 1;
+                if(_thisclass._answer[3][1] == 'grade'){
+                    thisGame['stat'][2] += _thisclass._answer[3][2];
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[3][1] == 'relationship'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                    thisGame['stat'][1] += _thisclass._answer[3][2];
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[3][1] == 'health'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += _thisclass._answer[3][2];
+                } else {
+                    thisGame['stat'][2] += (Math.random()-0.5)*4;
+                    thisGame['stat'][1] += (Math.random()-0.5)*4;
+                    thisGame['stat'][0] += (Math.random()-0.5)*4;
+                }
+                console.log(thisGame['stat'][0]);
+                console.log(thisGame['stat'][1]);
+                console.log(thisGame['stat'][2]);
+                _thisclass._selected_num = _thisclass._selected_num + 1;
+                if (_thisclass._selected_num == _thisclass._selected_num_available){
+                    console.log('ang');
+                }
+            }
+            function answer_onButtonUp_3(){
+                if (this.isOver){
+                } else {
+                }
+            }
+            function answer_onButtonOver_3(){    
+                this.isOver = true;
+                if (this.isdown){
+                    return;
+                }
+            }
+            function answer_onButtonOut_3(){
+                this.isOver = false;
+                if (this.isdown){
+                    return;
+                }
+            }
+        }
+        
+        if (this._num_of_answers > 4){
+            this._answer_buttons_4 = new PIXI.Graphics();
+            //this._answer_buttons.push(new PIXI.Graphics()); 
+            this._answer_buttons_4.beginFill(color_Template[Department[4]][2]);
+            this._answer_buttons_4.lineStyle(0, color_Template[Department[4]][2], 0);  
+            this._answer_buttons_4.moveTo(0,0);
+            this._answer_buttons_4.lineTo(
+                1102*Math.cos((4*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((4*2*Math.PI + this._random_angle)/this._num_of_answers)
+            ); 
+            this._answer_buttons_4.arc(
+                0, 0, 1102, 
+                (4*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (5*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_4.endFill();
+            
+            this._answer_buttons_4.buttonMode = true;
+            this._answer_buttons_4.interactive = true;
+            this._answer_buttons_4.alpha = 0.6;
+            app_simulator.stage.addChild(this._answer_buttons_4);
+            
+            this._answer_buttons_4
+                .on('pointerdown', answer_onButtonDown_4)
+                .on('pointerup', answer_onButtonUp_4)
+                .on('pointerupoutside', answer_onButtonUp_4)
+                .on('pointerover', answer_onButtonOver_4)
+                .on('pointerout', answer_onButtonOut_4); 
+            
+            function answer_onButtonDown_4(){
+                this.isdown = true;
+                _thisclass._answer_buttons_4.alpha = 1;
+                if(_thisclass._answer[4][1] == 'grade'){
+                    thisGame['stat'][2] += _thisclass._answer[4][2];
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[4][1] == 'relationship'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                    thisGame['stat'][1] += _thisclass._answer[4][2];
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[4][1] == 'health'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += _thisclass._answer[4][2];
+                } else {
+                    thisGame['stat'][2] += (Math.random()-0.5)*4;
+                    thisGame['stat'][1] += (Math.random()-0.5)*4;
+                    thisGame['stat'][0] += (Math.random()-0.5)*4;
+                }
+                console.log(thisGame['stat'][0]);
+                console.log(thisGame['stat'][1]);
+                console.log(thisGame['stat'][2]);
+                _thisclass._selected_num = _thisclass._selected_num + 1;
+                if (_thisclass._selected_num == _thisclass._selected_num_available){
+                    console.log('ang');
+                }
+            }
+            function answer_onButtonUp_4(){
+                if (this.isOver){
+                } else {
+                }
+            }
+            function answer_onButtonOver_4(){    
+                this.isOver = true;
+                if (this.isdown){
+                    return;
+                }
+            }
+            function answer_onButtonOut_4(){
+                this.isOver = false;
+                if (this.isdown){
+                    return;
+                }
+            }
+        }
+        
+        if (this._num_of_answers > 5){
+            this._answer_buttons_5 = new PIXI.Graphics();
+            //this._answer_buttons.push(new PIXI.Graphics()); 
+            this._answer_buttons_5.beginFill(color_Template[Department[5]][2]);
+            this._answer_buttons_5.lineStyle(0, color_Template[Department[5]][2], 0);  
+            this._answer_buttons_5.moveTo(0,0);
+            this._answer_buttons_5.lineTo(
+                1102*Math.cos((5*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((5*2*Math.PI + this._random_angle)/this._num_of_answers)
+            ); 
+            this._answer_buttons_5.arc(
+                0, 0, 1102, 
+                (5*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (6*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_5.endFill();
+            
+            this._answer_buttons_5.buttonMode = true;
+            this._answer_buttons_5.interactive = true;
+            this._answer_buttons_5.alpha = 0.6;
+            app_simulator.stage.addChild(this._answer_buttons_5);
+            
+            this._answer_buttons_5
+                .on('pointerdown', answer_onButtonDown_5)
+                .on('pointerup', answer_onButtonUp_5)
+                .on('pointerupoutside', answer_onButtonUp_5)
+                .on('pointerover', answer_onButtonOver_5)
+                .on('pointerout', answer_onButtonOut_5); 
+            
+            function answer_onButtonDown_5(){
+                this.isdown = true;
+                _thisclass._answer_buttons_5.alpha = 1;
+                if(_thisclass._answer[5][1] == 'grade'){
+                    thisGame['stat'][2] += _thisclass._answer[5][2];
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[5][1] == 'relationship'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                    thisGame['stat'][1] += _thisclass._answer[5][2];
+                    thisGame['stat'][0] += (Math.random()-0.5)*2;
+                } else if(_thisclass._answer[5][1] == 'health'){
+                    thisGame['stat'][2] += (Math.random()-0.5)*2;
+                    thisGame['stat'][1] += (Math.random()-0.5)*2;
+                    thisGame['stat'][0] += _thisclass._answer[5][2];
+                } else {
+                    thisGame['stat'][2] += (Math.random()-0.5)*4;
+                    thisGame['stat'][1] += (Math.random()-0.5)*4;
+                    thisGame['stat'][0] += (Math.random()-0.5)*4;
+                }
+                console.log(thisGame['stat'][0]);
+                console.log(thisGame['stat'][1]);
+                console.log(thisGame['stat'][2]);
+                _thisclass._selected_num = _thisclass._selected_num + 1;
+                if (_thisclass._selected_num == _thisclass._selected_num_available){
+                    console.log('ang');
+                }
+            }
+            function answer_onButtonUp_5(){
+                if (this.isOver){
+                } else {
+                }
+            }
+            function answer_onButtonOver_5(){    
+                this.isOver = true;
+                if (this.isdown){
+                    return;
+                }
+            }
+            function answer_onButtonOut_5(){
+                this.isOver = false;
+                if (this.isdown){
+                    return;
+                }
+            }
+        }
+        
+        /*
+        for (this._i = 0; this._i<this._num_of_answers; this._i++){
+            this._answer_buttons.push(new PIXI.Graphics()); 
+            this._answer_buttons[this._i].beginFill(color_Template[Department[this._i]][2]);
+            this._answer_buttons[this._i].lineStyle(0, color_Template[Department[this._i]][2], 0);  
+            this._answer_buttons[this._i].moveTo(0,0);
+            this._answer_buttons[this._i].lineTo(
+                222*Math.cos((this._i*2*Math.PI + this._random_angle)/this._num_of_answers),
+                222*Math.sin((this._i*2*Math.PI + this._random_angle)/this._num_of_answers)
+            ); 
+            this._answer_buttons[this._i].arc(
+                0, 0, 1102, 
+                (this._i*2*Math.PI + this._random_angle)/this._num_of_answers,
+                ((this._i+1)*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons[this._i].endFill();
+            
+            this._answer_buttons[this._i].buttonMode = true;
+            this._answer_buttons[this._i].interactive = true;
+            this._answer_buttons[this._i].alpha = 0.6;
+            app_simulator.stage.addChild(this._answer_buttons[this._i]);
+            
+            this._answer_buttons[this._i]
+                .on('pointerdown', answer_onButtonDown)
+                .on('pointerup', answer_onButtonUp)
+                .on('pointerupoutside', answer_onButtonUp)
+                .on('pointerover', answer_onButtonOver)
+                .on('pointerout', answer_onButtonOut); 
+            
+            function answer_onButtonDown(){
+                this.isdown = true;
+                //_thisclass._answer_buttons[_thisclass._i].alpha = 1;
+            }
+        
+            
+            function answer_onButtonUp(){
+                if (this.isOver){
+                } else {
+                }
+            }
+            
+        
+            function answer_onButtonOver(){    
+                this.isOver = true;
+                if (this.isdown){
+                    return;
+                }
+            }
+
+            function answer_onButtonOut(){
+                this.isOver = false;
+                if (this.isdown){
+                    return;
+                }
+            }
+             */
+        
+       
+        
+        app_simulator.stage.addChild(this._question_center);
+
+    }
+}
+
+
+// MAIN
+{
+    mainmenu = new PIXI.Sprite.fromImage('images/menu.png');
+    //mainmenu.scale.x *= 1;
+    //mainmenu.scale.y *= 1;
+    mainmenu.anchor.set(0.5);
+    mainmenu.x = 0;
+    mainmenu.y = 0;
+    //app_simulator.stage.addChild(mainmenu);
+
+    button_new_game = new PIXI.Graphics();
+    button_achievement = new PIXI.Graphics(); ////////
+
+    button_new_game.beginFill(0xFFFFFF, 1);
+    button_new_game.drawRect(app_simulator.renderer.width*(-0.35), app_simulator.renderer.height*0.28, 
+                         app_simulator.renderer.width*0.126, app_simulator.renderer.height*0.074);
+    button_new_game.buttonMode = true;
+    button_new_game.interactive = true;
+    button_new_game.alpha = 0;
+
+    button_new_game
+        .on('pointerdown', new_game_onButtonDown);
+    /*
+        .on('pointerup', new_game_onButtonUp)
+        .on('pointerupoutside', new_game_onButtonUp)
+        .on('pointerover', new_game_onButtonOver)
+        .on('pointerout', new_game_onButtonOut);  
+
+    */
+    
+    function new_game_onButtonDown(){
+        
+        for (let i = 0; i < Department_choice_button.length; i++){
+            app_simulator.stage.addChild(Department_choice_button[i]._department_button);
+            app_simulator.stage.addChild(Department_choice_button[i]._select_button);
+            app_simulator.stage.addChild(Department_choice_button[i]._return_button);
+        }
+        
+        app_simulator.stage.removeChild(mainmenu);
+        app_simulator.stage.removeChild(button_new_game);
+            //this.isdown = true;
+    }
+    /*    
+    function new_game_onButtonUp(){
+        
+    }
+        
+    function new_game_onButtonOver(){    
+        this.isOver = true;
+        if (this.isdown){
+            return;
+        }
+        //this.texture = icons_Texture[name+'_labeled'];
+    }
+
+    function new_game_onButtonOut(){
+        this.isOver = false;
+        if (this.isdown){
+            return;
+        }
+        //this.texture = icons_Texture[name];
+        console.log(thisGame['department']);
+    }
+    */
+
+    app_simulator.stage.addChild(button_new_game);
+}
+
+
+let Character_test_questions = [];
+
+
+for (let i = 0; i < Object.keys(question_List).length; i++){
+    Character_test_questions.push(
+        new Character_test(question_List[i][0], question_List[i][1], question_List[i][2], Character_test_questions)
+    );
+}
+
+
+
+
+
