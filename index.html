@@ -24,10 +24,13 @@
     </style>
     <link rel="stylesheet" href="style/progressbar.css">
   </head>
-  <script src="pixi.min.js"></script>
   <script src="howler.js"></script>
   <body>
-    <div id="display" />
+  <script src="pixi.min.js"></script>
+  <script type="text/javascript" src="scripts/loadingscreen.js" charset="UTF-8"></script>
+  <script src="scripts/gameSetting.js" charset="UTF-8"></script>
+  <div id="display" />
+
     <script type="text/javascript" src="scripts/sketch.js">
         console.log("ang");
     </script>
@@ -50,8 +53,24 @@
     <script type="text/javascript" src="scripts/personality.js"></script>
     <script type="text/javascript" src="scripts/department.js"></script>
     <script type="text/javascript" src="scripts/session.js"></script>
-
+    <script type="text/javascript" src="loadingscreen.js"></script>
     <!-- 1. 초기메뉴화면 -->
+
+
+
+    <div> 출력할 문자열을 입력하세요 : 
+ 
+  <input type="button" value="출력" onclick="printOut();" /> 
+  
+ <div id="output_form"> 
+ </div>
+
+
+
+    <div id="temptemp">value</div>
+    <div id='out'></div>
+
+
     <div id="initialMenuScreen">
       <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
       <div id="buttonLoadgame" type="button" onclick="buttonLoadgame()">Load Game</div> <br>
@@ -60,7 +79,7 @@
     </div>
     <!-- 2. 로딩화면 -->
     <div id="loadingScreen" style="display: none !important">
-      <div class="gameTip" style="font-size: 200%">Tip 1: 휴학을 조심해!<br></div>
+      <div id='gametip1' class="gameTip" style="font-size: 200%">Tip 1: 휴학을 조심해!<br></div>
       <div class="gameTip" style="font-size: 200%">Tip 2: 학기 말은 몸에 해롭습니다.<br></div>
       <div class="gameTip" style="font-size: 200%">Tip 3: 계획은 어긋나기 위해 존재합니다.<br></div>
       <div class="gameTip" style="font-size: 200%">Tip 4: CSED232를 조심해!<br></div>
@@ -105,21 +124,21 @@
       <!-- 4-2. 학과선택 -->
       <div id="departmentChoiceScreen" style="display: none !important">
         <section class="Dep">
-      	  <img id="0" src="images/departments/01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
-      	  <img id="1" src="images/departments/02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
-       	  <img id="2" src="images/departments/03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
-       	  <img id="3" src="images/departments/04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
-       	  <br>
-      	  <img id="4" src="images/departments/05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
-      	  <img id="5" src="images/departments/06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
-       	  <img id="6" src="images/departments/07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
-       	  <img id="7" src="images/departments/08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
-       	  <br>
-       	  <img id="8" src="images/departments/09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
-      	  <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
-      	  <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
-      	  <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
-  	     </section>
+          <img id="0" src="images/departments/01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
+          <img id="1" src="images/departments/02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
+          <img id="2" src="images/departments/03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
+          <img id="3" src="images/departments/04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
+          <br>
+          <img id="4" src="images/departments/05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
+          <img id="5" src="images/departments/06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
+          <img id="6" src="images/departments/07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
+          <img id="7" src="images/departments/08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
+          <br>
+          <img id="8" src="images/departments/09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
+          <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
+          <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
+          <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
+         </section>
          <section class="buttons">
            <button onclick="confirm_department(1)">Confirm</button>
            <button onclick="buttonSession()">Next</button>
@@ -185,6 +204,6 @@
   <script type="text/javascript" src="scripts/personality.js" charset="UTF-8"></script>
   <script type="text/javascript" src="scripts/department.js" charset="UTF-8"></script>
   <script type="text/javascript" src="scripts/session.js" charset="UTF-8"></script>
-  <script src="scripts/gameSetting.js" charset="UTF-8"></script>
+
   </body>
 </html>
