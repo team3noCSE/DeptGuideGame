@@ -24,8 +24,6 @@ let Period = {
 class SingleEvent {
   constructor(
     _name,                //  String
-    _day,                 //  dayofweek
-    _period,              //  Period
     _duration,            //  float
     _deltaHealth,         //  float
     _deltaRelationship,   //  float
@@ -35,8 +33,6 @@ class SingleEvent {
   ) {
     //  event
     this.name = _name;  //  이벤트 이름
-    this.day = _day;  //  요일
-    this.period = _period;  //  시작 시간(교시)
     this.duration = _duration;  //  한 번 수행하는데 걸리는 시간 (분)
     this.deltaHealth = _deltaHealth;  //  체력 스탯 변화량
     this.deltaRelationship = _deltaRelationship;  //  인간관계 스탯 변화량
@@ -58,6 +54,13 @@ class SingleEvent {
 
 //  SingleEvent pool
 let Event = {
-  "객체지향프로그래밍A" : new SingleEvent("객체지향프로그래밍", dayofweek[0], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232"),
-  "객체지향프로그래밍B" : new SingleEvent("객체지향프로그래밍", dayofweek[2], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232")
+  "객체지향프로그래밍A" : new SingleEvent("객체지향프로그래밍", 90, -0.02, 0, true, 100, "CSED232"),
+  "객체지향프로그래밍B" : new SingleEvent("객체지향프로그래밍", 90, -0.02, 0, true, 100, "CSED232"),
+  "정보시스템기술A" : new SingleEvent("정보시스템기술A", 90, -0.02, 0, true, 100, "IMEN281"),
+  "정보시스템기술B" : new SingleEvent("정보시스템기술B", 90, -0.02, 0, true, 100, "IMEN281"),
+  "정보시스템기술C" : new SingleEvent("정보시스템기술C", 75, -0.02, 0, true, 100, "IMEN281"),
+  "경영과학2A" : new SingleEvent("경영과학2A", 90, -0.02, 0, true, 100, "IMEN266"),
+  "경영과학2B" : new SingleEvent("경영과학2B", 90, -0.02, 0, true, 100, "IMEN266"),
+  "경영과학2B" : new SingleEvent("경영과학2B", 90, -0.02, 0, true, 100, "IMEN266"),
+
 }
