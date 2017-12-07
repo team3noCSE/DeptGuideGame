@@ -12,14 +12,35 @@
         display: inline-block;
         margin: 5px;
         text-align: center;
-	vertical-align: middle;
-	line-height: 100px;
+	      vertical-align: middle;
+	      line-height: 100px;
         font-size:20px
       }
-      .enabled {
+      .end_button {
+        width: 426px;
+        height: 145px;
+        border: 1px solid black;
+        background-color:white;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 145px;
+        font-size:100px;
+        position: absolute;
+        @font-family {
+          src:url("fonts/a옛날목욕탕L.ttf");
+        }
+        font-family: "a옛날목욕탕L","맑은 고딕";
+      }
+      .canvas{
+        width: 1920px;
+        height: 1080px;
+        border: 1px solid black;
+        background-color: #E5E4E0;
+        position: absolute;
+      }
+      .enabled{
         background-color: limegreen;
         border: 1px solid black;
-	opacity:0.5;
       }
     </style>
     <link rel="stylesheet" href="style/progressbar.css">
@@ -50,8 +71,11 @@
 
     <script type="text/javascript" src="scripts/personality.js"></script>
     <script type="text/javascript" src="scripts/department.js"></script>
+<<<<<<< HEAD
     <script type="text/javascript" src="scripts/session.js"></script>
 
+=======
+>>>>>>> New_Hyeong
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
       <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
@@ -106,28 +130,27 @@
       <!-- 4-2. 학과선택 -->
       <div id="departmentChoiceScreen" style="display: none !important">
         <section class="Dep">
-      	  <img id="0" src="images/departments/01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
-      	  <img id="1" src="images/departments/02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
-       	  <img id="2" src="images/departments/03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
-       	  <img id="3" src="images/departments/04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
-       	  <br>
-      	  <img id="4" src="images/departments/05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
-      	  <img id="5" src="images/departments/06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
-       	  <img id="6" src="images/departments/07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
-       	  <img id="7" src="images/departments/08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
-       	  <br>
-       	  <img id="8" src="images/departments/09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
-      	  <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
-      	  <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
-      	  <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
-  	     </section>
-         <section class="buttons">
-           <button onclick="confirm_department(1)">Confirm</button>
-           <button onclick="buttonSession()">Next</button>
-         </section>
-      </div>
+	  <img id="0" src="images/departments/01_math_black_labeled.png" alt="Mathmatics" width="150" height="150" onClick="selected(this)">
+	  <img id="1" src="images/departments/02_PHYS_black_labeled.png" alt="Physics" width="150" height="150" onClick="selected(this)">
+ 	  <img id="2" src="images/departments/03_CHEM_black_labeled.png" alt="Chemistry" width="150" height="150" onClick="selected(this)">
+ 	  <img id="3" src="images/departments/04_life_black_labeled.png" alt="Life" width="150" height="150" onClick="selected(this)">
+ 	  <br>
+	  <img id="4" src="images/departments/05_MSE_black_labeled.png" alt="MSE" width="150" height="150" onClick="selected(this)">
+	  <img id="5" src="images/departments/06_ME_black_labeled.png" alt="ME" width="150" height="150" onClick="selected(this)">
+ 	  <img id="6" src="images/departments/07_IME_black_labeled.png" alt="IME" width="150" height="150" onClick="selected(this)">
+ 	  <img id="7" src="images/departments/08_EE_black_labeled.png" alt="EE" width="150" height="150" onClick="selected(this)">
+ 	  <br>
+   	  <img id="8" src="images/departments/09_CSE_black_labeled.png" alt="CSE" width="150" height="150" onClick="selected(this)">
+  	  <img id="9" src="images/departments/10_CE_black_labeled.png" alt="CE" width="150" height="150" onClick="selected(this)">
+  	  <img id="10" src="images/departments/12_Random.png" alt="CiTE" width="150" height="150" onClick="selected(this)">
+  	  <img id="11" src="images/departments/12_Random.png" alt="Random" width="150" height="150" onClick="selected(this)">
+	     </section>
+       <section class="buttons">
+         <button onclick="confirm_department(1)">Confirm</button>
+       </section>
+     </div>
       <!-- 4-3. 시간표구성 -->
-      <div id="lectureSchedulingScreen" style="display: none !important">
+    <div id="lectureSchedulingScreen" style="display: none !important">
         <div class="lectureSchdule">시간표 1</div>
         <div class="lectureSchdule">시간표 2</div>
         <div class="lectureSchdule">시간표 3</div>
@@ -136,7 +159,7 @@
         <div class="lectureSchdule">시간표 6</div>
       </div>
       <!-- 4-4. 학기진행화면(진행상황 관찰) -->
-      <div id="inSession" style="display: none !important">
+     <div id="inSession" style="display: none !important">
         <p id="usingVar"> </p>
         <script type="text/javascript">
         var d = new Date();
@@ -187,5 +210,20 @@
   <script type="text/javascript" src="scripts/department.js" charset="UTF-8"></script>
   <script type="text/javascript" src="scripts/session.js" charset="UTF-8"></script>
   <script src="scripts/gameSetting.js" charset="UTF-8"></script>
+  <!--엔딩-->
+  <div id="Ending" style="display:none !important">
+    <section class="End">
+      <div class="canvas"></div>
+      <div id="Ending_menu" class="canvas" style="position: absolute; width:1920px; height:145px; top: 110px; background-color:#FFFFFF;"></div>
+      <div id="Button1" class="end_button" style="top:110px; left:8px;" onclick="show_summary()">요약</div>
+      <div id="Button2" class="end_button" style="top:110px; left:467px;" onclick="show_detail()">세부 정보</div>
+      <div id="Button3" class="end_button" style="top:110px; left:925px;" onclick="show_menu()">메뉴</div>
+      <img id="Result_pic" src="" style="position:absolute; left:420px; top:300px; width:1067px; height:603px;">
+      <div id="Result_name" style="position:absolute; left:420px; top:920px; font-size:80px; font-family:a옛날목욕탕L; width:1067px; text-align:center;"></div>
+      <img id="Phonix" src="../DeptGuideGame/images/End.png" style="position: absolute; left:1428px; top: 0px;"/>
+      <script type="text/javascript" src="scripts/ending.js"></script>
+    </section>
+  </div>
+
   </body>
 </html>

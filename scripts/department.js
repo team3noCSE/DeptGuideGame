@@ -15,11 +15,6 @@ function selected(clicked) {
   }
 }
 function confirm_department(num){
-  if(active==num){
-    return true;
-  }
-  else{
-    alert("선택 덜했네?");
-    return false;
-  }
+    document.getElementById("departmentChoiceScreen").style.display="none";
+    document.getElementById("Ending").style.display="block";
 }
