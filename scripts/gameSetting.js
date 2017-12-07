@@ -33,8 +33,6 @@ let Period = {
 class SingleEvent {
   constructor(
     _name,                //  String
-    _day,                 //  dayofweek
-    _period,              //  Period
     _duration,            //  float
     _deltaHealth,         //  float
     _deltaRelationship,   //  float
@@ -44,8 +42,6 @@ class SingleEvent {
   ) {
     //  event
     this.name = _name;  //  이벤트 이름
-    this.day = _day;  //  요일
-    this.period = _period;  //  시작 시간(교시)
     this.duration = _duration;  //  한 번 수행하는데 걸리는 시간 (분)
     this.deltaHealth = _deltaHealth;  //  체력 스탯 변화량
     this.deltaRelationship = _deltaRelationship;  //  인간관계 스탯 변화량
