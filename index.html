@@ -26,6 +26,9 @@
         line-height: 145px;
         font-size:100px;
         position: absolute;
+        @font-family {
+          src:url("fonts/a옛날목욕탕L.ttf");
+        }
         font-family: "a옛날목욕탕L","맑은 고딕";
       }
       .canvas{
@@ -60,7 +63,6 @@
     <script type="text/javascript" src="scripts/personality.js"></script>
     <script type="text/javascript" src="scripts/semester.js"></script>
     <script type="text/javascript" src="scripts/department.js"></script>
-    <script type="text/javascript" src="scripts/ending.js"></script>
     <!-- 1. 초기메뉴화면 -->
     <div id="initialMenuScreen">
       <div id="buttonStartgame" type="button" onclick="buttonStartgame()">start game</div> <br>
@@ -189,7 +191,10 @@
       <div id="Button1" class="end_button" style="top:110px; left:8px;" onclick="show_summary()">요약</div>
       <div id="Button2" class="end_button" style="top:110px; left:467px;" onclick="show_detail()">세부 정보</div>
       <div id="Button3" class="end_button" style="top:110px; left:925px;" onclick="show_menu()">메뉴</div>
+      <img id="Result_pic" src="" style="position:absolute; left:420px; top:300px; width:1067px; height:603px;">
+      <div id="Result_name" style="position:absolute; left:420px; top:920px; font-size:80px; font-family:a옛날목욕탕L; width:1067px; text-align:center;"></div>
       <img id="Phonix" src="../DeptGuideGame/images/End.png" style="position: absolute; left:1428px; top: 0px;"/>
+      <script type="text/javascript" src="scripts/ending.js"></script>
     </section>
   </div>
 

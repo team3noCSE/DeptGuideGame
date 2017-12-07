@@ -1,7 +1,10 @@
-var summary_first = true;
+var summary_first = false;
 var detail_first = true;
 var menu_first = true;
 var ending_name="huh";
+var Result_pic=document.createElement('img');
+document.getElementById("Result_pic").src="../DeptGuideGame/images/"+ending_name+".png";
+document.getElementById("Result_name").innerHTML=ending_name;
 function show_summary(){
   if(!detail_first){
     document.getElementById("Detail").style.display="none";
@@ -10,21 +13,15 @@ function show_summary(){
     document.getElementById("main").style.display="none";
     document.getElementById("end").style.display="none";
   }
-  if(summary_first){
-    var result_pic=document.createElement('img');
-    result_pic.id="Result_pic";
-    result_pic.style="position:absolute; left:370px; top:230px; width:1186; height:670px;"
-    result_pic.src="../DeptGuideGame/images/"+ending_name+".png";
-    document.getElementById("Ending_menu").appendChild(result_pic);
-    summary_first=false;
-  }
-  else{
+  if(!summary_first){
+    document.getElementById("Result_name").style.display="block";
     document.getElementById("Result_pic").style.display="block";
   }
 }
 function show_detail(){
   if(!summary_first){
     document.getElementById("Result_pic").style.display="none";
+    document.getElementById("Result_name").style.display="none";
   }
   if(!menu_first){
     document.getElementById("main").style.display="none";
@@ -59,6 +56,7 @@ function show_detail(){
 function show_menu(){
   if(!summary_first){
     document.getElementById("Result_pic").style.display="none";
+    document.getElementById("Result_name").style.display="none";
   }
   if(!detail_first){
     document.getElementById("Detail").style.display="none";
