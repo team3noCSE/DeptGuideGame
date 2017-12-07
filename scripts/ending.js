@@ -14,7 +14,7 @@ function show_summary(){
     var result_pic=document.createElement('img');
     result_pic.id="Result_pic";
     result_pic.style="position:absolute; left:370px; top:230px; width:1186; height:670px;"
-    result_pic.src="../learningPixi/"+ending_name+".png";
+    result_pic.src="../DeptGuideGame/images/"+ending_name+".png";
     document.getElementById("Ending_menu").appendChild(result_pic);
     summary_first=false;
   }
