@@ -42,7 +42,7 @@ function animationLoop() {
 
 
 
-/*
+
 var app = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
 document.body.appendChild(app.view);
 
@@ -74,6 +74,16 @@ ruler.y = app.renderer.height *0.02;
 
 app.stage.addChild(ruler);
 
+ var a=1;
+ app.ticker.add(()=>
+ {
+ 	ruler.x+=a;
+ });
+
+
+
+
+
 
 var graphics = new PIXI.Graphics();
   graphics.lineStyle(2, 0xFF00FF, 1);
@@ -83,43 +93,20 @@ var graphics = new PIXI.Graphics();
 
 var leftblock = new PIXI.Graphics();
   //leftblock.lineStyle(2, 0xFF00FF, 1);
-  leftblock.beginFill(0xFFFF99, 0.25);
-  leftblock.drawRect(0, 0, 30, 30);
+  leftblock.beginFill(0x1099bb, 1);
+  leftblock.drawRect(0, 0, 200, 100);
   app.stage.addChild(leftblock);
 
 var rightblock = new PIXI.Graphics();
   //rightblock.lineStyle(2, 0xFF00FF, 1);
-  rightblock.beginFill(0xFFFF99, 0.25);
-  rightblock.drawRect(700, 200, 20, 20);
+  rightblock.beginFill(0x1099bb, 1);
+  rightblock.drawRect(600, 0, 200, 100);
   app.stage.addChild(rightblock);
 
 
-*/
 
 var renderer = PIXI.autoDetectRenderer(512,512,{
 	transparent: true,
-	//backgroundColor:0xFF00FF,
 	resolution: 1
 });
-
-PIXI.loader
-	.add("spritesheet", "character_standard_01-1.png")
-	.load(setup);
-
-var rat;
-
-function setup() {
-	rat = new PIXI.Sprite{
-		PIXI.loader.resources["images/character_standard_01-1.png"].texture;
-	}
-
-	stage.addChild(sprite);
-
-	animatoinLoop();
-}
-
-function animationLoop() {
-	requestAnimationFrame(animationLoop);
-
-	renderer.render(stage);
-}
+app.stage.addChild(renderer);
