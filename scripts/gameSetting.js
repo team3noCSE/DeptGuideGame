@@ -202,22 +202,55 @@ class SingleEvent {
 class SinglePopUpEvent {
   constructor (
     _name, // String
+    _department, // 과 연관, 과와 관련 없을 경우
     _time, // boolean array (16주중 되는 시간 true)
     _priority, // 성향테스트로 나온 값을 반영
     _description //
   ){
     this.name = _name;
-    this.time = _time;
-    this.priority = _priority;
-    this.description = _description;
+    this.department = _department; // 과, 관련 없으면 null
+    this.time = _time; // 없으면 null
+    this.priority = _priority; // general 에서는 0,1,2로 구분, general이 아니면 null
+    this.description = _description; // 설명
   }
 }
 
 //  SingleEvent pool
 
 let PopUpEvent = {
-  "개총" : new SinglePopUpEvent("개총", [1, 2, 3], null, null, null, null, null, null, "새로운 학기의 시작은 개총과 함께~?"),
-}
+  "개총" : new SinglePopUpEvent("개총", null,[1, 2, 3], 2, "새로운 학기의 시작은 개총과 함께~?"),
+
+  // 과 general
+  "화학레포트" : new SinglePopUpEvent("레포트", 2, null, 3, "오늘은 실험이 있는 날입니다. 어제 프리랩과 파이널랩을 손으로 쓰느라 잠을 한 숨도 못 잤어요 ㅠㅠ 10페이지 가량 쓰다보니 손도 아프고 눈도 아프고…1교시는 가서 졸았어요 ㅠㅠ 다음부터는 미리해야겠어요 "),
+  "화학실험" : new SinglePopUpEvent("실험", 2, null, 3, "오늘은 실험을 하는데 뷰렛에서 용매를 한방울씩 떨어뜨리래요. 어느 덧 저녁시간이 되서 밥을 시켜먹고 실험을 계속 진행해서 10시에 끝났어요. 기가 빨리는 것 같지만 파트너랑도 친해졌어요"),
+  "화학세미나" : new SinglePopUpEvent("술약", 2, null, 3, "오늘은 왠일로 실험이 일찍 끝나서 과 친구들과 술을 마시러 갔어요. 갔는데 알코올이 알데하이드로 분해되는 유기화학 이야기를 하네요. 머리가 아파와요.."),
+  "화공레포트" : new SinglePopUpEvent("레포트", 9, null, 3, "오늘은 실험이 있는 날입니다. 어제 프리랩과 파이널랩을 쓰느라 잠을 한 숨도 못 잤어요 ㅠㅠ 10페이지 가량 쓰다보니 손도 아프고 눈도 아프고…1교시는 가서 졸았어요 ㅠㅠ 다음부터는 미리해야겠어요 "),
+  "화공산행" : new SinglePopUpEvent("산행", 9, null, 3, "오늘은 교수님들과 화공과 산행을 갔어요. 오랜 만에 맑은 공기도 쐬고 맛있는 것도 먹을 수 있어서 너무 좋았어요. 하지만 다음엔 안 가야겠어요 ㅎㅎ "),
+  "화공퀴즈" : new SinglePopUpEvent("퀴즈", 9, null, 3, "화요일도 퀴즈, 목요일도 퀴즈, 금요일도 퀴즈… 어떤 과목들은 시험이 3번이라서 퀴즈와 시험이 끝나지 않아요. 공부를 해서 학점은 어느 정도 받을 거 같지만 힘드네요 ㅠㅠ"),
+  "화공술약" : new SinglePopUpEvent("술약", 9, null, 3, "오늘은 실험이 일찍 끝나서 과 친구들과 술을 마시러 갔어요. 갔는데 알코올이 알데하이드로 분해되는 유기화학 이야기를 하네요. 머리가 아파와요.."),
+  "생명산행" : new SinglePopUpEvent("산행",3, null, 3 ,"오늘은 교수님들과 산행을 갔어요. 오랜 만에 맑은 공기도 쐬고 맛있는 것도 먹을 수 있어서 너무 좋았어요. 하지만 다음엔 안 가야겠어요 ㅎㅎ " ),
+  "생명실험" : new SinglePopUpEvent("실험", 3, null, 3, "오늘은 실험을 했어요. 1시부터 시작했는데 뭔가 잘못되서 재실험을 했어요. 12시가 되서야 끝났어요. 기가 빨리는 것 같지만 생명과 친구들과 친해진 것 같기도 해요."),
+  "생명술약" : new SinglePopUpEvent("술약", 3, null, 3, "오랜만에 과 친구들과 술을 마시러 갔어요. 애들이 술 마시면 세포가 급격하게 죽는데요. 머리가 아파와요"),
+  "전자붐붐 EE night": new SinglePopUpEvent("붐붐 EE night", 7, null, 3, "오늘은 EE night. 전자과 랩투어도 하고 교수님들과 바비큐 파티도 했어요. 유익했지만 앞으로 어떻게 해야할지 고민이 생겼네요 ㅎㅎ"),
+  "전자간담회" : new SinglePopUpEvent("간담회", 7, null, 3, "오늘은 전자과 간담회가 있어요. 금요일이라서 쉬려고 했는데 필참이라네요. 교수님과 대화하면서 친분도 쌓은거 같고 밥도 사주셔서 좋았어요.ㅎㅎ"),
+  "전자술약" : new SinglePopUpEvent("술약", 7, null, 3, "오늘은 전자과 친구들과 술을 마시러 갔어요. 스트레스는 풀렸지만 자유전자라서 친해진건지는 잘 모르겠어요"),
+  "물리실험" : new SinglePopUpEvent("실험", 1, null, 3, "생명과, 화학과만큼은 아니어도 실험시간이 길어 지쳐가는 주인공입니다."),
+  "물리휴게실" : new SinglePopUpEvent("휴게실", 1, null, 3, "편안한 휴식의 공간일 줄 알고 찾아간 휴게실! 막상 가보니 쇼파나 침대 대신 칸막이 있는 자습실과 칠판이.. 휴식공간이 아니라 공부 공간이었군요. 여기서 휴식을 즐기긴 어려울 것 같네요."),
+  "기계시험공부" : new SinglePopUpEvent("시험공부",5, null, 3, "시험 문제 풀(pool)이 500문제가 돼서 다 공부하고 시험칠 수 있을지 걱정되네요.."),
+  "기계보고서" : new SinglePopUpEvent("보고서", 5, null, 3, "실험 과목도 아닌데 실험 보고서를 작성해야 하는 과목이 있네요.. 제출 안하면 실험 점수를 못받는데 관련 내용을 전부 공부하기엔 양이 너무 많습니다. 실험보고서를 쓰고는 있지만 자괴감이 드는 주인공입니다."),
+  "기계실험" : new SinglePopUpEvent("실험", 5, null, 3, "기계 실험동이 너무 멀어서 저녁 시간에 잡힌 실험을 하러 가기가 힘에 벅찬 주인공입니다."),
+  "소재코딩" : new SinglePopUpEvent("코딩", 4, null, 3, "엥 소재과에 왠 코딩?!! 뜻밖의 코딩으로 밤을 새게 되는 주인공입니다."),
+  "소재회식" : new SinglePopUpEvent("회식", 4, null, 3, "과 학생회 친구들과 모여 회식을 했습니다. 다양한 일들을 경험할 수 있어 주인공은 행복합니다."),
+  "컴공튜터링" : new SinglePopUpEvent("튜터링", 8, null, 3, "튜터링에서 선배의 도움을 받아서 어싸인을 끝냈습니다! 오늘만은 놀아야지~ "),
+  "컴공어싸인" : new SinglePopUpEvent("어싸인", 8, null, 3, "어싸인을 제출하기도 전에 다음 어싸인이 올라왔어요. 주인공은 끝나지 않을 것만 같은 어싸인 세례에 우울합니다."),
+  "수학친목" : new SinglePopUpEvent("친목", 0, null, 3, "과 친구들과 친해지고 싶은데 생각보다 다가가기가 쉽지 않네요.. 친목 모임이 거의 없어 주인공은 너무 외롭습니다."),
+  "수학퀴즈" : new SinglePopUpEvent("퀴즈", 0, null, 3, "매주 있는 퀴즈가 너무도 지겹게 느껴집니다. 오늘  퀴즈를 치러 가지 말지 고민되네요"),
+  "산경조모임" : new SinglePopUpEvent("조모임", 6, null, 3, "조모임이 너무 많이 잡혀서 두달 째 집에 못가고 있는 주인공. 집이 너무도 그립습니다."),
+  "산경시험공부" : new SinglePopUpEvent("시험공부", 6, null, 3, "시험기간인데 공부해야 할 ppt분량 100쪽을 넘어갑니다. 눈이 빠질 것 같군요."),
+  "산경코딩" : new SinglePopUpEvent("코딩", 6, null, 3, "문득 전공이 컴공과인지 헷갈리는 주인공.. 코딩을 많이 해야 하는 주인공은 오늘도 디버깅의 악몽에 시달립니다."),
+
+
+ }
 
 var Event = {};
 

@@ -46,7 +46,8 @@ calculateLoad(Event["확률및통계"]);
 calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
-alert(PopUpEvent["개총"]);
+alert(PopUpEvent["개총"].description);
+alert(PopUpEvent["화학세미나"].description);
 model();
 
 function model() { // 일단은 1주 진행
@@ -103,9 +104,7 @@ function model() { // 일단은 1주 진행
     console.log("이번 학기의 총 로드: "+thisGame.load);
     console.log("Grade: "+completedLoad/thisGame.load);
 }
-function eventHandler(){
 
-} // 이벤트 발생 (UI랑 연결?)
 function capacityUpdate(firstPeriod){
   var wakeUpTime = 8 + 1.5 * firstPeriod;
   var tempCapacity = 24;
