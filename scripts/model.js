@@ -94,14 +94,14 @@ function model() { // 일단은 1주 진행
       completedLoad = weekCapacityUpdate(capacityPerWeek, completedLoad, week);
       // 주간 로드 반영
 
-      console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
-      console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
-      console.log("총 수행한 로드(누적): "+completedLoad+"\n");
+      //console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
+      //console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
+      //console.log("총 수행한 로드(누적): "+completedLoad+"\n");
       eventHandler();
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
     }
-    console.log("이번 학기의 총 로드: "+thisGame.load);
-    console.log("Grade: "+completedLoad/thisGame.load);
+    //console.log("이번 학기의 총 로드: "+thisGame.load);
+    //console.log("Grade: "+completedLoad/thisGame.load);
 }
 function eventHandler(){
 
@@ -167,6 +167,6 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
   }
   // capacityPerWeek을 과제, 공부, 체력충전으로 전환
 
-  console.log(week+"주차 / 수행해야 할 로드: "+tempLoadPerWeek+"\n");
+  //console.log(week+"주차 / 수행해야 할 로드: "+tempLoadPerWeek+"\n");
   return completedLoad;
 }
