@@ -64,10 +64,10 @@ app.stage.addChild(bunny);
 
 var ruler = PIXI.Sprite.fromImage('images/ruler.png');
 // center the sprite's anchor point
-ruler.anchor.set(0.5);
+//ruler.anchor.set(0.5);
 // move the sprite to the center of the screen
 ruler.x = app.renderer.width *0.5;
-ruler.y = app.renderer.height *0.02;
+ruler.y = app.renderer.height *(-0.04);
 
 //ruler.scale.x*=0.2;
 //ruler.scale.y*=0.2;
@@ -77,7 +77,7 @@ app.stage.addChild(ruler);
  var a=1;
  app.ticker.add(()=>
  {
- 	ruler.x+=a;
+ 	ruler.x-=a;
  });
 
 
