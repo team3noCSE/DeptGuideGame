@@ -1,21 +1,5 @@
 let healthPerLecture = -0.005;
 
-var thisGame = {};
-
-thisGame.department;
-  //  이번 게임에서 선택한 학과
-thisGame.timeTable;
-  //  이번 게임에서 선택한 이벤트들로 구성된 시간표
-thisGame.status = {};
-thisGame.status.health = 1;
-thisGame.status.grade = 0;
-//  grade = (수행한 로드)/(전체 로드)
-thisGame.status.relationship = 0;
-  //  이번 게임의 스탯
-
-thisGame.load = 0;
-  // 학기 전체의 load;
-
 var dayofweek = ["월", "화", "수", "목", "금", "토", "일"];
 
 let Load = {
@@ -346,8 +330,8 @@ Event["화학분석"].add3Test(2);
 Event["화학분석"].addHomeWork4Week(2);
 
 Event["유기화학"] = new SingleEvent("유기화학", 1.5, healthPerLecture, 0, true, "CHEM221"); // 7
-Event["유기화학"].add4test(7);
-Event["유기화학"].addquiz(7);
+Event["유기화학"].add4Test(7);
+Event["유기화학"].addQuiz(7);
 Event["유기화학"].addHomeWork4Week(7);
 
 Event["화학수학"] = new SingleEvent("화학수학", 1.5, healthPerLecture, 0, true, "CHEM213"); // 2
@@ -404,8 +388,8 @@ Event["디지털시스템설계"].addMidTerm(9);
 Event["디지털시스템설계"].addFinal(9);
 Event["디지털시스템설계"].addHomeWork4Week(9);
 for(var i=1; i<8; i++) {
-  Event["디지털시스템설계"].addLoad(Load["LABREPORT"]*9,"지난 실험의 보고서를 작성합니다. ");
+  Event["디지털시스템설계"].addLoad(Load["LABREPORT"]*9,"지난 실험의 보고서를 작성합니다. ",i);
 }
 for(var i=8; i<15; i++) {
-  Event["디지털시스템설계"].addLoad(Load["LABREPORT"]*9,"텀프로젝트를 진행합니다. ");
+  Event["디지털시스템설계"].addLoad(Load["LABREPORT"]*9,"텀프로젝트를 진행합니다. ",i);
 }

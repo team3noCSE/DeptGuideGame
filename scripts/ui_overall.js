@@ -13,12 +13,6 @@ let this_stat = {
 
 let timetable = [[1, 0], [2, 3]];
 
-let thisGame = {
-    department  :   'none',
-    timetable   :   timetable,
-    stat        :   [100, 100, 100]
-}
-
 let Department = {
 // DEPARTMENT   :   VALUE
     MATH        :   0,      0   :   'MATH',
@@ -596,7 +590,7 @@ function new_game_onButtonOut(){
         return;
     }
     //this.texture = icons_Texture[name];
-console.log(thisGame['department']);
+console.log(thisGame.department);
     }
 */
 
@@ -697,25 +691,25 @@ class Character_test {
                     _thisclass._selected[0] = 1;
                     _thisclass._answer_buttons_0.alpha = 1;
                     if(_thisclass._answer[0][1] == 'grade'){
-                        thisGame['stat'][2] += _thisclass._answer[0][2];
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += _thisclass._answer[0][2];
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[0][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += _thisclass._answer[0][2];
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += _thisclass._answer[0][2];
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[0][1] == 'health'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += _thisclass._answer[0][2];
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += _thisclass._answer[0][2];
                     } else {
-                        thisGame['stat'][2] += (Math.random()-0.5)*4;
-                        thisGame['stat'][1] += (Math.random()-0.5)*4;
-                        thisGame['stat'][0] += (Math.random()-0.5)*4;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
-                    console.log(thisGame['stat'][0]);
-                    console.log(thisGame['stat'][1]);
-                    console.log(thisGame['stat'][2]);
+                    console.log(thisGame.status.health);
+                    console.log(thisGame.status.relationship);
+                    console.log(thisGame.status.grade);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
                 }
                 if (_thisclass._selected_num == _thisclass._selected_num_available){
@@ -777,25 +771,25 @@ class Character_test {
                     _thisclass._selected[1] = 1;
                     _thisclass._answer_buttons_1.alpha = 1;
                     if(_thisclass._answer[1][1] == 'grade'){
-                        thisGame['stat'][2] += _thisclass._answer[1][2];
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += _thisclass._answer[1][2];
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[1][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += _thisclass._answer[1][2];
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += _thisclass._answer[1][2];
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[1][1] == 'health'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += _thisclass._answer[1][2];
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += _thisclass._answer[1][2];
                     } else {
-                        thisGame['stat'][2] += (Math.random()-0.5)*4;
-                        thisGame['stat'][1] += (Math.random()-0.5)*4;
-                        thisGame['stat'][0] += (Math.random()-0.5)*4;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
-                    console.log(thisGame['stat'][0]);
-                    console.log(thisGame['stat'][1]);
-                    console.log(thisGame['stat'][2]);
+                    console.log(thisGame.status.health);
+                    console.log(thisGame.status.relationship);
+                    console.log(thisGame.status.grade);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
                 }
                 if (_thisclass._selected_num == _thisclass._selected_num_available){
@@ -857,25 +851,25 @@ class Character_test {
                     _thisclass._selected[2] = 1;
                     _thisclass._answer_buttons_2.alpha = 1;
                     if(_thisclass._answer[2][1] == 'grade'){
-                        thisGame['stat'][2] += _thisclass._answer[2][2];
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += _thisclass._answer[2][2];
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[2][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += _thisclass._answer[2][2];
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += _thisclass._answer[2][2];
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[2][1] == 'health'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += _thisclass._answer[2][2];
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += _thisclass._answer[2][2];
                     } else {
-                        thisGame['stat'][2] += (Math.random()-0.5)*4;
-                        thisGame['stat'][1] += (Math.random()-0.5)*4;
-                        thisGame['stat'][0] += (Math.random()-0.5)*4;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
-                    console.log(thisGame['stat'][0]);
-                    console.log(thisGame['stat'][1]);
-                    console.log(thisGame['stat'][2]);
+                    console.log(thisGame.status.health);
+                    console.log(thisGame.status.relationship);
+                    console.log(thisGame.status.grade);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
                 }
                 if (_thisclass._selected_num == _thisclass._selected_num_available){
@@ -937,25 +931,25 @@ class Character_test {
                     _thisclass._selected[3] = 1;
                     _thisclass._answer_buttons_3.alpha = 1;
                     if(_thisclass._answer[3][1] == 'grade'){
-                        thisGame['stat'][2] += _thisclass._answer[3][2];
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += _thisclass._answer[3][2];
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[3][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += _thisclass._answer[3][2];
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += _thisclass._answer[3][2];
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[3][1] == 'health'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += _thisclass._answer[3][2];
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += _thisclass._answer[3][2];
                     } else {
-                        thisGame['stat'][2] += (Math.random()-0.5)*4;
-                        thisGame['stat'][1] += (Math.random()-0.5)*4;
-                        thisGame['stat'][0] += (Math.random()-0.5)*4;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
-                    console.log(thisGame['stat'][0]);
-                    console.log(thisGame['stat'][1]);
-                    console.log(thisGame['stat'][2]);
+                    console.log(thisGame.status.health);
+                    console.log(thisGame.status.relationship);
+                    console.log(thisGame.status.grade);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
                 }
                 if (_thisclass._selected_num == _thisclass._selected_num_available){
@@ -1017,25 +1011,25 @@ class Character_test {
                     _thisclass._selected[4] = 1;
                     _thisclass._answer_buttons_4.alpha = 1;
                     if(_thisclass._answer[4][1] == 'grade'){
-                        thisGame['stat'][2] += _thisclass._answer[4][2];
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += _thisclass._answer[4][2];
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[4][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += _thisclass._answer[4][2];
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += _thisclass._answer[4][2];
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[4][1] == 'health'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += _thisclass._answer[4][2];
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += _thisclass._answer[4][2];
                     } else {
-                        thisGame['stat'][2] += (Math.random()-0.5)*4;
-                        thisGame['stat'][1] += (Math.random()-0.5)*4;
-                        thisGame['stat'][0] += (Math.random()-0.5)*4;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
-                    console.log(thisGame['stat'][0]);
-                    console.log(thisGame['stat'][1]);
-                    console.log(thisGame['stat'][2]);
+                    console.log(thisGame.status.health);
+                    console.log(thisGame.status.relationship);
+                    console.log(thisGame.status.grade);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
                 }
                 if (_thisclass._selected_num == _thisclass._selected_num_available){
@@ -1097,25 +1091,25 @@ class Character_test {
                     _thisclass._selected[5] = 1;
                     _thisclass._answer_buttons_5.alpha = 1;
                     if(_thisclass._answer[5][1] == 'grade'){
-                        thisGame['stat'][2] += _thisclass._answer[5][2];
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += _thisclass._answer[5][2];
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[5][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += _thisclass._answer[5][2];
-                        thisGame['stat'][0] += (Math.random()-0.5)*2;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += _thisclass._answer[5][2];
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[5][1] == 'health'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;
-                        thisGame['stat'][1] += (Math.random()-0.5)*2;
-                        thisGame['stat'][0] += _thisclass._answer[5][2];
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += _thisclass._answer[5][2];
                     } else {
-                        thisGame['stat'][2] += (Math.random()-0.5)*4;
-                        thisGame['stat'][1] += (Math.random()-0.5)*4;
-                        thisGame['stat'][0] += (Math.random()-0.5)*4;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
-                    console.log(thisGame['stat'][0]);
-                    console.log(thisGame['stat'][1]);
-                    console.log(thisGame['stat'][2]);
+                    console.log(thisGame.status.health);
+                    console.log(thisGame.status.relationship);
+                    console.log(thisGame.status.grade);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
                 }
 
@@ -1264,14 +1258,14 @@ class Department_choice {
         function department_onButtonDown(){
             this.isdown = true;
             this.texture = icons_Texture[name+'_labeled'];
-            thisGame['department'] = _thisclass._name;
-            console.log(thisGame['department']);
+            thisGame.department = _thisclass._name;
+            console.log(thisGame.department);
             _thisclass._select_button.interactive = true;
             _thisclass._select_button.alpha = 1;
             _thisclass._return_button.interactive = true;
             _thisclass._return_button.alpha = 1;
             for (let i = 0; i < list.length; i++){
-                if (list[i]._name != thisGame['department']){
+                if (list[i]._name != thisGame.department){
                     console.log('hi');
                     list[i]._department_button.alpha = 0;
                     list[i]._department_button.interactive = false;
@@ -1301,7 +1295,7 @@ class Department_choice {
                 return;
             }
             this.texture = icons_Texture[name];
-            console.log(thisGame['department']);
+            console.log(thisGame.department);
 
         }
 
@@ -1317,8 +1311,8 @@ class Department_choice {
         function select_onButtonDown(){
             this.isdown = true;
             //this.texture = icons_Texture[name+'_labeled'];
-            //thisGame['department'] = _thisclass._name;
-            console.log(thisGame['department'] + 'confirmed');
+            //thisGame.department = _thisclass._name;
+            console.log(thisGame.department + 'confirmed');
             for (let i = 0; i < list.length; i++){
                 app_simulator.stage.removeChild(list[i]._department_button);
                 app_simulator.stage.removeChild(list[i]._select_button);
@@ -1350,7 +1344,7 @@ class Department_choice {
                 return;
             }
             //this.texture = icons_Texture[name];
-            console.log(thisGame['department']);
+            console.log(thisGame.department);
 
         }
 
@@ -1366,10 +1360,10 @@ class Department_choice {
         function return_onButtonDown(){
             this.isdown = true;
             //this.texture = icons_Texture[name+'_labeled'];
-            //thisGame['department'] = _thisclass._name;
-            console.log(thisGame['department'] + 'confirmed');
+            //thisGame.department = _thisclass._name;
+            console.log(thisGame.department + 'confirmed');
             for (let i = 0; i < list.length; i++){
-                if (list[i]._name != thisGame['department']){
+                if (list[i]._name != thisGame.department){
                     list[i]._department_button.interactive = true;
                     list[i]._department_button.alpha = 1;
                 }
@@ -1403,7 +1397,7 @@ class Department_choice {
                 return;
             }
             //this.texture = icons_Texture[name];
-            console.log(thisGame['department']);
+            console.log(thisGame.department);
 
         }
 
@@ -1580,19 +1574,12 @@ class select_timetable {
                 if (_thisclass._template_buttons[i-1].over == true){
                     for (let j = 0; j < 10; j++){
                         for (let k = 0; k < 5; k++){
-<<<<<<< HEAD
-                            _thisclass._timetable[j][k] = timetable_list[_thisclass._department+'_'+i][j][k] // <<<< CHNAGE DATA STRUCTURE
-                        }
-                    }
-                    console.log('hi');
-=======
                             if (timetable_list[_thisclass._department+'_'+i][j][k][0] != "x"){
                                 _thisclass._timetable[j][k] = timetable_list[_thisclass._department+'_'+i][j][k] // <<<< CHNAGE DATA STRUCTURE
                             }
                         }
                     }
                     _thisclass._selected = i;
->>>>>>> ac50d090632aa1b09e41fd3af2a0d753ce5f543f
                 }
             }
             _thisclass.update_timetable_graphics();
@@ -1722,35 +1709,6 @@ function loading_menu_to_test() {
         wordWrap: true,
         wordWrapWidth: 440
     });
-<<<<<<< HEAD
-
-    let loadingText = new PIXI.Text('gimori', style);
-    loadingText.anchor.set(0.5);
-    loadingText.x = 0;
-    loadingText.y = 0;
-    app_simulator.stage.addChild(loadingText);
-
-    var bar1 = new PIXI.Graphics();
-    bar1.lineStyle(2,0xFFFF00,1);
-    bar1.drawRect(-300,-310,600,50);
-    app_simulator.stage.addChild(bar1);
-
-    var graphics = new PIXI.Graphics();
-    graphics.lineStyle(2, 0xFF00FF, 1);
-    graphics.beginFill(0xFF00BB, 0.25);
-    graphics.drawRect(-300,-310, 0, 50);
-
-    graphics.endFill();
-    app_simulator.stage.addChild(graphics);
-
-    var a=0;
-
-    app_simulator.ticker.add(function(delta=1) {
-
-        a+=delta*10;
-        graphics.drawRect(-300, -310, a, 50);
-        if(a>600)
-=======
 
     let loadingText = new PIXI.Text('text goes here', style);
     loadingText.anchor.set(0.5);
@@ -1803,15 +1761,8 @@ function loading_menu_to_test() {
         //console.log(a);
 
         if(t > 1800)
->>>>>>> ac50d090632aa1b09e41fd3af2a0d753ce5f543f
         {
             app_simulator.stage.removeChild(loadingText);
-<<<<<<< HEAD
-            app_simulator.stage.removeChild(bar1);
-            app_simulator.stage.removeChild(graphics);
-            app_simulator.ticker.stop();
-
-=======
             //app_simulator.stage.removeChild(bar1);
             //app_simulator.stage.removeChild(graphics);
             app_simulator.stage.removeChild(loading_status);
@@ -1869,11 +1820,6 @@ function loading_test_to_department_choice() {
     });
 
 }
->>>>>>> ac50d090632aa1b09e41fd3af2a0d753ce5f543f
-
-        }
-
-    });
 
 function department_choice_to_select_timetable() {
 
@@ -1913,15 +1859,13 @@ function department_choice_to_select_timetable() {
             app_simulator.stage.removeChild(loading_status_3);
 
             Ticker_department_choice_to_select_timetable.stop();
-            if (thisGame['department'] == 'RAND'){
-                thisGame['department'] = Department[Math.floor(Math.random(11))];
+            if (thisGame.department == 'RAND'){
+                thisGame.department = Department[Math.floor(Math.random(11))];
             }
-            let select_table = new select_timetable(thisGame['department']);
+            let select_table = new select_timetable(thisGame.department);
             select_table.show_timetable();
             select_table.show_templates();
         }
     });
-
-}
 
 }
