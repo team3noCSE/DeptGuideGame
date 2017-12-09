@@ -167,6 +167,6 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
   }
   // capacityPerWeek을 과제, 공부, 체력충전으로 전환
 
-  //console.log(week+"주차 / 수행해야 할 로드: "+tempLoadPerWeek+"\n");
+  console.log(week+"주차 / 수행해야 할 로드: "+tempLoadPerWeek+"\n");
   return completedLoad;
 }

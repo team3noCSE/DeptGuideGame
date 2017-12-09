@@ -104,26 +104,39 @@ var numberstyle = new PIXI.TextStyle({
   wordWrap: true,
   wordWrapWidth: 440
   });
-var daynumber = 150;
-var dday;
+var daynumber = 112;
+var tempdaynumber=1;
 
-  var dday = new PIXI.Text(daynumber,numberstyle);
-
-/*
- app.ticker.add(()=>
- {
-  delta=100;
-  app.stage.removeChild(dday);
-  delete dday;
-  daynumber-=1;
-  var dday = new PIXI.Text(daynumber,numberstyle);
+  var dday = new PIXI.Text(daynumber+"일",numberstyle);
   dday.anchor.set(0.5);
   dday.x = 260;
-  dday.y = 480
+  dday.y = 480;
   app.stage.addChild(dday);
 
+ 
+
+ app.ticker.add(()=>
+ {
+  if(tempdaynumber%100===0)
+  {
+   app.stage.removeChild(dday);
+   daynumber-=1;
+   dday = new PIXI.Text(daynumber+"일", numberstyle);
+   dday.anchor.set(0.5);
+   dday.x = 260;
+   dday.y = 480;
+   app.stage.addChild(dday);
+  }
+  tempdaynumber++;
  });
-*/
+
+
+  var thistext = new PIXI.Text(lectureList[1].name, numberstyle);
+  thistext.anchor.set(0.5);
+  thistext.x=300;
+  thistext.y=480;
+  app.stage.addChild(thistext);
+
 
 
 /*
@@ -152,8 +165,8 @@ var rightblock = new PIXI.Graphics();
 for(var i=0; i < lectureList.length; i++) {
      console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
      console.log(lectureList[i].load[week][1]);
-}
-*/
+}*/
+
 var eventstyle = new PIXI.TextStyle({
   fontFamily: 'Consolas',
   fontSize: 80,
@@ -169,7 +182,7 @@ var eventstyle = new PIXI.TextStyle({
   wordWrapWidth: 440
   });
 
-var inputTxt = lectureList[2].name;
+  var inputTxt = lectureList[2].name;
   var richText = new PIXI.Text(inputTxt,eventstyle);
   richText.anchor.set(0.5);
   richText.x = 1920/2;
