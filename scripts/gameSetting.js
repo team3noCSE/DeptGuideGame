@@ -203,37 +203,22 @@ class SinglePopUpEvent {
   constructor (
     _name, // String
     _time, // boolean array (16주중 되는 시간 true)
-    _relationshipCeil, // float (Ceil은 상한, Floor는 하한)
-    _relationshipFloor, // float
-    _healthCeil, // float
-    _healthFloor, // float
-    _gradeCeil, // float
-    _gradeFloor, // float
-    _description
+    _priority, // 성향테스트로 나온 값을 반영
+    _description //
   ){
     this.name = _name;
     this.time = _time;
-    this.relationshipCeil = _relationshipCeil;
-    this.relationshipFloor = _relationshipFloor;
-    this.healthCeil = _healthCeil;
-    this.healthFloor = _healthFloor;
-    this.gradeCeil = _gradeCeil;
-    this.gradeFloor = _gradeFloor;
+    this.priority = _priority;
     this.description = _description;
   }
 }
 
 //  SingleEvent pool
-<<<<<<< HEAD
-let Event = {
-  "객체지향프로그래밍A" : new SingleEvent("객체지향프로그래밍", 90, -0.02, 0, true, 100, "CSED232"),
-  "객체지향프로그래밍B" : new SingleEvent("객체지향프로그래밍", 90, -0.02, 0, true, 100, "CSED232")
-} // 전체 과목(Period 단위)를 저장
 
 let PopUpEvent = {
   "개총" : new SinglePopUpEvent("개총", [1, 2, 3], null, null, null, null, null, null, "새로운 학기의 시작은 개총과 함께~?"),
 }
-=======
+
 var Event = {};
 
 
@@ -291,4 +276,3 @@ Event["비즈니스플래닝"].addMidTerm(4);
 Event["비즈니스플래닝"].addFinal(4);
 Event["비즈니스플래닝"].addMidPresentation(4, "(사업계획서)");
 Event["비즈니스플래닝"].addFinalPresentation(4, "(사업계획데모, 전문투자자)");
->>>>>>> master

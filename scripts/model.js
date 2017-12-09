@@ -46,7 +46,7 @@ calculateLoad(Event["확률및통계"]);
 calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
-
+alert(PopUpEvent["개총"]);
 model();
 
 function model() { // 일단은 1주 진행
