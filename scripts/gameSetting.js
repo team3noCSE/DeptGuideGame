@@ -9,9 +9,9 @@ thisGame.timeTable;
   //  이번 게임에서 선택한 이벤트들로 구성된 시간표
 thisGame.status = {};
 thisGame.status.health = 1;
-thisGame.status.grade = 1;
+thisGame.status.grade = 0;
 //  grade = (수행한 로드)/(전체 로드)
-thisGame.status.relationship = 1;
+thisGame.status.relationship = 0;
   //  이번 게임의 스탯
 
 thisGame.load = 0;
@@ -82,7 +82,7 @@ class SingleEvent {
         continue;
       }
       this.load[i][0] += Load["QUIZ"]*weight;
-      this.load[i][1] += "퀴즈가 있습니다.<br/>";
+      this.load[i][1] += "퀴즈가 있습니다.";
     }
   }
 
@@ -95,7 +95,7 @@ class SingleEvent {
         continue;
       }
       this.load[i][0] += Load["HOMEWORK"]*weight;
-      this.load[i][1] += "숙제가 있습니다.<br/>";
+      this.load[i][1] += "숙제가 있습니다.";
     }
   }
   addHomeWork4Week(weight) {
@@ -105,7 +105,7 @@ class SingleEvent {
 
     for(var i=0; i<4; i++) {
       this.load[i*4+1+adjust][0] += Load["HOMEWORK"]*weight;
-      this.load[i*4+1+adjust][1] += "숙제가 있습니다.<br/>";
+      this.load[i*4+1+adjust][1] += "숙제가 있습니다.";
     }
   }
 
@@ -124,14 +124,14 @@ class SingleEvent {
     this.load[13+adjust][0] += Load["ASSIGN"]*weight;
 
     // assign 1
-    this.load[3+adjust][0] += "어사인먼트1이 나왔습니다.<br/>";
-    this.load[4+adjust][0] += "어사인먼트1 제출기한이 임박했습니다!<br/>";
+    this.load[3+adjust][0] += "어사인먼트1이 나왔습니다.";
+    this.load[4+adjust][0] += "어사인먼트1 제출기한이 임박했습니다!";
     // assign 2
-    this.load[8+adjust][0] += "어사인먼트2가 나왔습니다.<br/>";
-    this.load[9+adjust][0] += "어사인먼트2 제출기한이 임박했습니다!<br/>";
+    this.load[8+adjust][0] += "어사인먼트2가 나왔습니다.";
+    this.load[9+adjust][0] += "어사인먼트2 제출기한이 임박했습니다!";
     // assign 3
-    this.load[12+adjust][0] += "어사인먼트3가 나왔습니다.<br/>";
-    this.load[13+adjust][0] += "어사인먼트3 제출기한이 임박했습니다!<br/>";
+    this.load[12+adjust][0] += "어사인먼트3가 나왔습니다.";
+    this.load[13+adjust][0] += "어사인먼트3 제출기한이 임박했습니다!";
   }
 
   addLabAssign(weight) {
@@ -140,7 +140,7 @@ class SingleEvent {
         continue;
       }
       this.load[i][0] += Load["LABASSIGN"]*weight;
-      this.load[i][1] += "랩(TA수업/연습시간) 과제가 있습니다.<br/>";
+      this.load[i][1] += "랩(TA수업/연습시간) 과제가 있습니다.";
     }
   }
 
@@ -148,16 +148,16 @@ class SingleEvent {
     this.load[6][0] += Load["MIDTERM"]*weight;
     this.load[7][0] += Load["MIDTERM"]*weight;
 
-    this.load[6][1] += "중간고사에 대비하세요!<br/>";
-    this.load[7][1] += "중간고사가 있습니다!<br/>";
+    this.load[6][1] += "중간고사에 대비하세요!";
+    this.load[7][1] += "중간고사가 있습니다!";
   }
 
   addFinal(weight) {
     this.load[14][0] += Load["MIDTERM"]*weight;
     this.load[15][0] += Load["MIDTERM"]*weight;
 
-    this.load[14][1] += "기말고사에 대비하세요!<br/>";
-    this.load[15][1] += "기말고사가 있습니다!<br/>";
+    this.load[14][1] += "기말고사에 대비하세요!";
+    this.load[15][1] += "기말고사가 있습니다!";
   }
 
   add3Test(weight) {
@@ -168,28 +168,28 @@ class SingleEvent {
     this.load[14][0] += Load["3TEST"]*weight;
     this.load[15][0] += Load["3TEST"]*weight;
 
-    this.load[4][1] += "첫번째 중간고사에 대비하세요!<br/>";
-    this.load[5][1] += "첫번째 중간고사가 있습니다.<br/>";
-    this.load[9][1] += "두번째 중간고사에 대비하세요!<br/>";
-    this.load[10][1] += "두번째 중간고사가 있습니다.<br/>";
-    this.load[14][1] += "기말고사에 대비하세요!<br/>";
-    this.load[15][1] += "기말고사가 있습니다!<br/>";
+    this.load[4][1] += "첫번째 중간고사에 대비하세요!";
+    this.load[5][1] += "첫번째 중간고사가 있습니다.";
+    this.load[9][1] += "두번째 중간고사에 대비하세요!";
+    this.load[10][1] += "두번째 중간고사가 있습니다.";
+    this.load[14][1] += "기말고사에 대비하세요!";
+    this.load[15][1] += "기말고사가 있습니다!";
   }
 
   addMidPresentation(weight, description) {
     var adjust = Math.floor(Math.random() * 3) - 1;
     this.load[4+adjust][0] += Load["PRESENTATION"]*weight;
     this.load[5+adjust][0] += Load["PRESENTATION"]*weight;
-    this.load[4+adjust][1] += "중간발표를 준비하세요!"+description+"<br/>";
-    this.load[5+adjust][1] += "중간발표가 있습니다."+description+"<br/>";
+    this.load[4+adjust][1] += "중간발표를 준비하세요!"+description+"";
+    this.load[5+adjust][1] += "중간발표가 있습니다."+description+"";
   }
 
   addFinalPresentation(weight, description) {
     var adjust = Math.floor(Math.random() * 3) - 1;
     this.load[12+adjust][0] += Load["PRESENTATION"]*weight*2;
     this.load[13+adjust][0] += Load["PRESENTATION"]*weight*2;
-    this.load[12+adjust][1] += "기말발표를 준비하세요!"+description+"<br/>";
-    this.load[13+adjust][1] += "기말발표가 있습니다."+description+"<br/>";
+    this.load[12+adjust][1] += "기말발표를 준비하세요!"+description+"";
+    this.load[13+adjust][1] += "기말발표가 있습니다."+description+"";
   }
 
   addLoad(load, description, period) {

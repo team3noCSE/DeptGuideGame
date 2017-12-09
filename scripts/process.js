@@ -103,7 +103,7 @@ var numberstyle = new PIXI.TextStyle({
   });
 var daynumber = 150;
 var dday;
-
+/*
  	var dday = new PIXI.Text(daynumber,numberstyle);
  app.ticker.add(()=>
  {
@@ -118,7 +118,7 @@ var dday;
   app.stage.addChild(dday);
 
  });
-
+*/
 /*
 var graphics = new PIXI.Graphics();
   graphics.lineStyle(2, 0xFF00FF, 1);
