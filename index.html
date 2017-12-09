@@ -196,6 +196,21 @@
         <div>결과발표</div>
       </div>
   </div>
+  <!--엔딩-->
+  <div id="Ending" style="display:none !important">
+    <section class="End">
+      <div class="canvas"></div>
+      <div id="Ending_menu" class="canvas" style="position: absolute; width:1920px; height:145px; top: 110px; background-color:#FFFFFF;"></div>
+      <div id="Button1" class="end_button" style="top:110px; left:8px;" onclick="show_summary()">요약</div>
+      <div id="Button2" class="end_button" style="top:110px; left:467px;" onclick="show_detail()">세부 정보</div>
+      <div id="Button3" class="end_button" style="top:110px; left:925px;" onclick="show_menu()">메뉴</div>
+      <img id="Result_pic" style="position:absolute; left:420px; top:300px; width:1067px; height:603px;">
+      <div id="Result_name" style="position:absolute; left:420px; top:920px; font-size:80px; font-family:a옛날목욕탕L; width:1067px; text-align:center;"></div>
+      <img id="Phonix" src="../DeptGuideGame/images/ending/End.png" style="position: absolute; left:1428px; top: 0px;"/>
+    </section>
+  </div>
+  <script type="text/javascript" src="scripts/ui_overall.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="scripts/ending.js" charset="UTF-8"></script>
   <script src="jquery/jquery-3.2.1.min.js"></script>
   <script src="jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript" src="scripts/screen.js" charset="UTF-8"></script>
@@ -205,21 +220,7 @@
   <script type="text/javascript" src="scripts/personality.js" charset="UTF-8"></script>
   <script type="text/javascript" src="scripts/department.js" charset="UTF-8"></script>
   <script type="text/javascript" src="scripts/session.js" charset="UTF-8"></script>
-  <script src="scripts/gameSetting.js" charset="UTF-8"></script>
-  <!--엔딩-->
-  <div id="Ending" style="display:none !important">
-    <section class="End">
-      <div class="canvas"></div>
-      <div id="Ending_menu" class="canvas" style="position: absolute; width:1920px; height:145px; top: 110px; background-color:#FFFFFF;"></div>
-      <div id="Button1" class="end_button" style="top:110px; left:8px;" onclick="show_summary()">요약</div>
-      <div id="Button2" class="end_button" style="top:110px; left:467px;" onclick="show_detail()">세부 정보</div>
-      <div id="Button3" class="end_button" style="top:110px; left:925px;" onclick="show_menu()">메뉴</div>
-      <img id="Result_pic" src="" style="position:absolute; left:420px; top:300px; width:1067px; height:603px;">
-      <div id="Result_name" style="position:absolute; left:420px; top:920px; font-size:80px; font-family:a옛날목욕탕L; width:1067px; text-align:center;"></div>
-      <img id="Phonix" src="../DeptGuideGame/images/ending/End.png" style="position: absolute; left:1428px; top: 0px;"/>
-      <script type="text/javascript" src="scripts/ending.js"></script>
-    </section>
-  </div>
-
+  <script type="text/javascript" src="scripts/gameSetting.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="scripts/model.js" charset="UTF-8"></script>
   </body>
 </html>
