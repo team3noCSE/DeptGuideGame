@@ -118,7 +118,7 @@ var dday;
   app.stage.addChild(dday);
 
  });
-   
+
 /*
 var graphics = new PIXI.Graphics();
   graphics.lineStyle(2, 0xFF00FF, 1);
