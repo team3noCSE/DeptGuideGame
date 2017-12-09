@@ -33,8 +33,6 @@ let Period = {
 class SingleEvent {
   constructor(
     _name,                //  String
-    _day,                 //  dayofweek
-    _period,              //  Period
     _duration,            //  float
     _deltaHealth,         //  float
     _deltaRelationship,   //  float
@@ -44,8 +42,6 @@ class SingleEvent {
   ) {
     //  event
     this.name = _name;  //  이벤트 이름
-    this.day = _day;  //  요일
-    this.period = _period;  //  시작 시간(교시)
     this.duration = _duration;  //  한 번 수행하는데 걸리는 시간 (분)
     this.deltaHealth = _deltaHealth;  //  체력 스탯 변화량
     this.deltaRelationship = _deltaRelationship;  //  인간관계 스탯 변화량
@@ -58,8 +54,36 @@ class SingleEvent {
 //  model 만드시는 분께서 capacity(남은 가용시간)를 받아 load를 업데이트 시키는 메소드도 만들어 주세요
 }
 
+class SinglePopUpEvent {
+  constructor (
+    _name, // String
+    _time, // boolean array (16주중 되는 시간 true)
+    _relationshipCeil, // float (Ceil은 상한, Floor는 하한)
+    _relationshipFloor, // float
+    _healthCeil, // float
+    _healthFloor, // float
+    _gradeCeil, // float
+    _gradeFloor, // float
+    _description
+  ){
+    this.name = _name;
+    this.time = _time;
+    this.relationshipCeil = _relationshipCeil;
+    this.relationshipFloor = _relationshipFloor;
+    this.healthCeil = _healthCeil;
+    this.healthFloor = _healthFloor;
+    this.gradeCeil = _gradeCeil;
+    this.gradeFloor = _gradeFloor;
+    this.description = _description;
+  }
+}
+
 //  SingleEvent pool
 let Event = {
-  "객체지향프로그래밍A" : new SingleEvent("객체지향프로그래밍", dayofweek[0], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232"),
-  "객체지향프로그래밍B" : new SingleEvent("객체지향프로그래밍", dayofweek[2], Period["AM 11:00"], 90, -0.02, 0, true, 100, "CSED232")
+  "객체지향프로그래밍A" : new SingleEvent("객체지향프로그래밍", 90, -0.02, 0, true, 100, "CSED232"),
+  "객체지향프로그래밍B" : new SingleEvent("객체지향프로그래밍", 90, -0.02, 0, true, 100, "CSED232")
 } // 전체 과목(Period 단위)를 저장
+
+let PopUpEvent = {
+  "개총" : new SinglePopUpEvent("개총", [1, 2, 3], null, null, null, null, null, null, "새로운 학기의 시작은 개총과 함께~?"),
+}
