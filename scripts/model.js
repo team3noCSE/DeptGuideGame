@@ -30,6 +30,7 @@ thisGame.timeTable[1][5] = Event["미분방정식"];
 thisGame.timeTable[3][5] = Event["미분방정식"];
 
 var lectureList = new Array(5);
+//  동아리도 들어가야됨
 lectureList[0] = Event["현대대수학I"];
 lectureList[1] = Event["확률및통계"];
 lectureList[2] = Event["이산수학"];
@@ -102,10 +103,10 @@ function model() { // 일단은 1주 진행
       thisGame.status.grade = completedLoad/loadTillNow;
       // 주간 로드 반영
 
-      //console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
-      //console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
-      //console.log(week+"주차 / 현재 성적: "+thisGame.status.grade+"\n");
-      //console.log("총 수행한 로드(누적): "+completedLoad+"\n");
+      console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
+      console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
+      console.log(week+"주차 / 현재 성적: "+thisGame.status.grade+"\n");
+      console.log("총 수행한 로드(누적): "+completedLoad+"\n");
       eventHandler();
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
     }
