@@ -45,17 +45,17 @@ let icons_Texture = {
     LIFE            :   PIXI.Texture.fromImage('images/departments/04_LIFE_black.png'),
     LIFE_labeled    :   PIXI.Texture.fromImage('images/departments/04_LIFE_black_labeled.png'),
     MSE             :   PIXI.Texture.fromImage('images/departments/05_MSE_black.png'),
-    MSE_labeled     :   PIXI.Texture.fromImage('images/departments/05_MSE_black_labeled.png'),  
+    MSE_labeled     :   PIXI.Texture.fromImage('images/departments/05_MSE_black_labeled.png'),
     ME              :   PIXI.Texture.fromImage('images/departments/06_ME_black.png'),
-    ME_labeled      :   PIXI.Texture.fromImage('images/departments/06_ME_black_labeled.png'),  
+    ME_labeled      :   PIXI.Texture.fromImage('images/departments/06_ME_black_labeled.png'),
     IME             :   PIXI.Texture.fromImage('images/departments/07_IME_black.png'),
-    IME_labeled     :   PIXI.Texture.fromImage('images/departments/07_IME_black_labeled.png'),  
+    IME_labeled     :   PIXI.Texture.fromImage('images/departments/07_IME_black_labeled.png'),
     EE              :   PIXI.Texture.fromImage('images/departments/08_EE_black.png'),
-    EE_labeled      :   PIXI.Texture.fromImage('images/departments/08_EE_black_labeled.png'),  
+    EE_labeled      :   PIXI.Texture.fromImage('images/departments/08_EE_black_labeled.png'),
     CSE             :   PIXI.Texture.fromImage('images/departments/09_CSE_black.png'),
-    CSE_labeled     :   PIXI.Texture.fromImage('images/departments/09_CSE_black_labeled.png'),  
+    CSE_labeled     :   PIXI.Texture.fromImage('images/departments/09_CSE_black_labeled.png'),
     CE              :   PIXI.Texture.fromImage('images/departments/10_CE_black.png'),
-    CE_labeled      :   PIXI.Texture.fromImage('images/departments/10_CE_black_labeled.png'),  
+    CE_labeled      :   PIXI.Texture.fromImage('images/departments/10_CE_black_labeled.png'),
     CITE            :   PIXI.Texture.fromImage('images/ang.png'),  // TEMPORARY
     CITE_labeled    :   PIXI.Texture.fromImage('images/sibal.png'),
     RAND            :   PIXI.Texture.fromImage('images/hohoho.png'),
@@ -63,7 +63,7 @@ let icons_Texture = {
 }
 
 let question_List = {
-//  QUESTION        :   [QUESTION,  
+//  QUESTION        :   [QUESTION,
 //                       ANSWER-AFFECT-VALUE ARRAY]
     0               :   [   '가장 중요한 것 두개를 고르면?',
                             [
@@ -101,7 +101,7 @@ let question_List = {
                             ],
                             5
                         ]
-}   
+}
 
 let color_Template = {
 //  DEPARTMENT      :   [MAIN1,    SUB1,     SUB2,     SUB3    ]
@@ -121,9 +121,9 @@ let color_Template = {
 }
 
 let timetable_list = {
-//  DEPARTMENT     :          
+//  DEPARTMENT     :
 //      MON                 TUE                 WED                 THR                 FRI
-    MATH_1         :   
+    MATH_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "현대대수학1",         "",                 "현대대수학1",         ""                  ],  // 2
@@ -135,7 +135,7 @@ let timetable_list = {
         ["",                "",                 "현대대수학1",         "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    MATH_2         :   
+    MATH_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -147,7 +147,7 @@ let timetable_list = {
         ["",                "",                 "",                 "이산수학",           ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    MATH_3         :   
+    MATH_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "현대대수학1",         "",                 "현대대수학1",         ""                  ],  // 2
@@ -159,7 +159,7 @@ let timetable_list = {
         ["",                "",                 "현대대수학1",         "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    PHYS_1         :   
+    PHYS_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "양자물리2",          "",                 "양자물리2",          ""                  ],  // 1
         ["",                "열물리",             "",                 "열물리",            ""                  ],  // 2
@@ -171,7 +171,7 @@ let timetable_list = {
         ["",                "양자물리2",          "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    PHYS_2         :   
+    PHYS_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "양자물리2",          "",                 "양자물리2",          ""                  ],  // 1
         ["",                "열물리",             "",                 "열물리",            ""                  ],  // 2
@@ -183,7 +183,7 @@ let timetable_list = {
         ["",                "양자물리2",          "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    PHYS_3         :   
+    PHYS_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["컴퓨터네트워크",      "알고리즘",           "컴퓨터네트워크",       "알고리즘",           ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -195,7 +195,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CSE_1         :   
+    CSE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "컴파일러설계",        "",                 "컴파일러설계",         ""                  ],  // 2
@@ -207,7 +207,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CSE_2         :   
+    CSE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["컴퓨터네트워크",      "",                 "컴퓨터네트워크",       "",                 ""                  ],  // 1
         ["",                "컴파일러설계",        "",                 "컴파일러설계",         ""                  ],  // 2
@@ -219,7 +219,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CSE_3         :   
+    CSE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -231,7 +231,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    IME_1         :   
+    IME_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "정보시스템기술",       "",                 "정보시스템기술",       ""                  ],  // 1
         ["경영과학2",         "",                 "경영과학2",          "",                 ""                  ],  // 2
@@ -243,7 +243,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    IME_2         :   
+    IME_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "정보시스템기술",       "",                 "정보시스템기술",       ""                  ],  // 1
         ["경영과학2",         "",                 "경영과학2",          "",                 ""                  ],  // 2
@@ -255,7 +255,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    IME_3         :   
+    IME_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "정보시스템기술",       "",                 "정보시스템기술",       ""                  ],  // 1
         ["경영과학2",         "",                 "경영과학2",          "",                 ""                  ],  // 2
@@ -267,7 +267,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    MSE_1         :   
+    MSE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["고분자소재개론",      "",                 "고분자소재개론",       "",                 ""                  ],  // 1
         ["세라믹소재개론",      "",                 "세라믹소재개론",       "",                 ""                  ],  // 2
@@ -279,7 +279,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    MSE_2         :   
+    MSE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["고분자소재개론",      "",                 "고분자소재개론",       "",                 ""                  ],  // 1
         ["세라믹소재개론",      "",                 "세라믹소재개론",       "",                 ""                  ],  // 2
@@ -291,7 +291,7 @@ let timetable_list = {
         ["",                "신소재공학실험",       "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    MSE_3         :   
+    MSE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["고분자소재개론",      "",                 "고분자소재개론",       "",                 ""                  ],  // 1
         ["세라믹소재개론",      "",                 "세라믹소재개론",       "",                 ""                  ],  // 2
@@ -303,7 +303,7 @@ let timetable_list = {
         ["신소재공학실험",      "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    ME_1         :   
+    ME_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["열역학",            "",                 "열역학",            "",                 ""                  ],  // 1
         ["고체역학2",         "기계재료학",          "고체역학2",          "기계재료학",          ""                  ],  // 2
@@ -315,7 +315,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    ME_2         :   
+    ME_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["고체역학2",         "기계재료학",          "고체역학2",          "기계재료학",          ""                  ],  // 2
@@ -327,7 +327,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    ME_3         :   
+    ME_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["고체역학2",         "기계재료학",          "고체역학2",          "기계재료학",          ""                  ],  // 2
@@ -339,7 +339,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CHEM_1         :   
+    CHEM_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["화학수학",          "",                 "화학수학",           "",                 ""                  ],  // 1
         ["",                "유기화학",           "",                 "유기화학",           ""                  ],  // 2
@@ -351,7 +351,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CHEM_2         :   
+    CHEM_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["화학수학",          "",                 "화학수학",           "",                 ""                  ],  // 1
         ["",                "유기화학",           "",                 "유기화학",           ""                  ],  // 2
@@ -363,7 +363,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CHEM_3         :   
+    CHEM_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -375,7 +375,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    LIFE_1         :   
+    LIFE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "생명과학의원리",       "",                 "생명과학의원리",       ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -387,7 +387,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    LIFE_2         :   
+    LIFE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "생명과학의원리",       "",                 "생명과학의원리",       ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -399,7 +399,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    LIFE_3         :   
+    LIFE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["생명과학의원리",      "",                 "생명과학의원리",       "",                 ""                  ],  // 2
@@ -411,7 +411,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CE_1         :   
+    CE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["물리화학",          "유기화학",           "물리화학",            "유기화학",           ""                  ],  // 2
@@ -423,7 +423,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CE_2         :   
+    CE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["물리화학",          "유기화학",           "물리화학",            "유기화학",           ""                  ],  // 2
@@ -435,7 +435,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CE_3         :   
+    CE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["물리화학",          "유기화학",           "물리화학",            "유기화학",           ""                  ],  // 2
@@ -447,7 +447,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CITE_1         :   
+    CITE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -459,7 +459,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CITE_2         :   
+    CITE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -471,7 +471,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    CITE_3         :   
+    CITE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
@@ -483,7 +483,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    EE_1         :   
+    EE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "반도체전자공학",       "",                 "반도체전자공학",       ""                  ],  // 1
         ["디지털시스템설계",    "",                 "디지털시스템설계",      "",                 ""                  ],  // 2
@@ -495,7 +495,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    EE_2         :   
+    EE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "반도체전자공학",       "",                 "반도체전자공학",       ""                  ],  // 1
         ["디지털시스템설계",    "",                 "디지털시스템설계",      "",                 ""                  ],  // 2
@@ -507,7 +507,7 @@ let timetable_list = {
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
    ],
-    EE_3         :   
+    EE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "반도체전자공학",       "",                 "반도체전자공학",       ""                  ],  // 1
         ["디지털시스템설계",    "",                 "디지털시스템설계",      "",                 ""                  ],  // 2
@@ -525,10 +525,10 @@ let timetable_list = {
 var back_temp = new PIXI.Graphics();
 back_temp.lineStyle(2, 0x0000FF, 0);
 back_temp.beginFill(0xE5E4E0, 1);
-back_temp.drawRect(-app_simulator.renderer.width/2, -app_simulator.renderer.height/2, 
+back_temp.drawRect(-app_simulator.renderer.width/2, -app_simulator.renderer.height/2,
                   app_simulator.renderer.width, app_simulator.renderer.height);
 app_simulator.stage.addChild(back_temp);
-    
+
 // MAIN MENU
 mainmenu = new PIXI.Sprite.fromImage('images/menu.png');
 //mainmenu.scale.x *= 1;
@@ -540,7 +540,7 @@ mainmenu.y = 0;
 button_new_game = new PIXI.Graphics();
 button_achievement = new PIXI.Graphics(); ////////
 button_new_game.beginFill(0xFFFFFF, 1);
-button_new_game.drawRect(app_simulator.renderer.width*(-0.35), app_simulator.renderer.height*0.28, 
+button_new_game.drawRect(app_simulator.renderer.width*(-0.35), app_simulator.renderer.height*0.28,
                      app_simulator.renderer.width*0.126, app_simulator.renderer.height*0.074);
 button_new_game.buttonMode = true;
 button_new_game.interactive = true;
@@ -551,31 +551,31 @@ button_new_game
     .on('pointerup', new_game_onButtonUp)
     .on('pointerupoutside', new_game_onButtonUp)
     .on('pointerover', new_game_onButtonOver)
-    .on('pointerout', new_game_onButtonOut);  
+    .on('pointerout', new_game_onButtonOut);
 */
-    
+
 function new_game_onButtonDown(){
     for (let i = 0; i < Department_choice_button.length; i++){
         app_simulator.stage.addChild(Department_choice_button[i]._department_button);
         app_simulator.stage.addChild(Department_choice_button[i]._select_button);
         app_simulator.stage.addChild(Department_choice_button[i]._return_button);
     }
-        
+
     app_simulator.stage.removeChild(mainmenu);
     app_simulator.stage.removeChild(button_new_game);
-    
+
     //loading_menu_to_test();
     enable_character_test();
     //this.isdown = true;
 }
 
 
-/*    
+/*
 function new_game_onButtonUp(){
-    
+
 }
-        
-function new_game_onButtonOver(){    
+
+function new_game_onButtonOver(){
     this.isOver = true;
     if (this.isdown){
         return;
@@ -588,14 +588,14 @@ function new_game_onButtonOut(){
     if (this.isdown){
         return;
     }
-    //this.texture = icons_Texture[name]; 
+    //this.texture = icons_Texture[name];
 console.log(thisGame['department']);
     }
 */
 
-    
+
 function enable_main_menu(){
-    app_simulator.stage.addChild(mainmenu); 
+    app_simulator.stage.addChild(mainmenu);
     app_simulator.stage.addChild(button_new_game);
 }
 
@@ -610,79 +610,79 @@ class Character_test {
                  selected_num_available,
                  list
                 ){
-        
+
         let _thisclass = this;
         this._question = question;
         this._answer = answer;
         this._selected_num_available = selected_num_available;
         this._list = list;
-        
+
         //////////////////////////////////////////////////////////
         this._question_center = new PIXI.Graphics();
         this._num_of_answers = this._answer.length;
         this._selected_num = 0;
         this._selected = [0, 0, 0, 0, 0, 0];
         this._i = 0;
-  
-        
+
+
         this._question_center.beginFill(color_Template[Department[4]][2]);
-        this._question_center.lineStyle(10, color_Template[Department[4]][3], 1);        
+        this._question_center.lineStyle(10, color_Template[Department[4]][3], 1);
         this._random_angle = Math.random()*2*Math.PI;
         for (this._i = 0; this._i<this._num_of_answers; this._i++){
-            if (this._i == 0){                
+            if (this._i == 0){
                 this._question_center.moveTo(
                     250*Math.cos((this._i*2*Math.PI + this._random_angle)/this._num_of_answers),
                     250*Math.sin((this._i*2*Math.PI + this._random_angle)/this._num_of_answers)
-                );   
-            } else {                
+                );
+            } else {
                 this._question_center.lineTo(
                     250*Math.cos((this._i*2*Math.PI + this._random_angle)/this._num_of_answers),
                     250*Math.sin((this._i*2*Math.PI + this._random_angle)/this._num_of_answers)
-                ); 
-            }        
+                );
+            }
         }
         this._question_center.lineTo(
                 250*Math.cos(this._random_angle/this._num_of_answers),
                 250*Math.sin(this._random_angle/this._num_of_answers)
-            );    
+            );
         this._question_center.endFill();
-        
+
         //////////////////////////////////////////////////////////
-        
+
         //this._answer_buttons = [];
-        
+
         this._temp_index = 0;
-        
+
         if (this._num_of_answers > 0){
             this._answer_buttons_0 = new PIXI.Graphics();
-            //this._answer_buttons.push(new PIXI.Graphics()); 
+            //this._answer_buttons.push(new PIXI.Graphics());
             this._answer_buttons_0.beginFill(color_Template[Department[0]][2]);
-            this._answer_buttons_0.lineStyle(0, color_Template[Department[0]][2], 0);  
+            this._answer_buttons_0.lineStyle(0, color_Template[Department[0]][2], 0);
             this._answer_buttons_0.moveTo(0,0);
             this._answer_buttons_0.lineTo(
                 1102*Math.cos((this._random_angle)/this._num_of_answers),
                 1102*Math.sin((this._random_angle)/this._num_of_answers)
-            ); 
+            );
             this._answer_buttons_0.arc(
-                0, 0, 2000, 
+                0, 0, 2000,
                 0,
                 (2*Math.PI + this._random_angle)/this._num_of_answers
             );
             this._answer_buttons_0.lineTo(0, 0);
             this._answer_buttons_0.endFill();
-            
+
             this._answer_buttons_0.buttonMode = true;
             this._answer_buttons_0.interactive = true;
             this._answer_buttons_0.alpha = 0.6;
-            
-            
+
+
             this._answer_buttons_0
                 .on('pointerdown', answer_onButtonDown_0)
                 .on('pointerup', answer_onButtonUp_0)
                 .on('pointerupoutside', answer_onButtonUp_0)
                 .on('pointerover', answer_onButtonOver_0)
-                .on('pointerout', answer_onButtonOut_0); 
-            
+                .on('pointerout', answer_onButtonOut_0);
+
             function answer_onButtonDown_0(){
                 console.log(0);
                 this.isdown = true;
@@ -694,7 +694,7 @@ class Character_test {
                         thisGame['stat'][1] += (Math.random()-0.5)*2;
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[0][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                        thisGame['stat'][2] += (Math.random()-0.5)*2;
                         thisGame['stat'][1] += _thisclass._answer[0][2];
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[0][1] == 'health'){
@@ -721,7 +721,7 @@ class Character_test {
                 } else {
                 }
             }
-            function answer_onButtonOver_0(){    
+            function answer_onButtonOver_0(){
                 this.isOver = true;
                 if (this.isdown){
                     return;
@@ -734,36 +734,36 @@ class Character_test {
                 }
             }
         }
-        
+
         if (this._num_of_answers > 1){
             this._answer_buttons_1 = new PIXI.Graphics();
-            //this._answer_buttons.push(new PIXI.Graphics()); 
+            //this._answer_buttons.push(new PIXI.Graphics());
             this._answer_buttons_1.beginFill(color_Template[Department[1]][2]);
-            this._answer_buttons_1.lineStyle(0, color_Template[Department[1]][2], 0);  
+            this._answer_buttons_1.lineStyle(0, color_Template[Department[1]][2], 0);
             this._answer_buttons_1.moveTo(0,0);
             this._answer_buttons_1.lineTo(
                 1102*Math.cos((2*Math.PI + this._random_angle)/this._num_of_answers),
                 1102*Math.sin((2*Math.PI + this._random_angle)/this._num_of_answers)
-            ); 
+            );
             this._answer_buttons_1.arc(
-                0, 0, 1102, 
+                0, 0, 1102,
                 (2*Math.PI + this._random_angle)/this._num_of_answers,
                 (2*2*Math.PI + this._random_angle)/this._num_of_answers
             );
             this._answer_buttons_1.endFill();
-            
+
             this._answer_buttons_1.buttonMode = true;
             this._answer_buttons_1.interactive = true;
             this._answer_buttons_1.alpha = 0.6;
-            
-            
+
+
             this._answer_buttons_1
                 .on('pointerdown', answer_onButtonDown_1)
                 .on('pointerup', answer_onButtonUp_1)
                 .on('pointerupoutside', answer_onButtonUp_1)
                 .on('pointerover', answer_onButtonOver_1)
-                .on('pointerout', answer_onButtonOut_1); 
-            
+                .on('pointerout', answer_onButtonOut_1);
+
             function answer_onButtonDown_1(){
                 this.isdown = true;
                 if (_thisclass._selected[1] == 0){
@@ -774,7 +774,7 @@ class Character_test {
                         thisGame['stat'][1] += (Math.random()-0.5)*2;
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[1][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                        thisGame['stat'][2] += (Math.random()-0.5)*2;
                         thisGame['stat'][1] += _thisclass._answer[1][2];
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[1][1] == 'health'){
@@ -801,7 +801,7 @@ class Character_test {
                 } else {
                 }
             }
-            function answer_onButtonOver_1(){    
+            function answer_onButtonOver_1(){
                 this.isOver = true;
                 if (this.isdown){
                     return;
@@ -814,36 +814,36 @@ class Character_test {
                 }
             }
         }
-        
+
         if (this._num_of_answers > 2){
             this._answer_buttons_2 = new PIXI.Graphics();
-            //this._answer_buttons.push(new PIXI.Graphics()); 
+            //this._answer_buttons.push(new PIXI.Graphics());
             this._answer_buttons_2.beginFill(color_Template[Department[2]][2]);
-            this._answer_buttons_2.lineStyle(0, color_Template[Department[2]][2], 0);  
+            this._answer_buttons_2.lineStyle(0, color_Template[Department[2]][2], 0);
             this._answer_buttons_2.moveTo(0,0);
             this._answer_buttons_2.lineTo(
                 1102*Math.cos((2*2*Math.PI + this._random_angle)/this._num_of_answers),
                 1102*Math.sin((2*2*Math.PI + this._random_angle)/this._num_of_answers)
-            ); 
+            );
             this._answer_buttons_2.arc(
-                0, 0, 1102, 
+                0, 0, 1102,
                 (2*2*Math.PI + this._random_angle)/this._num_of_answers,
                 (3*2*Math.PI + this._random_angle)/this._num_of_answers
             );
             this._answer_buttons_2.endFill();
-            
+
             this._answer_buttons_2.buttonMode = true;
             this._answer_buttons_2.interactive = true;
             this._answer_buttons_2.alpha = 0.6;
-            
-            
+
+
             this._answer_buttons_2
                 .on('pointerdown', answer_onButtonDown_2)
                 .on('pointerup', answer_onButtonUp_2)
                 .on('pointerupoutside', answer_onButtonUp_2)
                 .on('pointerover', answer_onButtonOver_2)
-                .on('pointerout', answer_onButtonOut_2); 
-            
+                .on('pointerout', answer_onButtonOut_2);
+
             function answer_onButtonDown_2(){
                 this.isdown = true;
                 if (_thisclass._selected[2] == 0){
@@ -854,7 +854,7 @@ class Character_test {
                         thisGame['stat'][1] += (Math.random()-0.5)*2;
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[2][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                        thisGame['stat'][2] += (Math.random()-0.5)*2;
                         thisGame['stat'][1] += _thisclass._answer[2][2];
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[2][1] == 'health'){
@@ -881,7 +881,7 @@ class Character_test {
                 } else {
                 }
             }
-            function answer_onButtonOver_2(){    
+            function answer_onButtonOver_2(){
                 this.isOver = true;
                 if (this.isdown){
                     return;
@@ -894,36 +894,36 @@ class Character_test {
                 }
             }
         }
-        
+
         if (this._num_of_answers > 3){
             this._answer_buttons_3 = new PIXI.Graphics();
-            //this._answer_buttons.push(new PIXI.Graphics()); 
+            //this._answer_buttons.push(new PIXI.Graphics());
             this._answer_buttons_3.beginFill(color_Template[Department[3]][2]);
-            this._answer_buttons_3.lineStyle(0, color_Template[Department[3]][2], 0);  
+            this._answer_buttons_3.lineStyle(0, color_Template[Department[3]][2], 0);
             this._answer_buttons_3.moveTo(0,0);
             this._answer_buttons_3.lineTo(
                 1102*Math.cos((3*2*Math.PI + this._random_angle)/this._num_of_answers),
                 1102*Math.sin((3*2*Math.PI + this._random_angle)/this._num_of_answers)
-            ); 
+            );
             this._answer_buttons_3.arc(
-                0, 0, 1102, 
+                0, 0, 1102,
                 (3*2*Math.PI + this._random_angle)/this._num_of_answers,
                 (4*2*Math.PI + this._random_angle)/this._num_of_answers
             );
             this._answer_buttons_3.endFill();
-            
+
             this._answer_buttons_3.buttonMode = true;
             this._answer_buttons_3.interactive = true;
             this._answer_buttons_3.alpha = 0.6;
-            
-            
+
+
             this._answer_buttons_3
                 .on('pointerdown', answer_onButtonDown_3)
                 .on('pointerup', answer_onButtonUp_3)
                 .on('pointerupoutside', answer_onButtonUp_3)
                 .on('pointerover', answer_onButtonOver_3)
-                .on('pointerout', answer_onButtonOut_3); 
-            
+                .on('pointerout', answer_onButtonOut_3);
+
             function answer_onButtonDown_3(){
                 this.isdown = true;
                 if (_thisclass._selected[3] == 0){
@@ -934,7 +934,7 @@ class Character_test {
                         thisGame['stat'][1] += (Math.random()-0.5)*2;
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[3][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                        thisGame['stat'][2] += (Math.random()-0.5)*2;
                         thisGame['stat'][1] += _thisclass._answer[3][2];
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[3][1] == 'health'){
@@ -950,7 +950,7 @@ class Character_test {
                     console.log(thisGame['stat'][1]);
                     console.log(thisGame['stat'][2]);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
-                }  
+                }
                 if (_thisclass._selected_num == _thisclass._selected_num_available){
                     character_test_run();
                     _thisclass.hide_this();
@@ -961,7 +961,7 @@ class Character_test {
                 } else {
                 }
             }
-            function answer_onButtonOver_3(){    
+            function answer_onButtonOver_3(){
                 this.isOver = true;
                 if (this.isdown){
                     return;
@@ -974,36 +974,36 @@ class Character_test {
                 }
             }
         }
-        
+
         if (this._num_of_answers > 4){
             this._answer_buttons_4 = new PIXI.Graphics();
-            //this._answer_buttons.push(new PIXI.Graphics()); 
+            //this._answer_buttons.push(new PIXI.Graphics());
             this._answer_buttons_4.beginFill(color_Template[Department[4]][2]);
-            this._answer_buttons_4.lineStyle(0, color_Template[Department[4]][2], 0);  
+            this._answer_buttons_4.lineStyle(0, color_Template[Department[4]][2], 0);
             this._answer_buttons_4.moveTo(0,0);
             this._answer_buttons_4.lineTo(
                 1102*Math.cos((4*2*Math.PI + this._random_angle)/this._num_of_answers),
                 1102*Math.sin((4*2*Math.PI + this._random_angle)/this._num_of_answers)
-            ); 
+            );
             this._answer_buttons_4.arc(
-                0, 0, 1102, 
+                0, 0, 1102,
                 (4*2*Math.PI + this._random_angle)/this._num_of_answers,
                 (5*2*Math.PI + this._random_angle)/this._num_of_answers
             );
             this._answer_buttons_4.endFill();
-            
+
             this._answer_buttons_4.buttonMode = true;
             this._answer_buttons_4.interactive = true;
             this._answer_buttons_4.alpha = 0.6;
-            
-            
+
+
             this._answer_buttons_4
                 .on('pointerdown', answer_onButtonDown_4)
                 .on('pointerup', answer_onButtonUp_4)
                 .on('pointerupoutside', answer_onButtonUp_4)
                 .on('pointerover', answer_onButtonOver_4)
-                .on('pointerout', answer_onButtonOut_4); 
-            
+                .on('pointerout', answer_onButtonOut_4);
+
             function answer_onButtonDown_4(){
                 this.isdown = true;
                 if (_thisclass._selected[4] == 0){
@@ -1014,7 +1014,7 @@ class Character_test {
                         thisGame['stat'][1] += (Math.random()-0.5)*2;
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[4][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                        thisGame['stat'][2] += (Math.random()-0.5)*2;
                         thisGame['stat'][1] += _thisclass._answer[4][2];
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[4][1] == 'health'){
@@ -1041,7 +1041,7 @@ class Character_test {
                 } else {
                 }
             }
-            function answer_onButtonOver_4(){    
+            function answer_onButtonOver_4(){
                 this.isOver = true;
                 if (this.isdown){
                     return;
@@ -1054,36 +1054,36 @@ class Character_test {
                 }
             }
         }
-        
+
         if (this._num_of_answers > 5){
             this._answer_buttons_5 = new PIXI.Graphics();
-            //this._answer_buttons.push(new PIXI.Graphics()); 
+            //this._answer_buttons.push(new PIXI.Graphics());
             this._answer_buttons_5.beginFill(color_Template[Department[5]][2]);
-            this._answer_buttons_5.lineStyle(0, color_Template[Department[5]][2], 0);  
+            this._answer_buttons_5.lineStyle(0, color_Template[Department[5]][2], 0);
             this._answer_buttons_5.moveTo(0,0);
             this._answer_buttons_5.lineTo(
                 1102*Math.cos((5*2*Math.PI + this._random_angle)/this._num_of_answers),
                 1102*Math.sin((5*2*Math.PI + this._random_angle)/this._num_of_answers)
-            ); 
+            );
             this._answer_buttons_5.arc(
-                0, 0, 1102, 
+                0, 0, 1102,
                 (5*2*Math.PI + this._random_angle)/this._num_of_answers,
                 (6*2*Math.PI + this._random_angle)/this._num_of_answers
             );
             this._answer_buttons_5.endFill();
-            
+
             this._answer_buttons_5.buttonMode = true;
             this._answer_buttons_5.interactive = true;
             this._answer_buttons_5.alpha = 0.6;
-            
-            
+
+
             this._answer_buttons_5
                 .on('pointerdown', answer_onButtonDown_5)
                 .on('pointerup', answer_onButtonUp_5)
                 .on('pointerupoutside', answer_onButtonUp_5)
                 .on('pointerover', answer_onButtonOver_5)
-                .on('pointerout', answer_onButtonOut_5); 
-            
+                .on('pointerout', answer_onButtonOut_5);
+
             function answer_onButtonDown_5(){
                 this.isdown = true;
                 if (_thisclass._selected[5] == 0){
@@ -1094,7 +1094,7 @@ class Character_test {
                         thisGame['stat'][1] += (Math.random()-0.5)*2;
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[5][1] == 'relationship'){
-                        thisGame['stat'][2] += (Math.random()-0.5)*2;                    
+                        thisGame['stat'][2] += (Math.random()-0.5)*2;
                         thisGame['stat'][1] += _thisclass._answer[5][2];
                         thisGame['stat'][0] += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[5][1] == 'health'){
@@ -1111,7 +1111,7 @@ class Character_test {
                     console.log(thisGame['stat'][2]);
                     _thisclass._selected_num = _thisclass._selected_num + 1;
                 }
-                
+
                 if (_thisclass._selected_num == _thisclass._selected_num_available){
                     character_test_run();
                     _thisclass.hide_this();
@@ -1122,7 +1122,7 @@ class Character_test {
                 } else {
                 }
             }
-            function answer_onButtonOver_5(){    
+            function answer_onButtonOver_5(){
                 this.isOver = true;
                 if (this.isdown){
                     return;
@@ -1138,13 +1138,13 @@ class Character_test {
 
     }
     show_this(){
-        
+
         if (this._num_of_answers > 5) { app_simulator.stage.addChild(this._answer_buttons_5); }
         if (this._num_of_answers > 4) { app_simulator.stage.addChild(this._answer_buttons_4); }
         if (this._num_of_answers > 3) { app_simulator.stage.addChild(this._answer_buttons_3); }
         if (this._num_of_answers > 2) { app_simulator.stage.addChild(this._answer_buttons_2); }
         if (this._num_of_answers > 1) { app_simulator.stage.addChild(this._answer_buttons_1); }
-        if (this._num_of_answers > 0) { app_simulator.stage.addChild(this._answer_buttons_0); } 
+        if (this._num_of_answers > 0) { app_simulator.stage.addChild(this._answer_buttons_0); }
         app_simulator.stage.addChild(this._question_center);
     }
     hide_this(){
@@ -1154,7 +1154,7 @@ class Character_test {
         if (this._num_of_answers > 3) { app_simulator.stage.removeChild(this._answer_buttons_3); }
         if (this._num_of_answers > 2) { app_simulator.stage.removeChild(this._answer_buttons_2); }
         if (this._num_of_answers > 1) { app_simulator.stage.removeChild(this._answer_buttons_1); }
-        if (this._num_of_answers > 0) { app_simulator.stage.removeChild(this._answer_buttons_0); }     
+        if (this._num_of_answers > 0) { app_simulator.stage.removeChild(this._answer_buttons_0); }
     }
 }
 let Character_test_questions = [];
@@ -1163,22 +1163,22 @@ function enable_character_test(){
         Character_test_questions.push(
             new Character_test(question_List[i][0], question_List[i][1], question_List[i][2], Character_test_questions)
         );
-        
+
     }
     Character_test_questions[0].show_this();
 }
 function character_test_run(){
     console.log('a');
-    for (let i = 1; i < Object.keys(question_List).length; i++){        
-        if((Character_test_questions[i-1]._selected_num == 
-           Character_test_questions[i-1]._selected_num_available) && 
-          (Character_test_questions[i]._selected_num != 
+    for (let i = 1; i < Object.keys(question_List).length; i++){
+        if((Character_test_questions[i-1]._selected_num ==
+           Character_test_questions[i-1]._selected_num_available) &&
+          (Character_test_questions[i]._selected_num !=
            Character_test_questions[i]._selected_num_available)){
             console.log('aaa');
             Character_test_questions[i].show_this();
-        } 
+        }
     }
-    
+
     if (Character_test_questions[Object.keys(question_List).length - 1]._selected_num ==
        Character_test_questions[Object.keys(question_List).length - 1]._selected_num_available){
         // END TEST
@@ -1186,15 +1186,15 @@ function character_test_run(){
     }
 }
 
-    
+
 // DEPARTMENT CHOICE
 class Department_choice {
-    constructor(name, 
-                 department_button_x, department_button_y, 
+    constructor(name,
+                 department_button_x, department_button_y,
                  select_button_x, select_button_y,
                  list
                 ){
-        
+
         let _thisclass = this;
         this._name = name;
         this._object = icons_Texture[name];
@@ -1205,25 +1205,25 @@ class Department_choice {
         this._select_button_y = select_button_y;
         this._return_button_x = select_button_x + 0.08;
         this._return_button_y = select_button_y;
-        
+
         //////////////////////////////////////////////////////////
         this._department_button = new PIXI.Sprite(this._object);
         this._select_button = new PIXI.Graphics();
         this._return_button = new PIXI.Graphics();
-        
+
         //////////////////////////////////////////////////////////
         this._department_button.scale.x *= 0.3;
         this._department_button.scale.y *= 0.3;
         this._department_button.buttonMode = true;
         this._department_button.anchor.set(0.5);
-        this._department_button.x = app_simulator.renderer.width*this._department_button_x/2; 
+        this._department_button.x = app_simulator.renderer.width*this._department_button_x/2;
         this._department_button.y = app_simulator.renderer.height*this._department_button_y/2;
         this._department_button.interactive = true;
-        
-        
+
+
         this._select_button.beginFill(color_Template[name][1], 1);
-        this._select_button.drawRect(app_simulator.renderer.width*this._select_button_x/2 - 170, 
-                                     app_simulator.renderer.height*this._select_button_y/2 - 40, 
+        this._select_button.drawRect(app_simulator.renderer.width*this._select_button_x/2 - 170,
+                                     app_simulator.renderer.height*this._select_button_y/2 - 40,
                                      140, 80);
         this._select_button.beginFill(color_Template[name][0], 1);
         this._select_button.drawRect(app_simulator.renderer.width*this._select_button_x/2 - 160,
@@ -1232,10 +1232,10 @@ class Department_choice {
         this._select_button.buttonMode = true;
         this._select_button.interactive = false;
         this._select_button.alpha = 0;
-        
+
         this._return_button.beginFill(color_Template[name][3], 1);
-        this._return_button.drawRect(app_simulator.renderer.width*this._return_button_x/2 - 20, 
-                                     app_simulator.renderer.height*this._return_button_y/2 - 40, 
+        this._return_button.drawRect(app_simulator.renderer.width*this._return_button_x/2 - 20,
+                                     app_simulator.renderer.height*this._return_button_y/2 - 40,
                                      140, 80);
         this._return_button.beginFill(color_Template[name][2], 1);
         this._return_button.drawRect(app_simulator.renderer.width*this._return_button_x/2 - 10,
@@ -1244,18 +1244,18 @@ class Department_choice {
         this._return_button.buttonMode = true;
         this._return_button.interactive = false;
         this._return_button.alpha = 0;
-        
+
         ///////////////////////////////////////////////////////////
         this._department_button
             .on('pointerdown', department_onButtonDown)
             .on('pointerup', department_onButtonUp)
             .on('pointerupoutside', department_onButtonUp)
             .on('pointerover', department_onButtonOver)
-            .on('pointerout', department_onButtonOut);        
+            .on('pointerout', department_onButtonOut);
 
         function department_onButtonDown(){
             this.isdown = true;
-            this.texture = icons_Texture[name+'_labeled']; 
+            this.texture = icons_Texture[name+'_labeled'];
             thisGame['department'] = _thisclass._name;
             console.log(thisGame['department']);
             _thisclass._select_button.interactive = true;
@@ -1270,7 +1270,7 @@ class Department_choice {
                 }
             }
         }
-        
+
         function department_onButtonUp(){
             if (this.isOver){
                 this.texture = icons_Texture[name+'_labeled'];
@@ -1278,8 +1278,8 @@ class Department_choice {
                 this.texture = icons_Texture[name];
             }
         }
-        
-        function department_onButtonOver(){    
+
+        function department_onButtonOver(){
             this.isOver = true;
             if (this.isdown){
                 return;
@@ -1296,7 +1296,7 @@ class Department_choice {
             console.log(thisGame['department']);
 
         }
-        
+
         ///////////////////////////////////////////////////////////
         this._select_button
             .on('pointerdown', select_onButtonDown)
@@ -1304,11 +1304,11 @@ class Department_choice {
             .on('pointerupoutside', select_onButtonUp)
             .on('pointerover', select_onButtonOver)
             .on('pointerout', select_onButtonOut);
-        
-        
+
+
         function select_onButtonDown(){
             this.isdown = true;
-            //this.texture = icons_Texture[name+'_labeled']; 
+            //this.texture = icons_Texture[name+'_labeled'];
             //thisGame['department'] = _thisclass._name;
             console.log(thisGame['department'] + 'confirmed');
             for (let i = 0; i < list.length; i++){
@@ -1317,7 +1317,7 @@ class Department_choice {
                 app_simulator.stage.removeChild(list[i]._return_button);
             }
         }
-        
+
         function select_onButtonUp(){
             if (this.isOver){
                 //this.texture = icons_Texture[name+'_labeled'];
@@ -1325,8 +1325,8 @@ class Department_choice {
                 //this.texture = icons_Texture[name];
             }
         }
-        
-        function select_onButtonOver(){    
+
+        function select_onButtonOver(){
             this.isOver = true;
             if (this.isdown){
                 return;
@@ -1343,7 +1343,7 @@ class Department_choice {
             console.log(thisGame['department']);
 
         }
-        
+
         ///////////////////////////////////////////////////////////
         this._return_button
             .on('pointerdown', return_onButtonDown)
@@ -1351,11 +1351,11 @@ class Department_choice {
             .on('pointerupoutside', return_onButtonUp)
             .on('pointerover', return_onButtonOver)
             .on('pointerout', return_onButtonOut);
-        
-        
+
+
         function return_onButtonDown(){
             this.isdown = true;
-            //this.texture = icons_Texture[name+'_labeled']; 
+            //this.texture = icons_Texture[name+'_labeled'];
             //thisGame['department'] = _thisclass._name;
             console.log(thisGame['department'] + 'confirmed');
             for (let i = 0; i < list.length; i++){
@@ -1369,7 +1369,7 @@ class Department_choice {
             _thisclass._return_button.interactive = false;
             _thisclass._return_button.alpha = 0;
         }
-        
+
         function return_onButtonUp(){
             if (this.isOver){
                 //this.texture = icons_Texture[name+'_labeled'];
@@ -1377,8 +1377,8 @@ class Department_choice {
                 //this.texture = icons_Texture[name];
             }
         }
-        
-        function return_onButtonOver(){    
+
+        function return_onButtonOver(){
             this.isOver = true;
             if (this.isdown){
                 return;
@@ -1395,13 +1395,13 @@ class Department_choice {
             console.log(thisGame['department']);
 
         }
-        
+
         app_simulator.stage.addChild(this._department_button);
         app_simulator.stage.addChild(this._select_button);
         app_simulator.stage.addChild(this._return_button);
-        
+
     }
-    
+
 }
 let Department_choice_button = [];
 function enable_department_choice(){
@@ -1424,7 +1424,7 @@ class select_timetable {
     constructor(department){
         let _thisclass = this;
         this._department = department;
-        
+
         this._timetable = new Array(10);
         for (let i = 0; i < 10; i++){
             this._timetable[i] = new Array(5);
@@ -1432,7 +1432,7 @@ class select_timetable {
                 this._timetable[i][j] = ""; // <<<< CHNAGE DATA STRUCTURE
             }
         }
-        
+
         this._timetable_graphics = new Array(10);
         for (let i = 0; i < 10; i++){
             this._timetable_graphics[i] = new Array(5);
@@ -1442,20 +1442,20 @@ class select_timetable {
                 this._timetable_graphics[i][j].drawRect(150*(j-5), -i*72+240, 120, 50);
             }
         }
-        
+
         this._template_buttons = [];
         this._template_buttons.push(new PIXI.Graphics());
         this._template_buttons.push(new PIXI.Graphics());
         this._template_buttons.push(new PIXI.Graphics());
-        
+
         this._template_buttons[0].beginFill(color_Template[department][2]);
         this._template_buttons[1].beginFill(color_Template[department][2]);
         this._template_buttons[2].beginFill(color_Template[department][2]);
-        
+
         this._template_buttons[0].drawRect(630, -148, 100, 50);
         this._template_buttons[1].drawRect(630, 52, 100, 50);
         this._template_buttons[2].drawRect(630, 252, 100, 50);
-        
+
         for (let i = 0; i < 3; i++){
             this._template_buttons[i].buttonMode = true;
             this._template_buttons[i].interactive = true;
@@ -1468,7 +1468,7 @@ class select_timetable {
                 .on('pointerover', template_onButtonOver)
                 .on('pointerout', template_onButtonOut)
         }
-        
+
         function template_onButtonDown(){
             _thisclass.update_timetable_graphics();
             for (let i = 0; i < 3; i++){
@@ -1485,20 +1485,20 @@ class select_timetable {
         function template_onButtonOver(){
             this.over = true;
             for (let i = 1; i < 4; i++){
-                if (_thisclass._template_buttons[i-1].over == true){  
+                if (_thisclass._template_buttons[i-1].over == true){
                     for (let j = 0; j < 10; j++){
                         for (let k = 0; k < 5; k++){
-                            _thisclass._timetable[j][k] = timetable_list[_thisclass._department+'_'+i][j][k] // <<<< CHNAGE DATA STRUCTURE 
+                            _thisclass._timetable[j][k] = timetable_list[_thisclass._department+'_'+i][j][k] // <<<< CHNAGE DATA STRUCTURE
                         }
                     }
-                    console.log('hi'); 
+                    console.log('hi');
                 }
             }
             _thisclass.update_timetable_graphics();
         }
         function template_onButtonOut(){
             this.over = false;
-            if (_thisclass._template_buttons[0].over == false 
+            if (_thisclass._template_buttons[0].over == false
                 && _thisclass._template_buttons[1].over == false
                 && _thisclass._template_buttons[2].over == false
                ) {
@@ -1523,7 +1523,7 @@ class select_timetable {
         for (let i = 0; i < 3; i++){
             app_simulator.stage.addChild(this._template_buttons[i]);
         }
-    }  
+    }
     update_timetable_graphics(){
         this._lecture_name_control = [];
         for (let i = 0; i < 10; i++){
@@ -1534,7 +1534,7 @@ class select_timetable {
                 } else {
                     if (this._lecture_name_control.indexOf(this._timetable[i][j]) == -1){
                         this._lecture_name_control.push(this._timetable[i][j]);
-                    } 
+                    }
                     this._timetable_graphics[i][j].beginFill(
                         color_Template[this._department][this._lecture_name_control.indexOf(this._timetable[i][j])]);
                 }
@@ -1570,30 +1570,30 @@ function loading_menu_to_test() {
         wordWrap: true,
         wordWrapWidth: 440
     });
-    
+
     let loadingText = new PIXI.Text('gimori', style);
     loadingText.anchor.set(0.5);
     loadingText.x = 0;
     loadingText.y = 0;
     app_simulator.stage.addChild(loadingText);
-    
+
     var bar1 = new PIXI.Graphics();
     bar1.lineStyle(2,0xFFFF00,1);
     bar1.drawRect(-300,-310,600,50);
     app_simulator.stage.addChild(bar1);
-    
+
     var graphics = new PIXI.Graphics();
     graphics.lineStyle(2, 0xFF00FF, 1);
     graphics.beginFill(0xFF00BB, 0.25);
     graphics.drawRect(-300,-310, 0, 50);
-  
+
     graphics.endFill();
     app_simulator.stage.addChild(graphics);
-    
+
     var a=0;
- 
+
     app_simulator.ticker.add(function(delta=1) {
-    
+
         a+=delta*10;
         graphics.drawRect(-300, -310, a, 50);
         if(a>600)
@@ -1603,16 +1603,12 @@ function loading_menu_to_test() {
             app_simulator.stage.removeChild(bar1);
             app_simulator.stage.removeChild(graphics);
             app_simulator.ticker.stop();
-            
-            
+
+
         }
-   
+
     });
-    
 
-    
+
+
 }
-
-
-
-
