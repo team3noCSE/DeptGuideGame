@@ -1,4 +1,3 @@
-function process() {
 class Game {
   constructor() {
     this.department = -1;
@@ -18,6 +17,8 @@ class Game {
   }
 }
 var thisGame = new Game();
+
+function process() {
 
 var thisDuration = { };
   //  얘네는 성향테스트에 따라서 조정되어야 함
