@@ -13,7 +13,11 @@ var _title, _img_name, _description;
 while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때만 break되게 한다.
   var randomize=Math.floor(Math.random()*15)+1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(randomize==1&&thisGame.status.grade<0.5){
+=======
+  if(randomize==1){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
   if(randomize==1){
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
@@ -26,6 +30,9 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
   else if(randomize==2&&thisGame.status.grade<0.5){
 =======
   else if(randomize==2){
+<<<<<<< HEAD
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+=======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="I`ll be back";
     _img_name="illbeback.png";
@@ -33,7 +40,11 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
     break;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   else if(randomize==3&&thisGame.status.grade<0.5){
+=======
+  else if(randomize==3){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
   else if(randomize==3){
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
@@ -46,6 +57,9 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
   else if(randomize==4&&thisGame.status.grade>=0.5){
 =======
   else if(randomize==4){
+<<<<<<< HEAD
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+=======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="휴먼굴림체";
     _img_name="휴먼굴림체.png";
@@ -57,6 +71,9 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
   else if(randomize==5&&thisGame.status.grade>0.75){
 =======
   else if(randomize==5){
+<<<<<<< HEAD
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+=======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
       _title="양심?";
       _img_name="양심.png";
@@ -67,6 +84,9 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
   else if(randomize==6&&thisGame.status.relationship<0.3){
 =======
   else if(randomize==6){
+<<<<<<< HEAD
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+=======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="개똥벌레";
     _img_name="개똥벌레.png";
@@ -75,7 +95,11 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
     break;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   else if(randomize==7&&thisGame.status.relationship<0.5){
+=======
+  else if(randomize==7){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
   else if(randomize==7){
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
@@ -88,6 +112,9 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
   else if(randomize==8&&thisGame.status.relationship>=0.7){
 =======
   else if(randomize==8){
+<<<<<<< HEAD
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+=======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="노는 게 제일 좋아";
     _img_name="노는게제일좋아.png";
@@ -262,6 +289,9 @@ function show_menu(){ //메뉴 출력
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon

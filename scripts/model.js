@@ -219,6 +219,7 @@ function eventHandler(week) {
       // 과 관련 이벤트 loop
       let val = PopUpEvent[key];
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (val.time === null && (week === 7 || week === 8)) continue;
       if (val.department === thisGame.department && val.priority === 3){
          // 과 dependent 이벤트
@@ -272,6 +273,15 @@ function eventHandler(week) {
             thisGame.eventCount++;
             val.eventCount++;
             return dialoglist;
+=======
+      if (val.department === thisGame.department || val.department === null){
+        if (val.priority === 3 || val.time === week || val.time === null){
+          if(Math.random() < 3/16){
+            console.log(week+"주차 이벤트 :");
+            console.log(val.description);
+            thisGame.eventCount++;
+            return;
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
       if (val.department === thisGame.department || val.department === null){
         if (val.priority === 3 || val.time === week || val.time === null){
@@ -406,8 +416,13 @@ function week1()
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
      
       eventHandler();
@@ -423,7 +438,10 @@ function week1()
     fill: ['#000000'], // gradient
      //backgroundColor:"green"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     });
@@ -659,7 +677,10 @@ var inputTxt;
 function week2 ()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
@@ -707,8 +728,13 @@ function week2 ()
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
      
       eventHandler();
@@ -724,7 +750,10 @@ function week2 ()
     fill: ['#000000'], // gradient
      //backgroundColor:"green"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     });
@@ -754,6 +783,7 @@ function week2 ()
     var length=lectureList.length;
     var deltatime=40;
 <<<<<<< HEAD
+<<<<<<< HEAD
     var eraser;
     var totalTextList="2주차의 로그\n\n";
     function erasedialog(eraser)
@@ -767,6 +797,8 @@ function week2 ()
       }
     }
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     app.stage.addChild(richTextList[0]);
@@ -860,9 +892,12 @@ function week2 ()
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   //setTimeout('week2()',8000 );
 
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
 function week_end_2(){
@@ -1020,8 +1055,13 @@ function week3()
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
      
       eventHandler();
@@ -1063,6 +1103,7 @@ function week3()
     var length=lectureList.length;
     var deltatime=40;
 <<<<<<< HEAD
+<<<<<<< HEAD
     var eraser;
     var totalTextList="3주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1076,6 +1117,8 @@ function week3()
       }
     }
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     app.stage.addChild(richTextList[0]);
@@ -1169,9 +1212,12 @@ function week3()
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   //setTimeout('week2()',8000 );
 
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
 function week_end_3(){
@@ -1281,7 +1327,10 @@ var inputTxt;
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
 }
@@ -1289,7 +1338,11 @@ var inputTxt;
 function week4()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
   
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
@@ -1338,8 +1391,13 @@ function week4()
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
      
       eventHandler();
@@ -1381,6 +1439,7 @@ function week4()
     var length=lectureList.length;
     var deltatime=40;
 <<<<<<< HEAD
+<<<<<<< HEAD
     var eraser;
     var totalTextList="4주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1394,6 +1453,8 @@ function week4()
       }
     }
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
     app.stage.addChild(richTextList[0]);
@@ -1487,9 +1548,12 @@ function week4()
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   //setTimeout('week2()',8000 );
 
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 =======
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
 function week_end_4(){
@@ -1601,6 +1665,7 @@ var inputTxt;
 }
 function week5()
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
@@ -3168,12 +3233,39 @@ var inputTxt;
   
 }
 function week9()
+=======
+  
+}
+function week6()
+{
+  
+}
+function week7()
+{
+  
+}
+function week8()
+{
+  
+  
+}
+function week9()
 {
   
 }
 function week10()
 {
   
+}
+function week11()
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+{
+  
+}
+function week12()
+{
+  
+<<<<<<< HEAD
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
 }
 function week11()
@@ -5372,6 +5464,21 @@ var inputTxt;
   
 >>>>>>> parent of dd3d3ee... model.js by beomjoon
 }
+=======
+}
+function week13()
+{
+  
+}
+function week14()
+{
+  
+}
+function week15()
+{
+  
+}
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 function week16()
 {
   
