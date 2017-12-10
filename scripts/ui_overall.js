@@ -2256,10 +2256,16 @@ function department_choice_to_select_timetable() {
               }
             }
             console.log("!!!!!!!여기좀 보세요 시1발!!!!!!!!");
+
             console.log(Timetable);
-            for (let i = 0; i < 7; i++)
-              for (let j = 0; j < 11 ; j++)
-                console.log(thisGame.timeTable[i][j].name);
+
+            for (let i = 0; i < 7; i++) {
+              for (let j = 0; j < 11 ; j++) {
+                //console.log(thisGame.timeTable[i][j].name);
+                if(Event[Timetable[i][j] !== undefined)
+                  console.log(Event[Timetable[i][j]);
+              }
+            }
             process();
         }
     });
