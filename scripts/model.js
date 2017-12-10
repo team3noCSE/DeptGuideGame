@@ -1373,21 +1373,3 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
   //console.log(week+"주차 / 수행해야 할 로드: "+tempLoadPerWeek+"\n");
   return completedLoad;
 }
-
-function eventHandler(week) {
-  if (thisGame.eventCount === 16) return;
-  if (thisGame.eventCount > week) return;
-    for (let key in PopUpEvent){
-      let val = PopUpEvent[key];
-      if (val.department === thisGame.department || val.department === null){
-        if (val.priority === 3 || val.time === week || val.time === null){
-          if(Math.random() < 3/16){
-            console.log(week+"주차 이벤트 :");
-            console.log(val.description);
-            thisGame.eventCount++;
-            return;
-          }
-        }
-      }
-    }
-}
