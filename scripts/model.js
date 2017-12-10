@@ -3,6 +3,9 @@ var thisDuration = { };
 thisDuration.meal = 2;
 thisDuration.dinguldingul = 4;
 
+thisGame.PopUpList = new Array(16);
+thisGame.eventCount = 0;
+
   //  얘는 랜덤하게 매일매일 성향에따라 정해지는걸로
 thisDuration.hobby = 4;
 
@@ -46,8 +49,6 @@ calculateLoad(Event["확률및통계"]);
 calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
-alert(PopUpEvent["개총"].description);
-alert(PopUpEvent["화학세미나"].description);
 model();
 
 function model() { // 일단은 1주 진행
@@ -98,7 +99,7 @@ function model() { // 일단은 1주 진행
       console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
-      eventHandler();
+      eventHandler(week);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
     }
     console.log("이번 학기의 총 로드: "+thisGame.load);
@@ -168,4 +169,24 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
 
   console.log(week+"주차 / 수행해야 할 로드: "+tempLoadPerWeek+"\n");
   return completedLoad;
+}
+
+function eventHandler(week) {
+  if (thisGame.eventCount === 16) return;
+  if (thisGame.eventCount > week) return;
+    for (let key in PopUpEvent){
+      let val = PopUpEvent[key];
+      console.log(key);
+      console.log(val);
+      alert(thisGame.popUpList[0]);
+      if (val.priority === 3){
+        if (val.time === week || val.time === null){
+          thisGame.popUpList[thisGame.eventCount] = val;
+          alert(thisGame.popUpList[thisGame.eventCount].description);
+          thisGame.eventCount++;
+          if()
+
+        }
+    }
+    }
 }
