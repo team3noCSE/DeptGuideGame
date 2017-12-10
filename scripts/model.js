@@ -212,6 +212,7 @@ function eventHandler(week) {
     for (let key in PopUpEvent){
       // 과 관련 이벤트 loop
       let val = PopUpEvent[key];
+<<<<<<< HEAD
       if (val.time === null && (week === 7 || week === 8)) continue;
       if (val.department === thisGame.department && val.priority === 3){
          // 과 dependent 이벤트
@@ -265,6 +266,15 @@ function eventHandler(week) {
             thisGame.eventCount++;
             val.eventCount++;
             return dialoglist;
+=======
+      if (val.department === thisGame.department || val.department === null){
+        if (val.priority === 3 || val.time === week || val.time === null){
+          if(Math.random() < 3/16){
+            console.log(week+"주차 이벤트 :");
+            console.log(val.description);
+            thisGame.eventCount++;
+            return;
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
           }
         }
       }
@@ -328,7 +338,7 @@ var leftblock = new PIXI.Graphics();
 var rightblock = new PIXI.Graphics();
   //rightblock.lineStyle(2, 0xFF00FF, 1);
   rightblock.beginFill(0xfff8dc, 1);
-  rightblock.drawRect(360,0,1200,240);
+  rightblock.drawRect(1300, 0, 620, 240);
   rightblock.lineStyle(4, 0xffd900, 1);
   app.stage.addChild(rightblock);
   rightblock.endFill();
@@ -344,7 +354,7 @@ function week1()
 {
 
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
-  week=0;
+  week=1;
     //7 * 11 시간표 배열이 넘어온다고 가정 (7일 10교시 + 10시 이후)
     // 16주 동안 진행하고, 16개의 이벤트 발생 -> critical 이벤트?
     var capacityPerWeek = 0;
@@ -387,8 +397,13 @@ function week1()
       console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
       //eventProcess(week);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
 
@@ -399,7 +414,10 @@ function week1()
     fontSize: 25,
     fill: ['#000000'], // gradient
      //backgroundColor:"green"
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     });
 
     var totalTextList;
@@ -409,52 +427,31 @@ function week1()
 
     for(var j=0;j<i;j++)
     {
+      //richTextList[j].y-=100;
     }
       console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
       console.log(lectureList[i].load[week][1]);
-      var inputTxt = lectureList[i].name +"의 로드 "+lectureList[i].load[week][1]+'\n';
+      var inputTxt = lectureList[i].name +"의 로드: "+lectureList[i].load[week]+'\n';
       totalTextList+=inputTxt;
       var richText = new PIXI.Text(inputTxt,eventstyle);
       richText.anchor.set(0.5);
-      richText.x = 960;
+      richText.x = 1600;
       richText.y = 1080/4-30;
+      //app.stage.addChild(richText);
       richTextList.push(richText);
     }
     var a=0;
     var b=0;
     var length=lectureList.length;
     var deltatime=40;
-    var eraser;
-    var totalTextList="1주차의 로그\n\n";
-    function erasedialog(eraser)
-    {
-      if(eraser===NaN||eraser===undefined)
-        return;
-      for(i=0;i<eraser.length;i++)
-      {
-        app.stage.removeChild(eraser[i]);
-      }
-    }
-
     app.stage.addChild(richTextList[0]);
-
-    var timing = Math.floor(Math.random() * (lectureList.length-1)*deltatime);
-
     var ticker1=new PIXI.ticker.Ticker();
     ticker1.start();
     ticker1.add(()=>
     {
       a++;
-      if(a===timing)
-        eraser=eventHandler(0);
       if(a===deltatime*lectureList.length-10)
       {
-        if(eraser!==NaN&&eraser!==undefined)
-        {
-          totalTextList+=eraser[1].text;
-          totalTextList+='\n';
-        }
-        erasedialog(eraser);
         week_end_1();
 
 
@@ -576,6 +573,7 @@ function week_end_1(){
   hwaginText.y = 910;
   app.stage.addChild(hwaginText);
 
+var totalTextList="1주차의 로그\n\n";
 var richTextList=[];
 var inputTxt;
   for(var i=0; i < lectureList.length; i++) {
@@ -602,13 +600,11 @@ var inputTxt;
    lineHeight: 50,
    fill: ['#000000'], // gradient
       //backgroundColor:"green"
-      wordWrap: true,
-    wordWrapWidth: 1500
    });
 
     var richText = new PIXI.Text(totalTextList,totalTextListstyle);
      richText.anchor.set(0.5);
-     richText.x = 960;
+     richText.x = 1920/2;
      richText.y = 1080/2;
      app.stage.addChild(richText);
     button
@@ -633,11 +629,11 @@ var inputTxt;
       var rightblock = new PIXI.Graphics();
       //rightblock.lineStyle(2, 0xFF00FF, 1);
       rightblock.beginFill(0xfff8dc, 1);
-      rightblock.drawRect(360,0,1200,240);
+      rightblock.drawRect(1300, 0, 620, 240);
       rightblock.lineStyle(4, 0xffd900, 1);
       rightblock.endFill();
       app.stage.addChild(rightblock);
-      week16();
+      week2();
     }
     function week_end_onButtonOver(){
 
@@ -654,9 +650,12 @@ var inputTxt;
 
 function week2 ()
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
-  week=1;
+  week=2;
     //7 * 11 시간표 배열이 넘어온다고 가정 (7일 10교시 + 10시 이후)
     // 16주 동안 진행하고, 16개의 이벤트 발생 -> critical 이벤트?
     var capacityPerWeek = 0;
@@ -699,8 +698,13 @@ function week2 ()
       console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
       //eventProcess(week);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
 
@@ -711,7 +715,10 @@ function week2 ()
     fontSize: 25,
     fill: ['#000000'], // gradient
      //backgroundColor:"green"
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     });
 
     var totalTextList;
@@ -723,15 +730,14 @@ function week2 ()
     {
       //richTextList[j].y-=100;
     }
-      console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
-      console.log(lectureList[i].load[week][1]);
+      //console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
+      //console.log(lectureList[i].load[week][1]);
       var inputTxt = lectureList[i].name +"의 로드: "+lectureList[i].load[week][1]+'\n';
       totalTextList+=inputTxt;
       var richText = new PIXI.Text(inputTxt,eventstyle);
       richText.anchor.set(0.5);
-      richText.x = 960;
+      richText.x = 1600;
       richText.y = 1080/4-30;
-
       //app.stage.addChild(richText);
       richTextList.push(richText);
     }
@@ -739,6 +745,7 @@ function week2 ()
     var b=0;
     var length=lectureList.length;
     var deltatime=40;
+<<<<<<< HEAD
     var eraser;
     var totalTextList="2주차의 로그\n\n";
     function erasedialog(eraser)
@@ -752,25 +759,16 @@ function week2 ()
       }
     }
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     app.stage.addChild(richTextList[0]);
-
-    var timing = Math.floor(Math.random() * (lectureList.length-1)*deltatime);
-
     var ticker1=new PIXI.ticker.Ticker();
     ticker1.start();
     ticker1.add(()=>
     {
       a++;
-      if(a===timing)
-        eraser=eventHandler(0);
       if(a===deltatime*lectureList.length-10)
       {
-        if(eraser!==NaN&&eraser!==undefined)
-        {
-         totalTextList+=eraser[1].text;
-         totalTextList+='\n';
-        }
-        erasedialog(eraser);
         week_end_2();
 
 
@@ -853,9 +851,12 @@ function week2 ()
     });
 
 
+<<<<<<< HEAD
   //setTimeout('week2()',8000 );
 
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 function week_end_2(){
    var block = new PIXI.Graphics();
    var block = new PIXI.Graphics();
@@ -892,6 +893,7 @@ function week_end_2(){
   hwaginText.y = 910;
   app.stage.addChild(hwaginText);
 
+var totalTextList="2주차의 로그\n\n";
 var richTextList=[];
 var inputTxt;
   for(var i=0; i < lectureList.length; i++) {
@@ -918,8 +920,6 @@ var inputTxt;
    lineHeight: 50,
    fill: ['#000000'], // gradient
       //backgroundColor:"green"
-      wordWrap: true,
-    wordWrapWidth: 1500
    });
 
     var richText = new PIXI.Text(totalTextList,totalTextListstyle);
@@ -949,7 +949,7 @@ var inputTxt;
       var rightblock = new PIXI.Graphics();
       //rightblock.lineStyle(2, 0xFF00FF, 1);
       rightblock.beginFill(0xfff8dc, 1);
-      rightblock.drawRect(360,0,1200,240);
+      rightblock.drawRect(1300, 0, 620, 240);
       rightblock.lineStyle(4, 0xffd900, 1);
       rightblock.endFill();
       app.stage.addChild(rightblock);
@@ -965,12 +965,10 @@ var inputTxt;
 }
 }
 
-
 function week3()
-{
-
+{  
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
-  week=2;
+  week=3;
     //7 * 11 시간표 배열이 넘어온다고 가정 (7일 10교시 + 10시 이후)
     // 16주 동안 진행하고, 16개의 이벤트 발생 -> critical 이벤트?
     var capacityPerWeek = 0;
@@ -1013,8 +1011,13 @@ function week3()
       console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
       //eventProcess(week);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
 
@@ -1036,13 +1039,13 @@ function week3()
     {
       //richTextList[j].y-=100;
     }
-      console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
-      console.log(lectureList[i].load[week][1]);
+      //console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
+      //console.log(lectureList[i].load[week][1]);
       var inputTxt = lectureList[i].name +"의 로드: "+lectureList[i].load[week][1]+'\n';
       totalTextList+=inputTxt;
       var richText = new PIXI.Text(inputTxt,eventstyle);
       richText.anchor.set(0.5);
-      richText.x = 960;
+      richText.x = 1600;
       richText.y = 1080/4-30;
       //app.stage.addChild(richText);
       richTextList.push(richText);
@@ -1051,6 +1054,7 @@ function week3()
     var b=0;
     var length=lectureList.length;
     var deltatime=40;
+<<<<<<< HEAD
     var eraser;
     var totalTextList="3주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1064,25 +1068,16 @@ function week3()
       }
     }
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     app.stage.addChild(richTextList[0]);
-
-    var timing = Math.floor(Math.random() * (lectureList.length-1)*deltatime);
-
     var ticker1=new PIXI.ticker.Ticker();
     ticker1.start();
     ticker1.add(()=>
     {
       a++;
-      if(a===timing)
-        eraser=eventHandler(0);
       if(a===deltatime*lectureList.length-10)
       {
-        if(eraser!==NaN&&eraser!==undefined)
-        {
-         totalTextList+=eraser[1].text;
-         totalTextList+='\n';
-        }
-        erasedialog(eraser);
         week_end_3();
 
 
@@ -1165,9 +1160,12 @@ function week3()
     });
 
 
+<<<<<<< HEAD
   //setTimeout('week2()',8000 );
 
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 function week_end_3(){
    var block = new PIXI.Graphics();
    var block = new PIXI.Graphics();
@@ -1204,6 +1202,7 @@ function week_end_3(){
   hwaginText.y = 910;
   app.stage.addChild(hwaginText);
 
+var totalTextList="3주차의 로그\n\n";
 var richTextList=[];
 var inputTxt;
   for(var i=0; i < lectureList.length; i++) {
@@ -1230,8 +1229,6 @@ var inputTxt;
    lineHeight: 50,
    fill: ['#000000'], // gradient
       //backgroundColor:"green"
-      wordWrap: true,
-    wordWrapWidth: 1500
    });
 
     var richText = new PIXI.Text(totalTextList,totalTextListstyle);
@@ -1261,7 +1258,7 @@ var inputTxt;
       var rightblock = new PIXI.Graphics();
       //rightblock.lineStyle(2, 0xFF00FF, 1);
       rightblock.beginFill(0xfff8dc, 1);
-      rightblock.drawRect(360,0,1200,240);
+      rightblock.drawRect(1300, 0, 620, 240);
       rightblock.lineStyle(4, 0xffd900, 1);
       rightblock.endFill();
       app.stage.addChild(rightblock);
@@ -1275,13 +1272,21 @@ var inputTxt;
     }
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 }
+
 function week4()
 {
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
-  week=3;
+  week=4;
     //7 * 11 시간표 배열이 넘어온다고 가정 (7일 10교시 + 10시 이후)
     // 16주 동안 진행하고, 16개의 이벤트 발생 -> critical 이벤트?
     var capacityPerWeek = 0;
@@ -1324,8 +1329,13 @@ function week4()
       console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
+<<<<<<< HEAD
 
       //eventHandler(0);
+=======
+     
+      eventHandler();
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
       //eventProcess(week);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
 
@@ -1347,13 +1357,13 @@ function week4()
     {
       //richTextList[j].y-=100;
     }
-      console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
-      console.log(lectureList[i].load[week][1]);
+      //console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
+      //console.log(lectureList[i].load[week][1]);
       var inputTxt = lectureList[i].name +"의 로드: "+lectureList[i].load[week][1]+'\n';
       totalTextList+=inputTxt;
       var richText = new PIXI.Text(inputTxt,eventstyle);
       richText.anchor.set(0.5);
-      richText.x = 960;
+      richText.x = 1600;
       richText.y = 1080/4-30;
       //app.stage.addChild(richText);
       richTextList.push(richText);
@@ -1362,6 +1372,7 @@ function week4()
     var b=0;
     var length=lectureList.length;
     var deltatime=40;
+<<<<<<< HEAD
     var eraser;
     var totalTextList="4주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1375,25 +1386,16 @@ function week4()
       }
     }
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     app.stage.addChild(richTextList[0]);
-
-    var timing = Math.floor(Math.random() * (lectureList.length-1)*deltatime);
-
     var ticker1=new PIXI.ticker.Ticker();
     ticker1.start();
     ticker1.add(()=>
     {
       a++;
-      if(a===timing)
-        eraser=eventHandler(0);
       if(a===deltatime*lectureList.length-10)
       {
-        if(eraser!==NaN&&eraser!==undefined)
-        {
-         totalTextList+=eraser[1].text;
-         totalTextList+='\n';
-        }
-        erasedialog(eraser);
         week_end_4();
 
 
@@ -1476,9 +1478,12 @@ function week4()
     });
 
 
+<<<<<<< HEAD
   //setTimeout('week2()',8000 );
 
 
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 function week_end_4(){
    var block = new PIXI.Graphics();
    var block = new PIXI.Graphics();
@@ -1515,6 +1520,7 @@ function week_end_4(){
   hwaginText.y = 910;
   app.stage.addChild(hwaginText);
 
+var totalTextList="4주차의 로그\n\n";
 var richTextList=[];
 var inputTxt;
   for(var i=0; i < lectureList.length; i++) {
@@ -1541,8 +1547,6 @@ var inputTxt;
    lineHeight: 50,
    fill: ['#000000'], // gradient
       //backgroundColor:"green"
-      wordWrap: true,
-    wordWrapWidth: 1500
    });
 
     var richText = new PIXI.Text(totalTextList,totalTextListstyle);
@@ -1572,7 +1576,7 @@ var inputTxt;
       var rightblock = new PIXI.Graphics();
       //rightblock.lineStyle(2, 0xFF00FF, 1);
       rightblock.beginFill(0xfff8dc, 1);
-      rightblock.drawRect(360,0,1200,240);
+      rightblock.drawRect(1300, 0, 620, 240);
       rightblock.lineStyle(4, 0xffd900, 1);
       rightblock.endFill();
       app.stage.addChild(rightblock);
@@ -1589,6 +1593,7 @@ var inputTxt;
 }
 function week5()
 {
+<<<<<<< HEAD
 
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
   week=4;
@@ -2207,10 +2212,17 @@ var inputTxt;
     }
 
 }
+=======
+  
 }
-
+function week6()
+{
+  
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+}
 function week7()
 {
+<<<<<<< HEAD
 
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
   week=6;
@@ -2517,12 +2529,13 @@ var inputTxt;
 
     }
 
+=======
+  
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 }
-}
-
-
 function week8()
 {
+<<<<<<< HEAD
 
 
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
@@ -3142,10 +3155,26 @@ var inputTxt;
 
     }
 
+=======
+  
+  
 }
+function week9()
+{
+  
 }
 function week10()
 {
+  
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+}
+function week11()
+{
+  
+}
+function week12()
+{
+<<<<<<< HEAD
 
 
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
@@ -3453,10 +3482,21 @@ var inputTxt;
 
     }
 
+=======
+  
 }
-}
-function week11()
+function week13()
 {
+  
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
+}
+function week14()
+{
+  
+}
+function week15()
+{
+<<<<<<< HEAD
 
 
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
@@ -5320,12 +5360,13 @@ var inputTxt;
     }
 
 }
+=======
+  
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
 }
-function exit() {
-  for (var i = app.stage.children.length - 1; i >= 0; i--) {  app.stage.removeChild(app.stage.children[i]);};
-  app.destroy(app.stage);
-  ending();
-
+function week16()
+{
+  
 }
 
 

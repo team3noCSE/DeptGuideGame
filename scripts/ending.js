@@ -1,4 +1,3 @@
-function ending(){
 class Single_Ending{ //ending_class
   constructor(
     _title,    //String
@@ -13,51 +12,83 @@ class Single_Ending{ //ending_class
 var _title, _img_name, _description;
 while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때만 break되게 한다.
   var randomize=Math.floor(Math.random()*15)+1;
+<<<<<<< HEAD
   if(randomize==1&&thisGame.status.grade<0.5){
+=======
+  if(randomize==1){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="님아, 그 강을 건너지 마오";
     _img_name="재수강.png";
     _description="16주 동안의 한 학기, 참 즐거웠었죠?";
     break;
   }
+<<<<<<< HEAD
   else if(randomize==2&&thisGame.status.grade<0.5){
+=======
+  else if(randomize==2){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="I`ll be back";
     _img_name="illbeback.png";
     _description="끝나지 않은 수업과의 싸움...\ 언젠가 다시 돌아온다";
     break;
   }
+<<<<<<< HEAD
   else if(randomize==3&&thisGame.status.grade<0.5){
+=======
+  else if(randomize==3){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="A가 없네";
     _img_name="A가없네.png";
     _description="A가 뭔지 알아요? 성실하게 수업을 들으면 받는 학점을 A라 그래요 A가 없네?";
     break;
   }
+<<<<<<< HEAD
   else if(randomize==4&&thisGame.status.grade>=0.5){
+=======
+  else if(randomize==4){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="휴먼굴림체";
     _img_name="휴먼굴림체.png";
     _description="당신은 이번 학기 동안 \
     훌륭하게 굴렀습니다. 구뤠잇!";
     break;
   }
+<<<<<<< HEAD
   else if(randomize==5&&thisGame.status.grade>0.75){
+=======
+  else if(randomize==5){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
       _title="양심?";
       _img_name="양심.png";
       _description="다른 학우들을 제치고\ 높은 학점을 받았군요!\ 양심의 상태가...";
       break;
   }
+<<<<<<< HEAD
   else if(randomize==6&&thisGame.status.relationship<0.3){
+=======
+  else if(randomize==6){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="개똥벌레";
     _img_name="개똥벌레.png";
     _description="나는야 개똥벌레~\
      친구가 없네~";
     break;
   }
+<<<<<<< HEAD
   else if(randomize==7&&thisGame.status.relationship<0.5){
+=======
+  else if(randomize==7){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="인생은 혼자다";
     _img_name="인생은혼자다.png";
     _description="인생 공수래 공수거 아니겠습니까!!";
     break;
   }
+<<<<<<< HEAD
   else if(randomize==8&&thisGame.status.relationship>=0.7){
+=======
+  else if(randomize==8){
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
     _title="노는 게 제일 좋아";
     _img_name="노는게제일좋아.png";
     _description="노는게 제일 좋아!\
@@ -230,4 +261,7 @@ function show_menu(){ //메뉴 출력
     document.getElementById("end").style.display="block";
   }
 }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> parent of dd3d3ee... model.js by beomjoon
