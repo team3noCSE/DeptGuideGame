@@ -253,8 +253,8 @@ class SingleEvent {
     this.load[3+adjust][1] += "첫번째 중간고사가 있습니다. ";
     this.load[6+adjust][1] += "두번째 중간고사에 대비하세요! ";
     this.load[7+adjust][1] += "두번째 중간고사가 있습니다. ";
-    this.load[10+adjust][1] += "두번째 중간고사에 대비하세요! ";
-    this.load[11+adjust][1] += "두번째 중간고사가 있습니다. ";
+    this.load[10+adjust][1] += "세번째 중간고사에 대비하세요! ";
+    this.load[11+adjust][1] += "세번째 중간고사가 있습니다. ";
     this.load[14][1] += "기말고사에 대비하세요! ";
     this.load[15][1] += "기말고사가 있습니다! ";
   }
