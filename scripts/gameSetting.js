@@ -3,18 +3,19 @@ let healthPerLecture = -0.005;
 var dayofweek = ["월", "화", "수", "목", "금", "토", "일"];
 
 let Load = {
+  // 로드 : 로드 크기의 단위
   "QUIZ" : 0.8,
 
   "ASSIGN" : 1.2,
   "LABASSIGN" : 0.4,
   "HOMEWORK" : 0.8,
 
-  "MIDTERM" : 2.4,      //  두번 있음, 4.8
-  "FINAL" : 2.4,        //  두번 있음, 4.8
+  "MIDTERM" : 2.4,
+  "FINAL" : 2.4,
   "3TEST" : 1.6,
   "4TEST" : 1.2,
 
-  "PRESENTATION" : 1.6,  //  두번 있음, 3.2
+  "PRESENTATION" : 1.6,
 
   "LABREPORT" : 0.8,
 
@@ -65,6 +66,7 @@ class SingleEvent {
   }
 //  model 만드시는 분께서 capacity(남은 가용시간)를 받아 load를 업데이트 시키는 메소드도 만들어 주세요
   addQuiz(weight) {
+    //  각 과목의 로드에 매주 1개의 퀴즈를 추가
     for(var i=1; i<16; i++) {
       if( i===7 || i===15 ) {
         continue;
@@ -75,6 +77,7 @@ class SingleEvent {
   }
 
   add4Quiz(weight) {
+    //  각 과목의 로드에 총 4개의 퀴즈를 추가
     var adjust = Math.floor(Math.random() * 4) - 1;
     this.load[2+adjust][0] += Load["QUIZ"]*weight;
     this.load[5+adjust][0] += Load["QUIZ"]*weight;
@@ -88,6 +91,7 @@ class SingleEvent {
   }
 
   add7Quiz(weight) {
+    //  각 과목의 로드에 총 7개의 퀴즈를 추가
     var adjust1 = Math.floor(Math.random() * 2);
     var adjust2 = Math.floor(Math.random() * 2);
     var adjust3 = Math.floor(Math.random() * 2);
@@ -113,6 +117,7 @@ class SingleEvent {
   }
 
   add7Meeting(weight) {
+    //  각 과목의 로드에 총 7개의 조모임을 추가
     var adjust1 = Math.floor(Math.random() * 2);
     var adjust2 = Math.floor(Math.random() * 2);
     var adjust3 = Math.floor(Math.random() * 2);
@@ -138,6 +143,7 @@ class SingleEvent {
   }
 
   addHomeWork1Week(weight) {
+    //  각 과목의 로드에 매주 1개의 숙제를 추가
     for(var i=1; i<16; i++) {
       if( i===7 || i===15 ) {
         continue;
@@ -148,6 +154,7 @@ class SingleEvent {
   }
 
   addHomeWork2Week(weight) {
+    //  각 과목의 로드에 2주 마다 1개의 숙제를 추가
     for(var i=0; i<16; i++) {
       if( i===7 || i===15 ) {
         continue;
@@ -196,6 +203,7 @@ class SingleEvent {
   }
 
   addLabAssign(weight) {
+    // 랩과제
     for(var i=1; i<16; i++) {
       if( i===7 || i===15 ) {
         continue;
@@ -206,6 +214,7 @@ class SingleEvent {
   }
 
   addMidTerm(weight) {
+    // 중간고사
     this.load[6][0] += Load["MIDTERM"]*weight;
     this.load[7][0] += Load["MIDTERM"]*weight;
 
@@ -214,6 +223,7 @@ class SingleEvent {
   }
 
   addFinal(weight) {
+    // 기말고사
     this.load[14][0] += Load["MIDTERM"]*weight;
     this.load[15][0] += Load["MIDTERM"]*weight;
 
@@ -222,6 +232,7 @@ class SingleEvent {
   }
 
   add3Test(weight) {
+    // 3번의 시험
     var adjust = Math.floor(Math.random() * 4) - 1;
     this.load[4+adjust][0] += Load["3TEST"]*weight;
     this.load[5+adjust][0] += Load["3TEST"]*weight;
@@ -239,6 +250,7 @@ class SingleEvent {
   }
 
   add4Test(weight) {
+    // 4번의 시험
     var adjust = Math.floor(Math.random() * 4) - 1;
     this.load[2+adjust][0] += Load["4TEST"]*weight;
     this.load[3+adjust][0] += Load["4TEST"]*weight;
@@ -260,6 +272,7 @@ class SingleEvent {
   }
 
   addMidPresentation(weight, description) {
+    // 중간 발표
     var adjust = Math.floor(Math.random() * 5) - 2;
     this.load[4+adjust][0] += Load["PRESENTATION"]*weight;
     this.load[5+adjust][0] += Load["PRESENTATION"]*weight;
@@ -268,6 +281,7 @@ class SingleEvent {
   }
 
   addFinalPresentation(weight, description) {
+    // 기말 발표
     var adjust = Math.floor(Math.random() * 5) - 2;
     this.load[12+adjust][0] += Load["PRESENTATION"]*weight*2;
     this.load[13+adjust][0] += Load["PRESENTATION"]*weight*2;
@@ -276,6 +290,7 @@ class SingleEvent {
   }
 
   add3Experiment(weight) {
+    // 3번의 실험
     var adjust = Math.floor(Math.random() * 5) - 2;
     this.load[3+adjust][0] += 1*weight;
     this.load[8+adjust][0] += 1*weight;
@@ -287,6 +302,7 @@ class SingleEvent {
   }
 
   addLabReport(weight) {
+    // 실험 리포트
     for(var i=1; i<16; i++) {
       if( i===7 || i===15 ) {
         continue;
@@ -298,6 +314,7 @@ class SingleEvent {
     }
   }
   addFinalReport(weight) {
+    // 파이널 리포트만 쓰는 경우
     for(var i=1; i<16; i++) {
       if( i===7 || i===15 ) {
         continue;
@@ -308,11 +325,13 @@ class SingleEvent {
   }
 
   addLoad(load, description, period) {
+    // 새롭게 로드를 만들어 추가
     this.load[period][0] += load;
     this.load[period][1] += description;
   }
 
   addGaechongJongchong() {
+    // 동아리에 개총, 종총 추가
     this.load[1][0] += 3;
     this.load[14][0] += 3;
 
@@ -321,6 +340,7 @@ class SingleEvent {
   }
 
   addPerformance() {
+    //  동아리에 공연 추가
     this.load[9][0] += 3;
     this.load[10][0] += 3;
     this.load[11][0] += 3;
