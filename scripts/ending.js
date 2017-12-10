@@ -170,15 +170,6 @@ function show_detail(){ //세부정보 보여주기
       dept="창의IT융합공학";
     Details.appendChild(document.createTextNode("당신은 "+dept+"과를 선택하였습니다.")); //과 정보 출력
     Details.appendChild(document.createElement("br"));
-    var lectures=Array();
-    var lecture1="객체";
-    var lecture2="지옥";
-    var lecture3="되라";
-    lectures.push(lecture1);
-    lectures.push(lecture2);
-    lectures.push(lecture3);
-    Details.appendChild(document.createTextNode("그리고 "+lectures+"를 수강하였습니다.")); //수강한 과목들 출력
-    Details.appendChild(document.createElement("br"));
     Details.appendChild(document.createTextNode("그 결과, "+this_ending.title+"을 얻었습니다.")); //획득한 엔딩 제목 출력
     document.getElementById("Ending_menu").appendChild(Details);
     detail_first=false;
