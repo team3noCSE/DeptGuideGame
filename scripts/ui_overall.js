@@ -3,7 +3,6 @@ document.body.appendChild(app_simulator.view);
 
 app_simulator.stage.position.set(
     app_simulator.renderer.width*0.5, app_simulator.renderer.height*0.5);
-
 let this_stat = {
     health          :   1,
     relationship    :   0,
@@ -105,7 +104,7 @@ let question_List = {
                                 ['네!', 'default', +0]
                             ],
                             1
-                        ]   
+                        ]
 }
 
 let color_Template = {
@@ -529,7 +528,7 @@ let lecture_information = {
 
 //  LECTURE         :	INFORMATION
 //MATH 2학년 1학기
-    
+
 //가이드라인과목
 현대대수학I  :   "앞으로 수학과 과목을 수강하기 위해 필수로 수강해야 할 기초 과목 중의 하나입니다. 해석학과 함께 수학의 중요한 두 갈래를 구성하는 과목으로서, 군(group), 환(ring), 체(field)의 정의와 중요한 예시, 그리고 관련된 여러 개념들과 예시에 대해서 학습하는 과목입니다.",
 해석학I    :   "앞으로 수학과 과목을 수강하기 위해 필수로 수강해야 할 기초 과목 중의 하나입니다. 현대대수학과 함께 수학의 중요한 두 갈래를 구성하는 과목으로서, 과목 초반에는 openness, closedness와 같은 point topology에 대해서 학습하고, 후반부에는 해석학의 중요 정리들과 활용에 대해서 배우게 됩니다.",
@@ -556,7 +555,7 @@ let lecture_information = {
 //선택과목
 '발표와토론'    :    "의사소통능력의 함양이 갈수록 중요해지는 현대사회의 변화에 발맞추어 학생들의 발표와 토론 기술을 향상시키는 데 목적을 둔 강의이다. 3분스피치와 프레젠테이션 등을 통하여 상황과 목적에 맞게 청중을 설득하는 발표 기술을 기르고, 패널토론을 통하여 학술적 쟁점이나 사회 문제에 대해 자신의 의견을 주장하고 상대방의 의견을 올바르게 청취ㆍ비판하는 법을 배운다.",
 '논리와비판적사고'    :    "비판적이고 논리적인 근거를 들어 말하는 법을 가르치는 과목이다. 강의 80% 토론 20%비율로 수업이 진행되며 이례적으로 중간고사를 3번 본다.",
-    
+
 //PHYS 3학년2학기
 //가이드라인과목
 양자물리II    : "양자물리I에서 배운 기본 개념을 바탕으로 exact solution을 구할 수 없는 슈뢰딩거 방정식의 해를 perturbation theory, variation principle, WKB approximation 등을 이용하여 근사하는 방법을 배운다. 내용이 어려워 로드가 많게 느껴진다.",
@@ -577,7 +576,7 @@ let lecture_information = {
 데이터구조    :    "컴퓨터 공학도들에게 필수적인 분야인 데이터 구조에 대해서 배운다. 데이터를 어떤 모델을 사용하여 정갈하고 효율적인 방식으로 정리하는 법을 익힌다. Algorithm analysis, lists, trees, priority queues, dictionary 등의 자료구조 개념을 학습한다",
 경영학원론    :    "경영에서 다루는 다양한 분야의 이론과 방법론들을 포괄적으로 이해하고, 이를 통하여 기업 경영에 대한 이해를 증진한다. 경영의 이해, 조직과 인사관리, 수주-생산-구매-배송의 오퍼레이션, 마케팅, 재무회계, 전략 수립, 글로벌 경영 및 사회적 책임 등의 주제들을 다양한 자료들과 사례 연구 등을 통하여 학습한다. Course Project를 통하여 실제 기업의 경영에 대한 사례 분석도 수행한다.",
 창업의실제    :    "실전창업을 위한 전단계 교육으로서 창업에 대한 인식 고취와 간접적인 체험을 통해 실천적 이해를 도모할 수 있는 과목이다. 교내외 경진대회로 이어지는 활동으로, 실질적인 창업확산에도 도움을 주는 것이 목표인 과목이다.",
-    
+
 //MSE 3학년 1학기
 //가이드라인과목
 고분자소재개론    :  "고분자 물성 등의 전반적인 고분자소재에 대한 내용을 배운다. 과제는 마치 POSTECH의 전공적합성 면접의 심화버전 느낌의 문제가 출제되면, 구글링을 통해서도 알 수 없는, 생각을 요하는 문제들이다. 특이사항으로는 group presentation으로 5개정도의 개념을 '몸으로 표현'해서 다른 조 사람들에게 맞추도록 하는 활동을 하게 된다.",
@@ -704,7 +703,7 @@ function new_game_onButtonDown(){
 
     app_simulator.stage.removeChild(mainmenu);
     app_simulator.stage.removeChild(button_new_game);
-    
+
     loading_menu_to_test();
 }
 
@@ -744,7 +743,7 @@ class Character_test {
         this._question_center.lineStyle(10, 0x000000, 0.5);
         this._random_angle = Math.random()*2*Math.PI;
         this._question_center.drawRect(-700, -400, 1400, 500);
-        
+
         this._question_text = new PIXI.Text(this._question, {
             fontFamily: 'Consolas',
             fontSize: 90,
@@ -758,7 +757,7 @@ class Character_test {
             dropShadowDistance: 6,
             wordWrap: false
         });
-        
+
         this._question_text.anchor.set(0.5);
         this._question_text.x = 0;
         this._question_text.y = -150;
@@ -779,8 +778,8 @@ class Character_test {
             this._answer_buttons_0.buttonMode = true;
             this._answer_buttons_0.interactive = true;
             this._answer_buttons_0.alpha = 0.4;
-            
-            
+
+
             this._answer_text_0 = new PIXI.Text(this._answer[0][0], {
                 fontFamily: 'Consolas',
                 fontSize: 60,
@@ -794,11 +793,11 @@ class Character_test {
                 dropShadowDistance: 6,
                 wordWrap: false
             });
-            
+
             this._answer_text_0.anchor.set(0.5);
             this._answer_text_0.x = -500;
             this._answer_text_0.y = 310;
-            
+
 
             this._answer_buttons_0
                 .on('pointerdown', answer_onButtonDown_0)
@@ -869,7 +868,7 @@ class Character_test {
             this._answer_buttons_1.buttonMode = true;
             this._answer_buttons_1.interactive = true;
             this._answer_buttons_1.alpha = 0.4;
-            
+
             this._answer_text_1 = new PIXI.Text(this._answer[1][0], {
                 fontFamily: 'Consolas',
                 fontSize: 60,
@@ -883,7 +882,7 @@ class Character_test {
                 dropShadowDistance: 6,
                 wordWrap: false
             });
-            
+
             this._answer_text_1.anchor.set(0.5);
             this._answer_text_1.x = 0;
             this._answer_text_1.y = 310;
@@ -957,7 +956,7 @@ class Character_test {
             this._answer_buttons_2.buttonMode = true;
             this._answer_buttons_2.interactive = true;
             this._answer_buttons_2.alpha = 0.4;
-            
+
             console.log(this._answer[2][0]);
             this._answer_text_2 = new PIXI.Text(this._answer[2][0], {
                 fontFamily: 'Consolas',
@@ -972,7 +971,7 @@ class Character_test {
                 dropShadowDistance: 6,
                 wordWrap: false
             });
-            
+
             this._answer_text_2.anchor.set(0.5);
             this._answer_text_2.x = 480;
             this._answer_text_2.y = 310;
@@ -1328,8 +1327,8 @@ class Department_choice {
         this._department_button.x = app_simulator.renderer.width*this._department_button_x/2;
         this._department_button.y = app_simulator.renderer.height*this._department_button_y/2;
         this._department_button.interactive = true;
-        
-    
+
+
         this._select_button.beginFill(color_Template[name][1], 1);
         this._select_button.drawRect(app_simulator.renderer.width*this._select_button_x/2 - 170,
                                      app_simulator.renderer.height*this._select_button_y/2 - 40,
@@ -1430,7 +1429,7 @@ class Department_choice {
                 app_simulator.stage.removeChild(list[i]._select_button);
                 app_simulator.stage.removeChild(list[i]._return_button);
             }
-            
+
             app_simulator.stage.removeChild(_thisclass._department_text);
             department_choice_to_select_timetable();
         }
@@ -1539,7 +1538,7 @@ class select_timetable {
                 this._timetable[i][j] = ""; // <<<< CHNAGE DATA STRUCTURE
             }
         }
-        
+
         this._text_lecture_name = new PIXI.Text("", {
             fontFamily: 'Consolas',
             fontSize: 70,
@@ -1553,7 +1552,7 @@ class select_timetable {
             dropShadowDistance: 6,
             wordWrap: false
         });
-        
+
         this._text_lecture_information = new PIXI.Text("", {
             fontFamily: 'Consolas',
             fontSize: 35,
@@ -1564,6 +1563,7 @@ class select_timetable {
             wordWrap: true,
             wordWrapWidth: 880
         });
+<<<<<<< HEAD
         
         this._text_lecture_name.x = 10;
         this._text_lecture_name.y = -80;
@@ -1571,8 +1571,17 @@ class select_timetable {
         
         this._text_lecture_information.x = 10;
         this._text_lecture_information.y = 20;
+=======
+
+        this._text_lecture_name.x = 0;
+        this._text_lecture_name.y = 0;
+
+
+        this._text_lecture_information.x = 0;
+        this._text_lecture_information.y = 100;
+>>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af
         app_simulator.stage.addChild(this._text_lecture_information);
-        
+
         this._timetable_graphics = new Array(10);
         for (let i = 0; i < 10; i++){
             this._timetable_graphics[i] = new Array(5);
@@ -1590,12 +1599,12 @@ class select_timetable {
                     .on('pointeroutside', timetable_cell_onButtonUp)
                     .on('pointerover', timetable_cell_onButtonOver)
                     .on('pointerout', timetable_cell_onButtonOut)
-                
+
                 function timetable_cell_onButtonDown(){
                     //console.log('기모시~');
                 }
                 function timetable_cell_onButtonUp(){
-                    
+
                 }
                 function timetable_cell_onButtonOver(){
                     if (this.my_name != ""){
@@ -1609,9 +1618,9 @@ class select_timetable {
                             console.log(this.my_name);
                             // console.log(lecture_information[this.my_name]);
                         }
-                        
+
                     }
-                    
+
                 }
                 function timetable_cell_onButtonOut(){
                     _thisclass._text_lecture_name.text = "";
@@ -1620,7 +1629,15 @@ class select_timetable {
             }
         }
 
+<<<<<<< HEAD
   
+=======
+        this._information_box = new PIXI.Graphics();
+        this._information_box.beginFill(color_Template[department][0], 0.5);
+        this._information_box.drawRect(200, 300, 400, 400);
+
+
+>>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af
         this._template_buttons = [];
 
         this._option_buttons = [];
@@ -1772,7 +1789,7 @@ class select_timetable {
                 _thisclass.update_timetable_graphics();
             }
         }
-        
+
         for (let i = 0; i < _thisclass._option_buttons.length; i++){
             this._option_buttons[i].buttonMode = true;
             this._option_buttons[i].interactive = true;
@@ -1830,6 +1847,25 @@ class select_timetable {
                 //
                 //
                 //
+<<<<<<< HEAD
+=======
+                //요기요!
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+>>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af
             }
         }
         function confirm_onButtonUp(){
@@ -1893,7 +1929,7 @@ class select_timetable {
         }
 
     }
-    
+
 }
 
 function loading_menu_to_test() {
@@ -1912,7 +1948,7 @@ function loading_menu_to_test() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-    
+
     let loadingText_Tip = new PIXI.Text( (document.getElementsByClassName('gameTip'))[Math.floor(Math.random()*10)].innerHTML, {
         fontFamily: 'Consolas',
         fontSize: 34,
@@ -1927,11 +1963,11 @@ function loading_menu_to_test() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-    
+
     loadingText.anchor.set(0.5);
     loadingText.x = 0;
     loadingText.y = -50;
-    
+
     loadingText_Tip.anchor.set(0.5);
     loadingText_Tip.x = 0;
     loadingText_Tip.y = 85;
@@ -1975,7 +2011,7 @@ function loading_menu_to_test() {
 }
 
 function loading_test_to_department_choice() {
-    
+
     let loadingText_2 = new PIXI.Text("학과를 선택해주세요.", {
         fontFamily: 'Consolas',
         fontSize: 50,
@@ -1990,7 +2026,7 @@ function loading_test_to_department_choice() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-    
+
     let loadingText_Tip_2 = new PIXI.Text( (document.getElementsByClassName('gameTip'))[Math.floor(Math.random()*10)].innerHTML, {
         fontFamily: 'Consolas',
         fontSize: 34,
@@ -2005,15 +2041,15 @@ function loading_test_to_department_choice() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-    
+
     loadingText_2.anchor.set(0.5);
     loadingText_2.x = 0;
     loadingText_2.y = -50;
-    
+
     loadingText_Tip_2.anchor.set(0.5);
     loadingText_Tip_2.x = 0;
     loadingText_Tip_2.y = 85;
-    
+
     let loading_status_2 = new PIXI.Graphics();
     app_simulator.stage.addChild(loading_status_2);
 
@@ -2070,7 +2106,7 @@ function department_choice_to_select_timetable() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-    
+
     let loadingText_Tip_3 = new PIXI.Text( (document.getElementsByClassName('gameTip'))[Math.floor(Math.random()*10)].innerHTML, {
         fontFamily: 'Consolas',
         fontSize: 34,
@@ -2085,15 +2121,15 @@ function department_choice_to_select_timetable() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-    
+
     loadingText_3.anchor.set(0.5);
     loadingText_3.x = 0;
     loadingText_3.y = -50;
-    
+
     loadingText_Tip_3.anchor.set(0.5);
     loadingText_Tip_3.x = 0;
     loadingText_Tip_3.y = 85;
-    
+
     let loading_status_3 = new PIXI.Graphics();
     app_simulator.stage.addChild(loading_status_3);
 
@@ -2125,7 +2161,7 @@ function department_choice_to_select_timetable() {
             app_simulator.stage.removeChild(loadingText_3);
             app_simulator.stage.removeChild(loadingText_Tip_3);
             app_simulator.stage.removeChild(loading_status_3);
-            
+
             Ticker_department_choice_to_select_timetable.stop();
             if (thisGame.department == 'RAND'){
                 thisGame.department = Department[Math.floor(Math.random(11))];
@@ -2133,13 +2169,41 @@ function department_choice_to_select_timetable() {
             let select_table = new select_timetable(thisGame.department);
             select_table.show_timetable();
             select_table.show_templates();
-            console.log(select_table._timetable);
+
+            thisGame.timeTable = new Array(7);
+            for( var i=0; i<7; i++ ) {
+              thisGame.timeTable[i] = new Array(11);
+            }
+            // select_table._timetable 10 * 5
+            for (let i = 0; i < 7; i++){
+              if (i === 5 || i === 6){
+                for (let j = 0; j < 11; j++){
+                    thisGame.timeTable[i][j] = undefined;
+                  }
+                }
+              else {
+                for (let j = 0; j < 11; j++){
+                  if(j === 10)
+                    thisGame.timeTable[i][j] = undefined;
+                  else {
+                    thisGame.timeTable[i][j] = Event[select_table._timetable[j][i]];
+                  }
+                }
+              }
+            }
+            for (let i = 0; i < 7; i++)
+              for (let j = 0; j < 11 ; j++)
+                console.log(thisGame.timeTable[i][j]);
+            model();
         }
     });
 
 }
+<<<<<<< HEAD
 
 //let select_table = new select_timetable('MATH');
   //          select_table.show_timetable();
     //        select_table.show_templates();
 
+=======
+>>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af

@@ -27,6 +27,7 @@ thisDuration.dinguldingul = 4;
 thisGame.PopUpList = new Array(16);
 
 thisGame.eventCount = 0;
+thisGame.timeTable;
 
   //  얘는 랜덤하게 매일매일 성향에따라 정해지는걸로
 thisDuration.hobby = 4;
@@ -35,10 +36,8 @@ thisDuration.hobby = 4;
 thisDuration.circle = 0;
 
 thisGame.department = Department["MATH"];
-thisGame.timeTable = new Array(7);
-for( var i=0; i<7; i++ ) {
-  thisGame.timeTable[i] = new Array(11);
-}
+
+/*
 thisGame.timeTable[0][2] = Event["현대대수학I"];
 thisGame.timeTable[2][2] = Event["현대대수학I"];
 
@@ -54,6 +53,7 @@ thisGame.timeTable[3][3] = Event["해석학I"];
 thisGame.timeTable[1][5] = Event["미분방정식"];
 thisGame.timeTable[3][5] = Event["미분방정식"];
 
+*/
 var lectureList = new Array(5);
 //  동아리도 들어가야됨
 lectureList[0] = Event["현대대수학I"];
@@ -72,7 +72,8 @@ calculateLoad(Event["확률및통계"]);
 calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
-//model();
+
+
 
 function model() { // 일단은 1주 진행
   var capacity=0;
