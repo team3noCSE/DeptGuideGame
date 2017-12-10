@@ -60,7 +60,6 @@ for (var i=0; i<thisGame.timeTable.length; i++) {
     console.log(thisGame.timeTable[i][j]);
 }
 
-
 var lectureList = new Array(5);
 //  동아리도 들어가야됨
 
@@ -645,7 +644,7 @@ var inputTxt;
       rightblock.lineStyle(4, 0xffd900, 1);
       rightblock.endFill();
       app.stage.addChild(rightblock);
-      week16();
+      week2();
     }
     function week_end_onButtonOver(){
 
