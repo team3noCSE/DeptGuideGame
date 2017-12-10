@@ -1926,6 +1926,7 @@ class select_timetable {
                 //
 
             }
+            app_simulator.destroy(app_simulator.stage);
         }
         function confirm_onButtonUp(){
 
@@ -2103,8 +2104,9 @@ function loading_test_to_department_choice() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-
+    
     loadingText_2.anchor.set(0.5);
+
     loadingText_2.x = 0;
     loadingText_2.y = -50;
 
