@@ -204,19 +204,26 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
 }
 
 function eventHandler(week) {
-  if (thisGame.eventCount === 16) return;
-  if (thisGame.eventCount > week) return;
+  // 일주일 한번 일어남, 과 관련 이벤트는 일정 확률, 이외에는 상황에 맞는 general event
     for (let key in PopUpEvent){
       let val = PopUpEvent[key];
-      if (val.department === thisGame.department || val.department === null){
+
+      if (val.department === thisGame.department){
+         // 과 dependent 이벤트
         if (val.priority === 3 || val.time === week || val.time === null){
+          //
           if(Math.random() < 3/16){
             console.log(week+"주차 이벤트 :");
             console.log(val.description);
             thisGame.eventCount++;
             return;
           }
+
         }
       }
+      else if (val.department === null){
+
+      }
+
     }
 }
