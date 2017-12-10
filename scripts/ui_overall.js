@@ -1910,23 +1910,51 @@ class select_timetable {
             for (let i = app_simulator.stage.children.length - 1; i>=0; i--){
                 app_simulator.stage.removeChild(app_simulator.stage.children[i]);
 
-
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-
             }
             app_simulator.destroy(app_simulator.stage);
+
+            if( thisGame.department !== -1 ) {
+
+              thisGame.timeTable = new Array(7);
+              for( var v=0; v<7; v++ ) {
+                thisGame.timeTable[v] = new Array(11);
+              }
+              // select_table._timetable 10 * 5
+              for (let v = 0; v < 7; v++){
+                if (v === 5 || v === 6){
+                  for (let x = 0; x < 11; x++){
+                      thisGame.timeTable[v][x] = undefined;
+                    }
+                  }
+                else {
+                  for (let x = 0; x < 11; x++){
+                    if(x === 10)
+                      thisGame.timeTable[v][x] = undefined;
+                    else {
+                      //console.log("추가할게요 !!!!!!!!");
+                      if( Timetable[x][v] !== "" ) {
+                        thisGame.timeTable[v][x] = Event[Timetable[x][v]];
+                        //console.log("추가됐어요!!!!");
+                      }
+                    }
+                  }
+                }
+              }
+              //console.log("!!!!!!!여기좀 보세요!!!!!!!!");
+
+              //console.log(Timetable);
+
+//              for (let i = 0; i < 7; i++) {
+  //              for (let j = 0; j < 11 ; j++) {
+                  //if(thisGame.timeTable[i][j] !== undefined)
+                    //console.log(thisGame.timeTable[i][j].name);
+                  //if(Event[Timetable[i][j]] !== undefined)
+                  //  console.log(Event[Timetable[i][j]]);
+    //            }
+      //        }
+            process();
+            }
+
         }
         function confirm_onButtonUp(){
 
@@ -2227,46 +2255,13 @@ function department_choice_to_select_timetable() {
             app_simulator.stage.removeChild(loading_status_3);
 
             Ticker_department_choice_to_select_timetable.stop();
-            if (thisGame.department == 'RAND'){
+            if (thisGame.department === 'RAND'){
                 thisGame.department = Department[Math.floor(Math.random(11))];
             }
             let select_table = new select_timetable(thisGame.department);
             select_table.show_timetable();
             select_table.show_templates();
 
-            thisGame.timeTable = new Array(7);
-            for( var i=0; i<7; i++ ) {
-              thisGame.timeTable[i] = new Array(11);
-            }
-            // select_table._timetable 10 * 5
-            for (let i = 0; i < 7; i++){
-              if (i === 5 || i === 6){
-                for (let j = 0; j < 11; j++){
-                    thisGame.timeTable[i][j] = undefined;
-                  }
-                }
-              else {
-                for (let j = 0; j < 11; j++){
-                  if(j === 10)
-                    thisGame.timeTable[i][j] = undefined;
-                  else {
-                    thisGame.timeTable[i][j] = Event[Timetable[j][i]];
-                  }
-                }
-              }
-            }
-            console.log("!!!!!!!여기좀 보세요 시1발!!!!!!!!");
-
-            console.log(Timetable);
-
-            for (let i = 0; i < 7; i++) {
-              for (let j = 0; j < 11 ; j++) {
-                //console.log(thisGame.timeTable[i][j].name);
-                if(Event[Timetable[i][j]] !== undefined)
-                  console.log(Event[Timetable[i][j]]);
-              }
-            }
-            process();
         }
     });
 }

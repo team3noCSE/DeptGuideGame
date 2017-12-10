@@ -35,8 +35,9 @@ thisDuration.hobby = 4;
 
 // 미구현 (동아리)
 thisDuration.circle = 0;
-
-thisGame.department = Department["MATH"];
+//console.log("제발 여기좀 봐라!!!!!!!!!!!!!!!!!!!!!!!!");
+//console.log(thisGame.department);
+//thisGame.department = Department["MATH"];
 
 /*
 thisGame.timeTable[0][2] = Event["현대대수학I"];
@@ -55,11 +56,12 @@ thisGame.timeTable[1][5] = Event["미분방정식"];
 thisGame.timeTable[3][5] = Event["미분방정식"];
 
 */
-console.log("요기보세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-for (var i=0; i<thisGame.timeTable.length; i++) {
-  for (var j=0; j<thisGame.timeTable[i].length; j++)
-    console.log(thisGame.timeTable[i][j]);
-}
+//console.log("요기보세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//for (var i=0; i<thisGame.timeTable.length; i++) {
+//  for (var j=0; j<thisGame.timeTable[i].length; j++)
+//    console.log(thisGame.timeTable[i][j]);
+//}
+/*
 
 var lectureList = new Array(5);
 //  동아리도 들어가야됨
@@ -69,19 +71,55 @@ lectureList[1] = Event["확률및통계"];
 lectureList[2] = Event["이산수학"];
 lectureList[3] = Event["해석학I"];
 lectureList[4] = Event["미분방정식"];
-
+*/
 function calculateLoad(lecture) {
   for(var i=0; i<16; i++)
     thisGame.load += lecture.load[i][0];
 }
-
+/*
 calculateLoad(Event["현대대수학I"]);
 calculateLoad(Event["확률및통계"]);
 calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
+*/
 
-model();
+for(var i=0; i<7; i++) {
+  for(var j=0; j<11; j++) {
+    console.log(thisGame.timeTable[i][j]);
+  }
+}
+
+console.log("시작한다!!!!!!!!!!");
+var lectureList = new Array();
+var isDuplicated = false;
+for(var i=0; i<thisGame.timeTable.length; i++) {
+  for(var j=0; j<thisGame.timeTable[i].length; j++) {
+      if( thisGame.timeTable[i][j] !== undefined ) {
+        console.log(thisGame.timeTable[i][j]);
+        console.log(lectureList.length);
+        for( var k=0; k<lectureList.length; k++ ) {
+          if( thisGame.timeTable[i][j].name === lectureList[k].name ) {
+            isDuplicated = true;
+            break;
+          }
+        }
+        if( isDuplicated === true ) {
+          isDuplicated = false;
+          continue;
+        } else {
+        console.log(thisGame.timeTable[i][j]);
+        lectureList.push(thisGame.timeTable[i][j]);
+        console.log(lectureList[0]);
+      }
+    }
+  }
+}
+console.log("@@@@@!!!!!!!!!!!!1여기봐라 이놈아!!!!!!!!!!!@@@@@");
+for( var i=0; i<lectureList.length; i++ ) {
+  console.log(lectureList[i].name);
+  calculateLoad(lectureList[i]);
+}
 
 function model() { // 일단은 1주 진행
   var capacity=0;
