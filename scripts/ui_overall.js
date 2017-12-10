@@ -10,7 +10,15 @@ let this_stat = {
     grade           :   0
 }
 
-let timetable = [[1, 0], [2, 3]];
+
+let Timetable = new Array(10);
+for (let i = 0; i < 10; i++){
+    Timetable[i] = new Array(5);
+    for (let j = 0; j < 5; j++){
+        Timetable[i][j] = "";
+    }
+}
+
 
 let Department = {
 // DEPARTMENT   :   VALUE
@@ -82,11 +90,11 @@ let question_List = {
                             ],
                             1
                         ],
-    3               :   [   '',
+    3               :   [   '공부하기 싫죠?',
                             [
-                                ['1', 'grade', 0],
-                                ['1', 'grade', 0],
-                                ['1', 'grade', 0]
+                                ['네!', 'grade', -0.03],
+                                ['아니요 좋은데요?', 'grade', +0.01],
+                                ['그럭저럭..', 'grade', 0]
                             ],
                             1
                         ],
@@ -1370,6 +1378,15 @@ class Department_choice {
                     list[i]._department_button.interactive = false;
                 }
             }
+            console.log(thisGame.department + 'confirmed');
+            for (let i = 0; i < list.length; i++){
+                app_simulator.stage.removeChild(list[i]._department_button);
+                app_simulator.stage.removeChild(list[i]._select_button);
+                app_simulator.stage.removeChild(list[i]._return_button);
+            }
+            
+            app_simulator.stage.removeChild(_thisclass._department_text);
+            department_choice_to_select_timetable();
         }
         function department_onButtonUp(){
             if (this.isOver){
@@ -1539,21 +1556,21 @@ class select_timetable {
         
         this._text_lecture_information = new PIXI.Text("", {
             fontFamily: 'Consolas',
-            fontSize: 40,
+            fontSize: 35,
             fill: 0x444444,
             stroke: 0x444444,
             strokeThickness: 1,
             dropShadow: false,
             wordWrap: true,
-            wordWrapWidth: 800
+            wordWrapWidth: 880
         });
         
-        this._text_lecture_name.x = 0;
-        this._text_lecture_name.y = 0;
+        this._text_lecture_name.x = 10;
+        this._text_lecture_name.y = -80;
         
         
-        this._text_lecture_information.x = 0;
-        this._text_lecture_information.y = 100;
+        this._text_lecture_information.x = 10;
+        this._text_lecture_information.y = 20;
         app_simulator.stage.addChild(this._text_lecture_information);
         
         this._timetable_graphics = new Array(10);
@@ -1603,14 +1620,11 @@ class select_timetable {
             }
         }
 
-        this._information_box = new PIXI.Graphics();
-        this._information_box.beginFill(color_Template[department][0], 0.5);
-        this._information_box.drawRect(200, 300, 400, 400);
-        
-        
+  
         this._template_buttons = [];
 
         this._option_buttons = [];
+        this._option_text = [];
         this._lecture_additional_name_control = [];
 
         this._template_buttons.push(new PIXI.Graphics());
@@ -1620,10 +1634,61 @@ class select_timetable {
         this._template_buttons[0].beginFill(color_Template[department][2]);
         this._template_buttons[1].beginFill(color_Template[department][2]);
         this._template_buttons[2].beginFill(color_Template[department][2]);
+        
+        this._template_text_1 = new PIXI.Text("기본시간표 1", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        this._template_text_1.anchor.set(0.5);
+        this._template_text_1.x = 180;
+        this._template_text_1.y = -270;
 
-        this._template_buttons[0].drawRect(630, -148, 100, 50);
-        this._template_buttons[1].drawRect(630, 52, 100, 50);
-        this._template_buttons[2].drawRect(630, 252, 100, 50);
+        this._template_text_2 = new PIXI.Text("기본시간표 2", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        this._template_text_2.anchor.set(0.5);
+        this._template_text_2.x = 180;
+        this._template_text_2.y = -120;
+        
+        this._template_text_3 = new PIXI.Text("기본시간표 3", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        this._template_text_3.anchor.set(0.5);
+        this._template_text_3.x = 180;
+        this._template_text_3.y = 30;
+        
+        this._template_buttons[0].drawRect(50, -270, 100, 100);
+        this._template_buttons[1].drawRect(50, -120, 100, 100);
+        this._template_buttons[2].drawRect(50, 30, 100, 100);
 
         for (let i = 0; i < 3; i++){
             this._template_buttons[i].buttonMode = true;
@@ -1641,10 +1706,16 @@ class select_timetable {
         function template_onButtonDown(){
             console.log(_thisclass._timetable);
             _thisclass.update_timetable_graphics();
+            _thisclass._confirm_button.buttonMode = true;
+            _thisclass._confirm_button.interactive = true;
+            _thisclass._confirm_button.alpha = 0.6;
             for (let i = 0; i < 3; i++){
                 _thisclass._template_buttons[i].buttonMode = false;
                 _thisclass._template_buttons[i].interactive = false;
                 app_simulator.stage.removeChild(_thisclass._template_buttons[i]);
+                app_simulator.stage.removeChild(_thisclass._template_text_1);
+                app_simulator.stage.removeChild(_thisclass._template_text_2);
+                app_simulator.stage.removeChild(_thisclass._template_text_3);
             }
 
             for (let j = 0; j < 10; j++){
@@ -1654,14 +1725,30 @@ class select_timetable {
                         if (_thisclass._lecture_additional_name_control.indexOf(_thisclass._temp) == -1){
                             _thisclass._lecture_additional_name_control.push(_thisclass._temp);
                             _thisclass._lecture_additional_name_control.push(0);
-
+                            
                             _thisclass._option_buttons.push(new PIXI.Graphics());
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].beginFill(0xBBBBBB);
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1]
-                                .drawRect(250, (_thisclass._option_buttons.length - 1)*100-260, 500, 100);
+                                .drawRect((_thisclass._option_buttons.length - 1)*150+ 20, -260, 120, 120);
+                            _thisclass._option_text.push(new PIXI.Text("선택 " + _thisclass._option_buttons.length, {
+                                fontFamily: 'Consolas',
+                                fontSize: 40,
+                                fill: 0x000000,
+                                stroke: 0xFFFFFF,
+                                strokeThickness: 8,
+                                dropShadow: false,
+                                dropShadowColor: '#DDDDDD',
+                                dropShadowBlur: 1,
+                                dropShadowAngle: Math.PI / 6,
+                                dropShadowDistance: 6,
+                                wordWrap: false
+                            }));
+                            _thisclass._option_text[_thisclass._option_buttons.length - 1].anchor.set(0.5);
+                            _thisclass._option_text[_thisclass._option_buttons.length - 1].x = (_thisclass._option_buttons.length - 1)*150+ 20;
+                            _thisclass._option_text[_thisclass._option_buttons.length - 1].y = -260;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].buttonMode = true;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].interactive = true;
-                            _thisclass._option_buttons[_thisclass._option_buttons.length - 1].alpha = 0.6;
+                            _thisclass._option_buttons[_thisclass._option_buttons.length - 1].alpha = 0.8;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1]._selected = 0;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1]._my_address = _thisclass._option_buttons.length -1;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1]
@@ -1672,6 +1759,7 @@ class select_timetable {
                                 .on('pointerout', option_onButtonOut)
 
                             app_simulator.stage.addChild(_thisclass._option_buttons[_thisclass._option_buttons.length - 1]);
+                            app_simulator.stage.addChild(_thisclass._option_text[_thisclass._option_buttons.length - 1]);
                         }
                     }
                 }
@@ -1699,11 +1787,14 @@ class select_timetable {
                         if (timetable_list[_thisclass._department+'_'+_thisclass._selected][j][k] == "x" + _thisclass._lecture_additional_name_control[this._my_address*2]){
                             _thisclass._timetable[j][k] =  "x" + _thisclass._lecture_additional_name_control[this._my_address*2];
                             console.log(_thisclass._timetable[j][k]);
+                            _thisclass._text_lecture_name.text = _thisclass._lecture_additional_name_control[this._my_address*2];
+                            _thisclass._text_lecture_information.text = lecture_information[_thisclass._lecture_additional_name_control[this._my_address*2]];
                         }
                     }
                 }
                 _thisclass.update_timetable_graphics();
                 console.log(_thisclass._lecture_additional_name_control[this._my_address*2]);
+                
             }
             function option_onButtonOut(){
             for (let j = 0; j < 10; j++){
@@ -1716,6 +1807,8 @@ class select_timetable {
                     }
                 }
             }
+                _thisclass._text_lecture_name.text = "";
+                _thisclass._text_lecture_information.text = "";
                 _thisclass.update_timetable_graphics();
 
             }
@@ -1771,13 +1864,29 @@ class select_timetable {
         }
 
         this._confirm_button = new PIXI.Graphics();
-        this._confirm_button.beginFill(0x000000);
-        this._confirm_button.drawRect(300, 400, 500, 100);
+        this._confirm_text = new PIXI.Text("결정", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        //this._confirm_text.anchor.set(0.5);
+        //this._confirm_e
+        
+        this._confirm_button.beginFill(0xBBBBBB);
+        this._confirm_button.drawRect(500, 340, 200, 100);
 
-        this._confirm_button.buttonMode = true;
-        this._confirm_button.interactive = true;
+        this._confirm_button.buttonMode = false;
+        this._confirm_button.interactive = false;
+        this._confirm_button.alpha = 0;
 
-        this._confirm_button.alpha = 0.6;
 
         this._confirm_button
             .on('pointerdown', confirm_onButtonDown)
@@ -1787,8 +1896,20 @@ class select_timetable {
             .on('pointerout', confirm_onButtonOut)
 
         function confirm_onButtonDown(){
+            for (let k = 0; k < 10; k++){
+                for (let l = 0; l < 5; l++){
+                    if (_thisclass._timetable[k][l][0] == "x"){
+                        Timetable[k][l] = _thisclass._timetable[k][l].slice(1);
+                    } else {
+                        Timetable[k][l] = _thisclass._timetable[k][l];
+                    }        
+                }
+            }
+            console.log(Timetable);
             for (let i = app_simulator.stage.children.length - 1; i>=0; i--){
                 app_simulator.stage.removeChild(app_simulator.stage.children[i]);
+               
+                
                 //
                 //
                 //
@@ -1802,28 +1923,7 @@ class select_timetable {
                 //
                 //
                 //
-<<<<<<< HEAD
-=======
-                //요기요!
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
->>>>>>> 137f99c6446baeb6c6b9a54ea63239643647c4fa
             }
-            app_simulator.destroy(app_simulator.stage);
-            process();
         }
         function confirm_onButtonUp(){
 
@@ -1837,7 +1937,6 @@ class select_timetable {
 
         app_simulator.stage.addChild(this._confirm_button);
         app_simulator.stage.addChild(this._text_lecture_name);
-        app_simulator.stage.addChild(this._information_box);
 
     }
     show_timetable(){
@@ -1851,6 +1950,9 @@ class select_timetable {
         for (let i = 0; i < 3; i++){
             app_simulator.stage.addChild(this._template_buttons[i]);
         }
+        app_simulator.stage.addChild(this._template_text_1);
+        app_simulator.stage.addChild(this._template_text_2);
+        app_simulator.stage.addChild(this._template_text_3);
     }
     update_timetable_graphics(){
         this._lecture_name_control = [];
@@ -2133,25 +2235,4 @@ function department_choice_to_select_timetable() {
 
 }
 
-<<<<<<< HEAD
-=======
 
-
-let select_table = new select_timetable('CITE');
-select_table.show_timetable();
-select_table.show_templates();
-
-/*
-  let richText = new PIXI.Text("굴려굴려", default_style);
-  richText.anchor.set(0.5);
-  richText.x = 0;
-  richText.y = 0;
-  app_simulator.stage.addChild(richText);
-*/
-
-
-
-
-
-
->>>>>>> 137f99c6446baeb6c6b9a54ea63239643647c4fa
