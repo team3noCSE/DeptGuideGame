@@ -1,9 +1,4 @@
-/*
-Event["현대대수학I"] = new SingleEvent("현대대수학I", 1.5, healthPerLecture, 0, true, "MATH301");  //5, 112시간
-Event["현대대수학I"].addQuiz(5);
-Event["현대대수학I"].addMidTerm(5);
-Event["현대대수학I"].addFinal(5);
-*/
+
 let healthPerCircle = -0.01;
 let relationshipPerCircle = 0.01;
 

@@ -1,3 +1,4 @@
+function ending(){
 class Single_Ending{ //ending_class
   constructor(
     _title,    //String
@@ -12,96 +13,96 @@ class Single_Ending{ //ending_class
 var _title, _img_name, _description;
 while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때만 break되게 한다.
   var randomize=Math.floor(Math.random()*15)+1;
-  if(randomize==1){
+  if(randomize==1&&thisGame.status.grade<0.5){
     _title="님아, 그 강을 건너지 마오";
     _img_name="재수강.png";
     _description="16주 동안의 한 학기, 참 즐거웠었죠?";
     break;
   }
-  else if(randomize==2){
+  else if(randomize==2&&thisGame.status.grade<0.5){
     _title="I`ll be back";
     _img_name="illbeback.png";
     _description="끝나지 않은 수업과의 싸움...\ 언젠가 다시 돌아온다";
     break;
   }
-  else if(randomize==3){
+  else if(randomize==3&&thisGame.status.grade<0.5){
     _title="A가 없네";
     _img_name="A가없네.png";
     _description="A가 뭔지 알아요? 성실하게 수업을 들으면 받는 학점을 A라 그래요 A가 없네?";
     break;
   }
-  else if(randomize==4){
+  else if(randomize==4&&thisGame.status.grade>=0.5){
     _title="휴먼굴림체";
     _img_name="휴먼굴림체.png";
     _description="당신은 이번 학기 동안 \
     훌륭하게 굴렀습니다. 구뤠잇!";
     break;
   }
-  else if(randomize==5){
+  else if(randomize==5&&thisGame.status.grade>0.75){
       _title="양심?";
       _img_name="양심.png";
       _description="다른 학우들을 제치고\ 높은 학점을 받았군요!\ 양심의 상태가...";
       break;
   }
-  else if(randomize==6){
+  else if(randomize==6&&thisGame.status.relationship<0.3){
     _title="개똥벌레";
     _img_name="개똥벌레.png";
     _description="나는야 개똥벌레~\
      친구가 없네~";
     break;
   }
-  else if(randomize==7){
+  else if(randomize==7&&thisGame.status.relationship<0.5){
     _title="인생은 혼자다";
     _img_name="인생은혼자다.png";
     _description="인생 공수래 공수거 아니겠습니까!!";
     break;
   }
-  else if(randomize==8){
+  else if(randomize==8&&thisGame.status.relationship>=0.7){
     _title="노는 게 제일 좋아";
     _img_name="노는게제일좋아.png";
     _description="노는게 제일 좋아!\
      친구들 모여라!";
     break;
   }
-  else if(randomize==9){
+  else if(randomize==9&&thisGame.status.relationship<0.5){
     _title="이불밖은위험해";
     _img_name="이불밖은위험해.png";
     _description="역시 이불 밖은 위험해...";
     break;
   }
-  else if(randomize==10){
+  else if(randomize==10&&thisGame.status.health<0.3){
     _title="죽겠어요";
     _img_name="죽겠어요.png";
     _description="힘들어 죽겠어요\
      죽겠다구요";
     break;
   }
-  else if(randomize==11){
+  else if(randomize==11&&thisGame.status.health<0.3){
     _title="사는게힘들어";
     _img_name="사는게힘들어엄마.png";
     _description="얼른 집으로 가자";
     break;
   }
-  else if(randomize==12){
+  else if(randomize==12&&thisGame.status.health<0.5){
     _title="핫식스";
     _img_name="핫식스.png";
     _description="내가 핫식스를 마시는지\
      핫식스가 나를 마시는지";
     break;
   }
-  else if(randomize==13){
+  else if(randomize==13&&thisGame.status.health>0.5){
     _title="할수있다능";
     _img_name="할수있다능.png";
     _description="할수있다능 별로 안 어렵다능";
     break;
   }
-  else if(randomize==14){
+  else if(randomize==14&&thisGame.status.health>0.7){
     _title="트로피카나";
     _img_name="트로피카나.png";
     _description="힘이 넘친다! Real Fruit! Real Sparkling!";
     break;
   }
-  else if(randomize==15){
+  else if(randomize==15&&thisGame.status.relationship>0.5){
     _title="술을 마시자";
     _img_name="술을마시자.png";
     _description="마시는 게 남는 거다! 술을 마시자!";
@@ -186,6 +187,9 @@ function show_detail(){ //세부정보 보여주기
     document.getElementById("Detail").style.display="block";
   }
 }
+function change_cursor(){
+  this.style.cursor="pointer";
+}
 function show_menu(){ //메뉴 출력
   if(!summary_first){ //요약 숨기기
     document.getElementById("Result_pic").style.display="none";
@@ -203,6 +207,9 @@ function show_menu(){ //메뉴 출력
     main_menu.onclick=function(){
       window.location.reload(); //새로고침을 통해서 메인메뉴로 돌아간다.
     }
+    main_menu.onmouseover=function(){
+      this.style.cursor="pointer";
+    }
     document.getElementById("Ending_menu").appendChild(main_menu);
     var end_program=document.createElement('div'); //프로그램 종료 버튼 생성
     end_program.id="end";
@@ -212,6 +219,9 @@ function show_menu(){ //메뉴 출력
     end_program.onclick=function(){
       window.close(); //창을 닫아 프로그램을 종료한다.
     }
+    end_program.onmouseover=function(){
+      this.style.cursor="pointer";
+    }
     document.getElementById("Ending_menu").appendChild(end_program);
     menu_first=false;
   }
@@ -219,4 +229,5 @@ function show_menu(){ //메뉴 출력
     document.getElementById("main").style.display="block";
     document.getElementById("end").style.display="block";
   }
+}
 }
