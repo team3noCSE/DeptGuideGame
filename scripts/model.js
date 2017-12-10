@@ -57,6 +57,7 @@ thisGame.timeTable[3][5] = Event["미분방정식"];
 */
 var lectureList = new Array(5);
 //  동아리도 들어가야됨
+
 lectureList[0] = Event["현대대수학I"];
 lectureList[1] = Event["확률및통계"];
 lectureList[2] = Event["이산수학"];
