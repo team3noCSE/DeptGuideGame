@@ -1383,7 +1383,7 @@ class Department_choice {
                 app_simulator.stage.removeChild(list[i]._select_button);
                 app_simulator.stage.removeChild(list[i]._return_button);
             }
-            
+
             app_simulator.stage.removeChild(_thisclass._department_text);
             department_choice_to_select_timetable();
         }
@@ -1563,23 +1563,15 @@ class select_timetable {
             wordWrap: true,
             wordWrapWidth: 880
         });
-<<<<<<< HEAD
-        
+
+
         this._text_lecture_name.x = 10;
         this._text_lecture_name.y = -80;
-        
-        
+
+
         this._text_lecture_information.x = 10;
         this._text_lecture_information.y = 20;
-=======
 
-        this._text_lecture_name.x = 0;
-        this._text_lecture_name.y = 0;
-
-
-        this._text_lecture_information.x = 0;
-        this._text_lecture_information.y = 100;
->>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af
         app_simulator.stage.addChild(this._text_lecture_information);
 
         this._timetable_graphics = new Array(10);
@@ -1629,15 +1621,7 @@ class select_timetable {
             }
         }
 
-<<<<<<< HEAD
-  
-=======
-        this._information_box = new PIXI.Graphics();
-        this._information_box.beginFill(color_Template[department][0], 0.5);
-        this._information_box.drawRect(200, 300, 400, 400);
 
-
->>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af
         this._template_buttons = [];
 
         this._option_buttons = [];
@@ -1826,14 +1810,14 @@ class select_timetable {
                         Timetable[k][l] = _thisclass._timetable[k][l].slice(1);
                     } else {
                         Timetable[k][l] = _thisclass._timetable[k][l];
-                    }        
+                    }
                 }
             }
             console.log(Timetable);
             for (let i = app_simulator.stage.children.length - 1; i>=0; i--){
                 app_simulator.stage.removeChild(app_simulator.stage.children[i]);
-               
-                
+
+
                 //
                 //
                 //
@@ -1847,25 +1831,7 @@ class select_timetable {
                 //
                 //
                 //
-<<<<<<< HEAD
-=======
-                //요기요!
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
-                //
->>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af
+
             }
         }
         function confirm_onButtonUp(){
@@ -2199,11 +2165,3 @@ function department_choice_to_select_timetable() {
     });
 
 }
-<<<<<<< HEAD
-
-//let select_table = new select_timetable('MATH');
-  //          select_table.show_timetable();
-    //        select_table.show_templates();
-
-=======
->>>>>>> 1e9ddce9a38f8f29074a713ddbdd46ab47edf1af
