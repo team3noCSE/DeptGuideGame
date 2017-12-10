@@ -1802,7 +1802,28 @@ class select_timetable {
                 //
                 //
                 //
+<<<<<<< HEAD
+=======
+                //요기요!
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+                //
+>>>>>>> 137f99c6446baeb6c6b9a54ea63239643647c4fa
             }
+            app_simulator.destroy(app_simulator.stage);
+            process();
         }
         function confirm_onButtonUp(){
 
@@ -2112,3 +2133,25 @@ function department_choice_to_select_timetable() {
 
 }
 
+<<<<<<< HEAD
+=======
+
+
+let select_table = new select_timetable('CITE');
+select_table.show_timetable();
+select_table.show_templates();
+
+/*
+  let richText = new PIXI.Text("굴려굴려", default_style);
+  richText.anchor.set(0.5);
+  richText.x = 0;
+  richText.y = 0;
+  app_simulator.stage.addChild(richText);
+*/
+
+
+
+
+
+
+>>>>>>> 137f99c6446baeb6c6b9a54ea63239643647c4fa
