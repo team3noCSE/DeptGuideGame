@@ -205,15 +205,16 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
 
 function eventHandler(week) {
   // 일주일 한번 일어남, 과 관련 이벤트는 일정 확률, 이외에는 상황에 맞는 general event
+
     for (let key in PopUpEvent){
       // 과 관련 이벤트 loop
       let val = PopUpEvent[key];
-
+      if (val.time === null && (week === 7 || week === 8)) continue;
       if (val.department === thisGame.department && val.priority === 3){
          // 과 dependent 이벤트
         if ( val.time === week || val.time === null){
           // 시간이 상관없음이거나 해당하는 week인 경우
-          if(Math.random() < 3/16){
+          if(Math.random() < 1/16){
 
             console.log(week+"주차 이벤트 :");
             console.log(val.description);
@@ -224,8 +225,28 @@ function eventHandler(week) {
           }
         }
       }
-    }
-    if (val.department === null){
+      else if (val.department === null){
+        let flag = false;
 
+        for (let time in val.time){
+          if (time === week) flag = true;
+        }
+
+        if (flag === false && val.time !== null) continue;
+        if(Math.random() < 2/16){
+
+          console.log(week+"주차 이벤트 :");
+          console.log(val.description);
+          if(val.priority === 0) // 체력 관련
+            thisGame.health *= 0.95;
+          else if (val.priority === 1) // 성적 관련
+            thisGame.grade *= 0.95;
+          else if (val.priority === 2) // 인간관계 관련
+            thisGame.relationship *= 0.95;
+          thisGame.eventCount++;
+          val.eventCount++;
+          return;
+        }
+      }
     }
 }
