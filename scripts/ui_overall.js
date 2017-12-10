@@ -3,8 +3,6 @@ document.body.appendChild(app_simulator.view);
 
 app_simulator.stage.position.set(
     app_simulator.renderer.width*0.5, app_simulator.renderer.height*0.5);
-
-
 let this_stat = {
     health          :   0,
     relationship    :   0,
@@ -1865,6 +1863,32 @@ function department_choice_to_select_timetable() {
             let select_table = new select_timetable(thisGame.department);
             select_table.show_timetable();
             select_table.show_templates();
+
+            thisGame.timeTable = new Array(7);
+            for( var i=0; i<7; i++ ) {
+              thisGame.timeTable[i] = new Array(11);
+            }
+            // select_table._timetable 10 * 5
+            for (let i = 0; i < 7; i++){
+              if (i === 5 || i === 6){
+                for (let j = 0; j < 11; j++){
+                    thisGame.timeTable[i][j] = undefined;
+                  }
+                }
+              else {
+                for (let j = 0; j < 11; j++){
+                  if(j === 10)
+                    thisGame.timeTable[i][j] = undefined;
+                  else {
+                    thisGame.timeTable[i][j] = Event[select_table._timetable[j][i]];
+                  }
+                }
+              }
+            }
+            for (let i = 0; i < 7; i++)
+              for (let j = 0; j < 11 ; j++)
+                console.log(thisGame.timeTable[i][j]);
+            model();
         }
     });
 
