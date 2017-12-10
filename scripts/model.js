@@ -72,11 +72,15 @@ calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 model();
 >>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210
+=======
+model();
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
 function model() { // 일단은 1주 진행
   var capacity=0;
@@ -305,6 +309,7 @@ function eventHandler(week) {
       }
     }
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 //////////////////////////////////////////////////////////UI///////////////////////////////////////////////////////////
 
@@ -5386,3 +5391,5 @@ function week16()
 }
 =======
 >>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210
+=======
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'

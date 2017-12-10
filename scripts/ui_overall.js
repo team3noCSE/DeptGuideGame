@@ -3,8 +3,13 @@ document.body.appendChild(app_simulator.view);
 
 app_simulator.stage.position.set(
     app_simulator.renderer.width*0.5, app_simulator.renderer.height*0.5);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 let this_stat = {
-    health          :   1,
+    health          :   0,
     relationship    :   0,
     grade           :   0
 }
@@ -65,36 +70,41 @@ let icons_Texture = {
 let question_List = {
 //  QUESTION        :   [QUESTION,
 //                       ANSWER-AFFECT-VALUE ARRAY]
-    0               :   [   '잘 지내요?',
+    0               :   [   '가장 중요한 것 두개를 고르면?',
                             [
-                                ['네', 'default', +0],
-                                ['네니오', 'default', +0],
-                                ['아니오', 'default', +0]
+                                ['학점', 'grade', +3],
+                                ['인간관계', 'relationship', +2],
+                                ['체력', 'health', +1]
                             ],
-                            1
+                            2
                         ],
-    1               :   [   '휴학하고 싶죠?',
+    1               :   [   '내 인생?',
                             [
-                                ['네!', 'default', +0],
-                                ['네!', 'default', +0],
-                                ['네!', 'default', +0]
+                                ['조졌따리', 'grade', -10],
+                                ['망했따리', 'relationship', -20],
+                                ['띠용~!', 'health', -30],
+                                ['기모리~', 'grade', -30]
                             ],
-                            1
+                            3
                         ],
-    2               :   [   '술은 좋아해요?',
+    2               :   [   '가나다라',
                             [
-                                ['네!', 'relationship', +0.02],
-                                ['그럭저럭..', 'default', +0],
-                                ['싫어요!', 'grade', +0]
+                                ['마바사', 'default', -20],
+                                ['아자차', 'relationship', +30],
+                                ['카타파하', 'grade', -29]
                             ],
-                            1
+                            2
                         ],
-    3               :   [   '',
+    3               :   [   '0',
                             [
-                                ['1', 'grade', 0],
-                                ['1', 'grade', 0],
-                                ['1', 'grade', 0]
+                                ['1', 'grade', 1],
+                                ['1', 'grade', 1],
+                                ['1', 'grade', 1],
+                                ['1', 'grade', 1],
+                                ['1', 'grade', 1],
+                                ['1', 'grade', 1]
                             ],
+<<<<<<< HEAD
                             1
                         ],
     4               :   [   '휴학하고 싶죠?',
@@ -104,6 +114,9 @@ let question_List = {
                                 ['네!', 'default', +0]
                             ],
                             1
+=======
+                            5
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
                         ]
 }
 
@@ -121,6 +134,13 @@ let color_Template = {
     CE              :   [0xC6E0FF, 0x315659, 0x2978A0, 0xBCAB79, 0x0D0A0B, 0xDD6E42, 0x242038, 0xAF9164, 0xED6A5A, 0xB1C1C0],
     CITE            :   [0xADF7B6, 0xFCF5C7, 0xFFC09F, 0x79ADDC, 0xE0D3DE, 0x666A86, 0x51A3A3, 0x817F82, 0xF0F2EF, 0x020202],
     RAND            :   [0xADF7B6, 0xFCF5C7, 0xFFC09F, 0x79ADDC]
+}
+
+let lecture_information = {
+//  LECTURE         :   INFORMATION
+    현대예술의이해     :   "현대예술의이해를배웁니다",
+    음악의이해        :   "dmakdkd",
+
 }
 
 let timetable_list = {
@@ -141,7 +161,7 @@ let timetable_list = {
     MATH_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "",                 "",                 "",                 ""                  ],  // 1
-        ["x고체역학I",        "",                 "x고체역학I",          "",                 ""                  ],  // 2
+        ["x고체역학",         "",                 "x고체역학",           "",                 ""                  ],  // 2
         ["x전자기학개론",      "해석학I",            "x전자기학개론",        "해석학I",           ""                  ],  // 3
         ["미분방정식",         "이산수학",           "미분방정식",          "이산수학",           ""                  ],  // 4
         ["",                "x게임이론",          "",                 "x게임이론",          ""                  ],  // 5
@@ -156,9 +176,9 @@ let timetable_list = {
         ["",                "현대대수학I",         "",                 "현대대수학I",         ""                  ],  // 2
         ["",                "x객체지향프로그래밍",   "",                 "x객체지향프로그래밍",   ""                  ],  // 3
         ["미분방정식",         "",                 "미분방정식",          "",                 ""                  ],  // 4
-        ["확률및통계",         "x경제학원론",         "확률및통계",         "x경제학원론",         ""                  ],  // 5
+        ["확률과통계",         "x경제학원론",         "확률과통계",         "x경제학원론",         ""                  ],  // 5
         ["",                "",                 "",                 "",                 ""                  ],  // 6
-        ["확률및통계",         "",                 "미분방정식",          "",                 ""                  ],  // 7
+        ["확률과통계",         "",                 "미분방정식",          "",                 ""                  ],  // 7
         ["",                "",                 "현대대수학I",         "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
     ],
@@ -229,7 +249,7 @@ let timetable_list = {
         ["x현대대수학I",       "x집합론",            "x현대대수학I",       "x집합론",            ""                  ],  // 3
         ["",                "프로그래밍언어",       "",                 "프로그래밍언어",       ""                  ],  // 4
         ["",                "",                 "",                 "",                 ""                  ],  // 5
-        ["x확률및통계",        "",                 "x확률및통계",         "",                 ""                  ],  // 6
+        ["x확률과통계",        "",                 "x확률과통계",         "",                 ""                  ],  // 6
         ["x이산수학",         "",                 "",                 "x해석학I",           ""                  ],  // 7
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
@@ -248,20 +268,20 @@ let timetable_list = {
     ],
     IME_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
-        ["x확률및통계",        "정보시스템기술",       "x확률및통계",        "정보시스템기술",       ""                  ],  // 1
-        ["경영과학II",        "x경영학원론",         "경영과학II",         "x경영학원론",         ""                  ],  // 2
-        ["미분방정식",         "",                 "미분방정식",          "",                 ""                  ],  // 3
+        ["x창업의실제",        "정보시스템기술",       "x창업의실제",        "정보시스템기술",       ""                  ],  // 1
+        ["경영과학2",         "x경영학원론",         "경영과학2",          "x경영학원론",         ""                  ],  // 2
+        ["비즈니스플래닝",      "",                 "비즈니스플래닝",       "",                 ""                  ],  // 3
         ["",                "제품생산공정설계1",    "",                 "제품생산공정설계1",     ""                  ],  // 4
-        ["x응용복소함수론",     "실험계획개론",        "x응용복소함수론",      "실험계획개론",         ""                  ],  // 5
+        ["x창의적기업가정신응용", "실험계획개론",        "x창의적기업가정신응용", "실험계획개론",         ""                  ],  // 5
         ["",                "",                 "",                 "",                 ""                  ],  // 6
-        ["",                "",                 "미분방정식",          "",                 ""                  ],  // 7
-        ["",                "",                 "x확률및통계",         "x응용복소함수론",      ""                  ],  // 8
+        ["",                "",                 "",                 "",                 ""                  ],  // 7
+        ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
     ],
     IME_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "정보시스템기술",       "",                 "정보시스템기술",       ""                  ],  // 1
-        ["경영과학II",        "x창의적기업가정신응용",  "경영과학II",         "x창의적기업가정신응용",  ""                  ],  // 2
+        ["경영과학2",         "x비즈니스모델스튜디오",  "경영과학2",          "x비즈니스모델스튜디오",  ""                  ],  // 2
         ["",                "",                 "",                 "",                 ""                  ],  // 3
         ["x데이터구조와알고리즘", "제품생산공정설계1",    "x데이터구조와알고리즘",  "제품생산공정설계1",    ""                  ],  // 4
         ["인터렉션디자인스튜디오","실험계획개론",        "인터렉션디자인스튜디오", "실험계획개론",         ""                  ],  // 5
@@ -309,11 +329,11 @@ let timetable_list = {
     ME_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["열역학",            "",                 "열역학",            "",                 ""                  ],  // 1
-        ["고체역학II",         "기계재료학",          "고체역학II",          "기계재료학",          ""                  ],  // 2
+        ["고체역학2",         "기계재료학",          "고체역학2",          "기계재료학",          ""                  ],  // 2
         ["",                "",                 "",                 "",                 ""                  ],  // 3
         ["x응용복소함수론",     "동역학",             "x응용복소함수론",     "동역학",             ""                  ],  // 4
         ["x확률및통계",        "",                 "x확률및통계",        "",                 ""                  ],  // 5
-        ["",                "기계공학개론I",        "",                 "",                 ""                  ],  // 6
+        ["",                "기계공학개론",        "",                 "",                 ""                  ],  // 6
         ["",                "",                 "",                 "x응용복소함수론",      ""                  ],  // 7
         ["",                "",                 "",                 "x확률및통계",         ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
@@ -321,11 +341,11 @@ let timetable_list = {
     ME_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["",                "x음악의이해",         "",                 "x음악의이해",         ""                  ],  // 1
-        ["고체역학II",         "기계재료학",          "고체역학II",          "기계재료학",          ""                  ],  // 2
-        ["확률및통계",         "",                 "확률및통계",          "",                 ""                  ],  // 3
+        ["고체역학2",         "기계재료학",          "고체역학2",          "기계재료학",          ""                  ],  // 2
+        ["확률과통계",         "",                 "확률과통계",          "",                 ""                  ],  // 3
         ["",                "동역학",             "",                 "동역학",            ""                  ],  // 4
         ["x20세기세계사",      "",                 "x20세기세계사",       "",                 ""                  ],  // 5
-        ["x경제학원론",        "기계공학개론I",        "x경제학원론",         "기계공학개론",         ""                  ],  // 6
+        ["x경제학원론",        "기계공학개론",        "x경제학원론",         "기계공학개론",         ""                  ],  // 6
         ["",                "",                 "",                 "",                 ""                  ],  // 7
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
@@ -333,11 +353,11 @@ let timetable_list = {
     ME_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["x영화의이해",        "",                 "x영화의이해",         "",                 ""                  ],  // 1
-        ["고체역학II",         "기계재료학",          "고체역학II",          "기계재료학",          ""                  ],  // 2
+        ["고체역학2",         "기계재료학",          "고체역학2",          "기계재료학",          ""                  ],  // 2
         ["",                "",                 "",                 "",                 ""                  ],  // 3
         ["응용복소함수론",      "동역학",             "응용복소함수론",       "동역학",            ""                  ],  // 4
         ["x회로이론",         "",                 "x회로이론",           "",                 ""                  ],  // 5
-        ["x전자기학개론",      "기계공학개론I",        "x전자기학개론",        "기계공학개론",         ""                  ],  // 6
+        ["x전자기학개론",      "기계공학개론",        "x전자기학개론",        "기계공학개론",         ""                  ],  // 6
         ["",                "",                 "응용복소함수론",       "",                 ""                  ],  // 7
         ["",                "",                 "",                 "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
@@ -417,7 +437,7 @@ let timetable_list = {
     CE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["x미분방정식",        "x잠의심리학",         "x미분방정식",         "x잠의심리학",        ""                  ],  // 1
-        ["화공물리화학I",          "유기화학I(화공)",      "화공물리화학I",            "유기화학I(화공)",           ""                  ],  // 2
+        ["물리화학",          "유기화학",           "물리화학",            "유기화학",           ""                  ],  // 2
         ["",                "",                 "",                 "",                 ""                  ],  // 3
         ["화학생명공학",       "화학생명공학실험",     "화학생명공학",         "",                 ""                  ],  // 4
         ["x경제학원론",        "화학생명공학실험",      "x경제학원론",        "",                 ""                  ],  // 5
@@ -429,7 +449,7 @@ let timetable_list = {
     CE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["x한국근현대사의이해",  "x20세기세계사",       "x한국근현대사의이해",   "x20세기세계사",       ""                  ],  // 1
-        ["화공물리화학I",          "유기화학I(화공)",      "화공물리화학I",           "유기화학I(화공)",           ""                  ],  // 2
+        ["물리화학",          "유기화학",           "물리화학",            "유기화학",           ""                  ],  // 2
         ["",                "",                 "",                 "",                 ""                  ],  // 3
         ["화학생명공학",        "",                "화학생명공학",        "화학생명공학실험",      ""                  ],  // 4
         ["x학제간통합교양교육특강:현대문명과환경의이해","","x학제간통합교양교육특강:현대문명과환경의이해","화학생명공학실험",""         ],  // 5
@@ -441,7 +461,7 @@ let timetable_list = {
     CE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
         ["x법률의세계",        "",                 "x법률의세계",        "",                 ""                  ],  // 1
-        ["화공물리화학I",          "유기화학I(화공)",      "화공물리화학I",           "유기화학I(화공)",     ""                  ],  // 2
+        ["물리화학",          "유기화학",           "물리화학",            "유기화학",           ""                  ],  // 2
         ["",                "",                 "",                 "",                 ""                  ],  // 3
         ["화학생명공학",        "x독서토의",         "화학생명공학",        "x독서토의",           ""                  ],  // 4
         ["",                "",                 "화학생명공학실험",     "",                 ""                  ],  // 5
@@ -464,31 +484,31 @@ let timetable_list = {
     ],
     CITE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
-        ["x응용복소함수론",     "x미분방정식",         "x응용복소함수론",     "x미분방정식",          ""                  ],  // 1
+        ["x현대대수학I",       "x해석학I",          "x현대대수학I",        "x해석학I",           ""                  ],  // 1
         ["",                "",                 "",                 "",                 ""                  ],  // 2
         ["인터렉션디자인스튜디오","",                 "인터렉션디자인스튜디오",  "",                 ""                  ],  // 3
         ["인터렉션디자인스튜디오","",                 "인터렉션디자인스튜디오",  "",                 ""                  ],  // 4
         ["",                "창의IT설계II:기초설계", "",                 "",                 ""                  ],  // 5
         ["",                "창의IT설계II:기초설계", "",                 "",                 ""                  ],  // 6
-        ["창의IT설계II:기초설계","창의IT설계II:기초설계","x응용복소함수론",       "",                 ""                  ],  // 7
-        ["창의IT설계II:기초설계","x미분방정식",         "창의IT설계II:기초설계", "",                 ""                  ],  // 8
+        ["창의IT설계II:기초설계","창의IT설계II:기초설계","x현대대수학I",        "",                 ""                  ],  // 7
+        ["창의IT설계II:기초설계","x해석학I",          "창의IT설계II:기초설계", "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
     ],
     CITE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
-        ["x유기화학I(화학)",   "융합적상상력과공학력디자인", "x유기화학I(화학)",  "융합적상상력과공학력디자인", ""               ],  // 1
-        ["창의적기업가정신응용",  "",                 "창의적기업가정신응용",  "",                 ""                  ],  // 2
+        ["x유기화학I(화학)",   "융합적상상력과공학력디자인","x유기화학I(화학)",   "융합적상상력과공학력디자인",""                ],  // 1
+        ["창의적기업가정신",    "",                 "창의적기업가정신",      "",                 ""                  ],  // 2
         ["",                "",                 "",                 "",                 ""                  ],  // 3
         ["x세포생물학",        "",                 "x세포생물학",         "",                 ""                  ],  // 4
         ["",                "창의IT설계II:기초설계", "",                 "",                 ""                  ],  // 5
         ["",                "창의IT설계II:기초설계", "",                 "",                 ""                  ],  // 6
-        ["창의IT설계II:기초설계","창의IT설계II:기초설계","",                 "",                 ""                  ],  // 7
-        ["창의IT설계II:기초설계","",                 "창의IT설계II:기초설계","",                 ""                  ],  // 8
+        ["창의IT설계II:기초설계","창의IT설계II:기초설계", "",                 "",                 ""                  ],  // 7
+        ["창의IT설계II:기초설계","",                 "창의IT설계II:기초설계", "",                 ""                  ],  // 8
         ["",                "",                 "",                 "",                 ""                  ]   // 9
     ],
     EE_1         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
-        ["x음악의이해",        "반도체전자공학I",       "x음악의이해",        "반도체전자공학I",       ""                  ],  // 1
+        ["x음악의이해",        "반도체전자공학",       "x음악의이해",        "반도체전자공학",       ""                  ],  // 1
         ["디지털시스템설계",    "",                 "디지털시스템설계",      "",                 ""                  ],  // 2
         ["",                "x객체지향프로그래밍",   "",                 "x객체지향프로그래밍",   ""                  ],  // 3
         ["신호및시스템",       "데이터구조",          "신호및시스템",        "데이터구조",          ""                  ],  // 4
@@ -500,7 +520,7 @@ let timetable_list = {
     ],
     EE_2         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
-        ["x해석학I",          "반도체전자공학I",       "x해석학I",          "반도체전자공학I",       ""                  ],  // 1
+        ["x해석학I",          "반도체전자공학",       "x해석학I",          "반도체전자공학",       ""                  ],  // 1
         ["디지털시스템설계",    "x이산수학",           "디지털시스템설계",      "x이산수학",         ""                  ],  // 2
         ["확률및통계",         "",                 "확률및통계",          "",                 ""                  ],  // 3
         ["신호및시스템",       "x현대대수학I",        "신호및시스템",        "x현대대수학I",        ""                  ],  // 4
@@ -512,7 +532,7 @@ let timetable_list = {
     ],
     EE_3         :
     [   ["",                "",                 "",                 "",                 ""                  ],  // 0
-        ["x현대물리",         "반도체전자공학I",       "x현대물리",          "반도체전자공학I",       ""                  ],  // 1
+        ["x현대물리",         "반도체전자공학",       "x현대물리",          "반도체전자공학",       ""                  ],  // 1
         ["디지털시스템설계",    "",                 "디지털시스템설계",      "",                 ""                  ],  // 2
         ["",                "x역학",             "",                 "x역학",             ""                  ],  // 3
         ["신호및시스템",       "x양자물리II",        "신호및시스템",        "x양자물리II",         ""                  ],  // 4
@@ -524,8 +544,8 @@ let timetable_list = {
     ]
 }
 
-let lecture_information = {
 
+<<<<<<< HEAD
 //  LECTURE         :	INFORMATION
 //MATH 2학년 1학기
 
@@ -654,6 +674,8 @@ let lecture_information = {
 미술의이해    :    "수업이 영어로 진행되며 퀴즈나 시험에서도 수업시간에 다룬 내용에 대해 물어보는 문제가 많이 나와서 수업시간에 집중을 잘 해야한다.  미술의 역사와 문화에 대해 많이 배울 수 있고, 수강생들이 과제에 올린 사진들 중 몇개를 선택, 가상의 전시회 ppt를 구성해보는 독특한 과제가 있다.",
 음악의이해    :  "고전주의부터 낭만주의까지의 음악의 역사에 대한 내용과, 음악의 본질과 여러 중요한 요소들에 대해서 배운다. 중간고사, 기말고사 때는 암기 위주의 공부를 해야 하며, 기말고사때는 특별히 듣기 시험을 치기 때문에 클래식 음악을 암기할 수도 있다는 점을 깨닫게 된다. 고등학교 음악 감상시험이 생각나는 대목이기도 하다. 교수님꼐서 음악의 여러 개념들과 역사에 대해 말로 풀어 차근차근 설명해주시기 때문에 편하게 들을 수 있는 과목이다."
 }
+=======
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
 var back_temp = new PIXI.Graphics();
 back_temp.lineStyle(2, 0x0000FF, 0);
@@ -662,23 +684,10 @@ back_temp.drawRect(-app_simulator.renderer.width/2, -app_simulator.renderer.heig
                   app_simulator.renderer.width, app_simulator.renderer.height);
 app_simulator.stage.addChild(back_temp);
 
-var default_style = new PIXI.TextStyle({
-  fontFamily: 'Consolas',
-  fontSize: 40,
-  fill: ['#000000', '#000000'], // gradient
-  stroke: '#4a1850',
-  strokeThickness: 1,
-  dropShadow: false,
-  dropShadowColor: '#000000',
-  dropShadowBlur: 1,
-  dropShadowAngle: Math.PI / 6,
-  dropShadowDistance: 6,
-  wordWrap: true,
-  wordWrapWidth: 700
-});
-
 // MAIN MENU
 mainmenu = new PIXI.Sprite.fromImage('images/menu.png');
+//mainmenu.scale.x *= 1;
+//mainmenu.scale.y *= 1;
 mainmenu.anchor.set(0.5);
 mainmenu.x = 0;
 mainmenu.y = 0;
@@ -693,6 +702,12 @@ button_new_game.interactive = true;
 button_new_game.alpha = 0;
 button_new_game
     .on('pointerdown', new_game_onButtonDown);
+/*
+    .on('pointerup', new_game_onButtonUp)
+    .on('pointerupoutside', new_game_onButtonUp)
+    .on('pointerover', new_game_onButtonOver)
+    .on('pointerout', new_game_onButtonOut);
+*/
 
 function new_game_onButtonDown(){
     for (let i = 0; i < Department_choice_button.length; i++){
@@ -705,7 +720,33 @@ function new_game_onButtonDown(){
     app_simulator.stage.removeChild(button_new_game);
 
     loading_menu_to_test();
+    //enable_character_test();
+    //this.isdown = true;
 }
+
+
+/*
+function new_game_onButtonUp(){
+
+}
+
+function new_game_onButtonOver(){
+    this.isOver = true;
+    if (this.isdown){
+        return;
+    }
+    //this.texture = icons_Texture[name+'_labeled'];
+}
+
+function new_game_onButtonOut(){
+    this.isOver = false;
+    if (this.isdown){
+        return;
+    }
+    //this.texture = icons_Texture[name];
+console.log(thisGame.department);
+    }
+*/
 
 
 function enable_main_menu(){
@@ -738,10 +779,11 @@ class Character_test {
         this._selected = [0, 0, 0, 0, 0, 0];
         this._i = 0;
 
-        this._rand_depart = Math.floor(Math.random()*10);
-        this._question_center.beginFill(0xDDDDDD);
-        this._question_center.lineStyle(10, 0x000000, 0.5);
+
+        this._question_center.beginFill(color_Template[Department[4]][2]);
+        this._question_center.lineStyle(10, color_Template[Department[4]][3], 1);
         this._random_angle = Math.random()*2*Math.PI;
+<<<<<<< HEAD
         this._question_center.drawRect(-700, -400, 1400, 500);
 
         this._question_text = new PIXI.Text(this._question, {
@@ -761,6 +803,26 @@ class Character_test {
         this._question_text.anchor.set(0.5);
         this._question_text.x = 0;
         this._question_text.y = -150;
+=======
+        for (this._i = 0; this._i<this._num_of_answers; this._i++){
+            if (this._i == 0){
+                this._question_center.moveTo(
+                    250*Math.cos((this._i*2*Math.PI + this._random_angle)/this._num_of_answers),
+                    250*Math.sin((this._i*2*Math.PI + this._random_angle)/this._num_of_answers)
+                );
+            } else {
+                this._question_center.lineTo(
+                    250*Math.cos((this._i*2*Math.PI + this._random_angle)/this._num_of_answers),
+                    250*Math.sin((this._i*2*Math.PI + this._random_angle)/this._num_of_answers)
+                );
+            }
+        }
+        this._question_center.lineTo(
+                250*Math.cos(this._random_angle/this._num_of_answers),
+                250*Math.sin(this._random_angle/this._num_of_answers)
+            );
+        this._question_center.endFill();
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
         //////////////////////////////////////////////////////////
 
@@ -771,12 +833,24 @@ class Character_test {
         if (this._num_of_answers > 0){
             this._answer_buttons_0 = new PIXI.Graphics();
             //this._answer_buttons.push(new PIXI.Graphics());
-            this._answer_buttons_0.beginFill(color_Template[Department[this._rand_depart]][0]);
-            this._answer_buttons_0.lineStyle(20, color_Template[Department[this._rand_depart]][0], 0.7);
-            this._answer_buttons_0.drawRect(-690, 190, 380, 240);
+            this._answer_buttons_0.beginFill(color_Template[Department[0]][2]);
+            this._answer_buttons_0.lineStyle(0, color_Template[Department[0]][2], 0);
+            this._answer_buttons_0.moveTo(0,0);
+            this._answer_buttons_0.lineTo(
+                1102*Math.cos((this._random_angle)/this._num_of_answers),
+                1102*Math.sin((this._random_angle)/this._num_of_answers)
+            );
+            this._answer_buttons_0.arc(
+                0, 0, 2000,
+                0,
+                (2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_0.lineTo(0, 0);
+            this._answer_buttons_0.endFill();
 
             this._answer_buttons_0.buttonMode = true;
             this._answer_buttons_0.interactive = true;
+<<<<<<< HEAD
             this._answer_buttons_0.alpha = 0.4;
 
 
@@ -797,6 +871,9 @@ class Character_test {
             this._answer_text_0.anchor.set(0.5);
             this._answer_text_0.x = -500;
             this._answer_text_0.y = 310;
+=======
+            this._answer_buttons_0.alpha = 0.6;
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
 
             this._answer_buttons_0
@@ -811,23 +888,23 @@ class Character_test {
                 this.isdown = true;
                 if (_thisclass._selected[0] == 0){
                     _thisclass._selected[0] = 1;
-                    _thisclass._answer_buttons_0.alpha = 0.8;
+                    _thisclass._answer_buttons_0.alpha = 1;
                     if(_thisclass._answer[0][1] == 'grade'){
                         thisGame.status.grade += _thisclass._answer[0][2];
-                        thisGame.status.relationship += (Math.random()-0.5)*0.01;
-                        thisGame.status.health += (Math.random()-0.5)*0.01;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[0][1] == 'relationship'){
-                        thisGame.status.grade += (Math.random()-0.5)*0.01;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
                         thisGame.status.relationship += _thisclass._answer[0][2];
-                        thisGame.status.health += (Math.random()-0.5)*0.01;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[0][1] == 'health'){
-                        thisGame.status.grade += (Math.random()-0.5)*0.01;
-                        thisGame.status.relationship += (Math.random()-0.5)*0.01;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
                         thisGame.status.health += _thisclass._answer[0][2];
                     } else {
-                        thisGame.status.grade += (Math.random()-0.5)*0.04;
-                        thisGame.status.relationship += (Math.random()-0.5)*0.04;
-                        thisGame.status.health += (Math.random()-0.5)*0.04;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
                     console.log(thisGame.status.health);
                     console.log(thisGame.status.relationship);
@@ -861,12 +938,23 @@ class Character_test {
         if (this._num_of_answers > 1){
             this._answer_buttons_1 = new PIXI.Graphics();
             //this._answer_buttons.push(new PIXI.Graphics());
-            this._answer_buttons_1.beginFill(color_Template[Department[this._rand_depart]][1]);
-            this._answer_buttons_1.lineStyle(20, color_Template[Department[this._rand_depart]][1], 0.7);
-            this._answer_buttons_1.drawRect(-190, 190, 380, 240);
+            this._answer_buttons_1.beginFill(color_Template[Department[1]][2]);
+            this._answer_buttons_1.lineStyle(0, color_Template[Department[1]][2], 0);
+            this._answer_buttons_1.moveTo(0,0);
+            this._answer_buttons_1.lineTo(
+                1102*Math.cos((2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((2*Math.PI + this._random_angle)/this._num_of_answers)
+            );
+            this._answer_buttons_1.arc(
+                0, 0, 1102,
+                (2*Math.PI + this._random_angle)/this._num_of_answers,
+                (2*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_1.endFill();
 
             this._answer_buttons_1.buttonMode = true;
             this._answer_buttons_1.interactive = true;
+<<<<<<< HEAD
             this._answer_buttons_1.alpha = 0.4;
 
             this._answer_text_1 = new PIXI.Text(this._answer[1][0], {
@@ -886,6 +974,9 @@ class Character_test {
             this._answer_text_1.anchor.set(0.5);
             this._answer_text_1.x = 0;
             this._answer_text_1.y = 310;
+=======
+            this._answer_buttons_1.alpha = 0.6;
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
 
             this._answer_buttons_1
@@ -899,23 +990,23 @@ class Character_test {
                 this.isdown = true;
                 if (_thisclass._selected[1] == 0){
                     _thisclass._selected[1] = 1;
-                    _thisclass._answer_buttons_1.alpha = 0.8;
+                    _thisclass._answer_buttons_1.alpha = 1;
                     if(_thisclass._answer[1][1] == 'grade'){
                         thisGame.status.grade += _thisclass._answer[1][2];
-                        thisGame.status.relationship += (Math.random()-0.5)*0.01;
-                        thisGame.status.health += (Math.random()-0.5)*0.01;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[1][1] == 'relationship'){
-                        thisGame.status.grade += (Math.random()-0.5)*0.01;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
                         thisGame.status.relationship += _thisclass._answer[1][2];
-                        thisGame.status.health += (Math.random()-0.5)*0.01;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[1][1] == 'health'){
-                        thisGame.status.grade += (Math.random()-0.5)*0.01;
-                        thisGame.status.relationship += (Math.random()-0.5)*0.01;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
                         thisGame.status.health += _thisclass._answer[1][2];
                     } else {
-                        thisGame.status.grade += (Math.random()-0.5)*0.04;
-                        thisGame.status.relationship += (Math.random()-0.5)*0.04;
-                        thisGame.status.health += (Math.random()-0.5)*0.04;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
                     console.log(thisGame.status.health);
                     console.log(thisGame.status.relationship);
@@ -949,12 +1040,23 @@ class Character_test {
         if (this._num_of_answers > 2){
             this._answer_buttons_2 = new PIXI.Graphics();
             //this._answer_buttons.push(new PIXI.Graphics());
-            this._answer_buttons_2.beginFill(color_Template[Department[this._rand_depart]][2]);
-            this._answer_buttons_2.lineStyle(20, color_Template[Department[this._rand_depart]][2], 0.7);
-            this._answer_buttons_2.drawRect(290, 190, 380, 240);
+            this._answer_buttons_2.beginFill(color_Template[Department[2]][2]);
+            this._answer_buttons_2.lineStyle(0, color_Template[Department[2]][2], 0);
+            this._answer_buttons_2.moveTo(0,0);
+            this._answer_buttons_2.lineTo(
+                1102*Math.cos((2*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((2*2*Math.PI + this._random_angle)/this._num_of_answers)
+            );
+            this._answer_buttons_2.arc(
+                0, 0, 1102,
+                (2*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (3*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_2.endFill();
 
             this._answer_buttons_2.buttonMode = true;
             this._answer_buttons_2.interactive = true;
+<<<<<<< HEAD
             this._answer_buttons_2.alpha = 0.4;
 
             console.log(this._answer[2][0]);
@@ -975,6 +1077,9 @@ class Character_test {
             this._answer_text_2.anchor.set(0.5);
             this._answer_text_2.x = 480;
             this._answer_text_2.y = 310;
+=======
+            this._answer_buttons_2.alpha = 0.6;
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
 
             this._answer_buttons_2
@@ -988,23 +1093,23 @@ class Character_test {
                 this.isdown = true;
                 if (_thisclass._selected[2] == 0){
                     _thisclass._selected[2] = 1;
-                    _thisclass._answer_buttons_2.alpha = 0.8;
+                    _thisclass._answer_buttons_2.alpha = 1;
                     if(_thisclass._answer[2][1] == 'grade'){
                         thisGame.status.grade += _thisclass._answer[2][2];
-                        thisGame.status.relationship += (Math.random()-0.5)*0.01;
-                        thisGame.status.health += (Math.random()-0.5)*0.01;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[2][1] == 'relationship'){
-                        thisGame.status.grade += (Math.random()-0.5)*0.01;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
                         thisGame.status.relationship += _thisclass._answer[2][2];
-                        thisGame.status.health += (Math.random()-0.5)*0.01;
+                        thisGame.status.health += (Math.random()-0.5)*2;
                     } else if(_thisclass._answer[2][1] == 'health'){
-                        thisGame.status.grade += (Math.random()-0.5)*0.01;
-                        thisGame.status.relationship += (Math.random()-0.5)*0.01;
+                        thisGame.status.grade += (Math.random()-0.5)*2;
+                        thisGame.status.relationship += (Math.random()-0.5)*2;
                         thisGame.status.health += _thisclass._answer[2][2];
                     } else {
-                        thisGame.status.grade += (Math.random()-0.5)*0.04;
-                        thisGame.status.relationship += (Math.random()-0.5)*0.04;
-                        thisGame.status.health += (Math.random()-0.5)*0.04;
+                        thisGame.status.grade += (Math.random()-0.5)*4;
+                        thisGame.status.relationship += (Math.random()-0.5)*4;
+                        thisGame.status.health += (Math.random()-0.5)*4;
                     }
                     console.log(thisGame.status.health);
                     console.log(thisGame.status.relationship);
@@ -1038,8 +1143,19 @@ class Character_test {
         if (this._num_of_answers > 3){
             this._answer_buttons_3 = new PIXI.Graphics();
             //this._answer_buttons.push(new PIXI.Graphics());
-            this._answer_buttons_3.beginFill(color_Template[Department[this._rand_depart]][3]);
-            this._answer_buttons_3.drawRect(700, 200, 200, 100);
+            this._answer_buttons_3.beginFill(color_Template[Department[3]][2]);
+            this._answer_buttons_3.lineStyle(0, color_Template[Department[3]][2], 0);
+            this._answer_buttons_3.moveTo(0,0);
+            this._answer_buttons_3.lineTo(
+                1102*Math.cos((3*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((3*2*Math.PI + this._random_angle)/this._num_of_answers)
+            );
+            this._answer_buttons_3.arc(
+                0, 0, 1102,
+                (3*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (4*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_3.endFill();
 
             this._answer_buttons_3.buttonMode = true;
             this._answer_buttons_3.interactive = true;
@@ -1107,8 +1223,20 @@ class Character_test {
         if (this._num_of_answers > 4){
             this._answer_buttons_4 = new PIXI.Graphics();
             //this._answer_buttons.push(new PIXI.Graphics());
-            this._answer_buttons_4.beginFill(color_Template[Department[this._rand_depart]][4]);
-            this._answer_buttons_4.drawRect(300, 200, 200, 100);
+            this._answer_buttons_4.beginFill(color_Template[Department[4]][2]);
+            this._answer_buttons_4.lineStyle(0, color_Template[Department[4]][2], 0);
+            this._answer_buttons_4.moveTo(0,0);
+            this._answer_buttons_4.lineTo(
+                1102*Math.cos((4*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((4*2*Math.PI + this._random_angle)/this._num_of_answers)
+            );
+            this._answer_buttons_4.arc(
+                0, 0, 1102,
+                (4*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (5*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_4.endFill();
+
             this._answer_buttons_4.buttonMode = true;
             this._answer_buttons_4.interactive = true;
             this._answer_buttons_4.alpha = 0.6;
@@ -1175,8 +1303,20 @@ class Character_test {
         if (this._num_of_answers > 5){
             this._answer_buttons_5 = new PIXI.Graphics();
             //this._answer_buttons.push(new PIXI.Graphics());
-            this._answer_buttons_5.beginFill(color_Template[Department[this._rand_depart]][5]);
-            this._answer_buttons_5.drawRect(500, 200, 200, 100);
+            this._answer_buttons_5.beginFill(color_Template[Department[5]][2]);
+            this._answer_buttons_5.lineStyle(0, color_Template[Department[5]][2], 0);
+            this._answer_buttons_5.moveTo(0,0);
+            this._answer_buttons_5.lineTo(
+                1102*Math.cos((5*2*Math.PI + this._random_angle)/this._num_of_answers),
+                1102*Math.sin((5*2*Math.PI + this._random_angle)/this._num_of_answers)
+            );
+            this._answer_buttons_5.arc(
+                0, 0, 1102,
+                (5*2*Math.PI + this._random_angle)/this._num_of_answers,
+                (6*2*Math.PI + this._random_angle)/this._num_of_answers
+            );
+            this._answer_buttons_5.endFill();
+
             this._answer_buttons_5.buttonMode = true;
             this._answer_buttons_5.interactive = true;
             this._answer_buttons_5.alpha = 0.6;
@@ -1243,25 +1383,23 @@ class Character_test {
 
     }
     show_this(){
+
         if (this._num_of_answers > 5) { app_simulator.stage.addChild(this._answer_buttons_5); }
         if (this._num_of_answers > 4) { app_simulator.stage.addChild(this._answer_buttons_4); }
         if (this._num_of_answers > 3) { app_simulator.stage.addChild(this._answer_buttons_3); }
-        if (this._num_of_answers > 2) { app_simulator.stage.addChild(this._answer_buttons_2); app_simulator.stage.addChild(this._answer_text_2);}
-        if (this._num_of_answers > 1) { app_simulator.stage.addChild(this._answer_buttons_1); app_simulator.stage.addChild(this._answer_text_1);}
-        if (this._num_of_answers > 0) { app_simulator.stage.addChild(this._answer_buttons_0); app_simulator.stage.addChild(this._answer_text_0);}
+        if (this._num_of_answers > 2) { app_simulator.stage.addChild(this._answer_buttons_2); }
+        if (this._num_of_answers > 1) { app_simulator.stage.addChild(this._answer_buttons_1); }
+        if (this._num_of_answers > 0) { app_simulator.stage.addChild(this._answer_buttons_0); }
         app_simulator.stage.addChild(this._question_center);
-        app_simulator.stage.addChild(this._question_text);
     }
     hide_this(){
         app_simulator.stage.removeChild(this._question_center);
         if (this._num_of_answers > 5) { app_simulator.stage.removeChild(this._answer_buttons_5); }
         if (this._num_of_answers > 4) { app_simulator.stage.removeChild(this._answer_buttons_4); }
         if (this._num_of_answers > 3) { app_simulator.stage.removeChild(this._answer_buttons_3); }
-        if (this._num_of_answers > 2) { app_simulator.stage.removeChild(this._answer_buttons_2); app_simulator.stage.removeChild(this._answer_text_2);}
-        if (this._num_of_answers > 1) { app_simulator.stage.removeChild(this._answer_buttons_1); app_simulator.stage.removeChild(this._answer_text_1);}
-        if (this._num_of_answers > 0) { app_simulator.stage.removeChild(this._answer_buttons_0); app_simulator.stage.removeChild(this._answer_text_0);}
-        app_simulator.stage.removeChild(this._question_center);
-        app_simulator.stage.removeChild(this._question_text);
+        if (this._num_of_answers > 2) { app_simulator.stage.removeChild(this._answer_buttons_2); }
+        if (this._num_of_answers > 1) { app_simulator.stage.removeChild(this._answer_buttons_1); }
+        if (this._num_of_answers > 0) { app_simulator.stage.removeChild(this._answer_buttons_0); }
     }
 }
 let Character_test_questions = [];
@@ -1320,8 +1458,8 @@ class Department_choice {
         this._return_button = new PIXI.Graphics();
 
         //////////////////////////////////////////////////////////
-        this._department_button.scale.x *= 0.4;
-        this._department_button.scale.y *= 0.4;
+        this._department_button.scale.x *= 0.3;
+        this._department_button.scale.y *= 0.3;
         this._department_button.buttonMode = true;
         this._department_button.anchor.set(0.5);
         this._department_button.x = app_simulator.renderer.width*this._department_button_x/2;
@@ -1387,6 +1525,7 @@ class Department_choice {
             app_simulator.stage.removeChild(_thisclass._department_text);
             department_choice_to_select_timetable();
         }
+
         function department_onButtonUp(){
             if (this.isOver){
                 this.texture = icons_Texture[name+'_labeled'];
@@ -1394,6 +1533,7 @@ class Department_choice {
                 this.texture = icons_Texture[name];
             }
         }
+
         function department_onButtonOver(){
             this.isOver = true;
             if (this.isdown){
@@ -1401,6 +1541,7 @@ class Department_choice {
             }
             this.texture = icons_Texture[name+'_labeled'];
         }
+
         function department_onButtonOut(){
             this.isOver = false;
             if (this.isdown){
@@ -1408,6 +1549,7 @@ class Department_choice {
             }
             this.texture = icons_Texture[name];
             console.log(thisGame.department);
+
         }
 
         ///////////////////////////////////////////////////////////
@@ -1429,10 +1571,16 @@ class Department_choice {
                 app_simulator.stage.removeChild(list[i]._select_button);
                 app_simulator.stage.removeChild(list[i]._return_button);
             }
+<<<<<<< HEAD
 
             app_simulator.stage.removeChild(_thisclass._department_text);
             department_choice_to_select_timetable();
+=======
+            department_choice_to_select_timetable()
+
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
         }
+
         function select_onButtonUp(){
             if (this.isOver){
                 //this.texture = icons_Texture[name+'_labeled'];
@@ -1440,6 +1588,7 @@ class Department_choice {
                 //this.texture = icons_Texture[name];
             }
         }
+
         function select_onButtonOver(){
             this.isOver = true;
             if (this.isdown){
@@ -1447,6 +1596,7 @@ class Department_choice {
             }
             //this.texture = icons_Texture[name+'_labeled'];
         }
+
         function select_onButtonOut(){
             this.isOver = false;
             if (this.isdown){
@@ -1454,6 +1604,7 @@ class Department_choice {
             }
             //this.texture = icons_Texture[name];
             console.log(thisGame.department);
+
         }
 
         ///////////////////////////////////////////////////////////
@@ -1463,6 +1614,7 @@ class Department_choice {
             .on('pointerupoutside', return_onButtonUp)
             .on('pointerover', return_onButtonOver)
             .on('pointerout', return_onButtonOut);
+
 
         function return_onButtonDown(){
             this.isdown = true;
@@ -1481,6 +1633,7 @@ class Department_choice {
             _thisclass._return_button.alpha = 0;
 
         }
+
         function return_onButtonUp(){
             if (this.isOver){
                 //this.texture = icons_Texture[name+'_labeled'];
@@ -1488,6 +1641,7 @@ class Department_choice {
                 //this.texture = icons_Texture[name];
             }
         }
+
         function return_onButtonOver(){
             this.isOver = true;
             if (this.isdown){
@@ -1495,6 +1649,7 @@ class Department_choice {
             }
             //this.texture = icons_Texture[name+'_labeled'];
         }
+
         function return_onButtonOut(){
             this.isOver = false;
             if (this.isdown){
@@ -1502,23 +1657,26 @@ class Department_choice {
             }
             //this.texture = icons_Texture[name];
             console.log(thisGame.department);
+
         }
+
         app_simulator.stage.addChild(this._department_button);
         app_simulator.stage.addChild(this._select_button);
         app_simulator.stage.addChild(this._return_button);
-    }
-}
 
+    }
+
+}
 let Department_choice_button = [];
 function enable_department_choice(){
-    Department_choice_button.push(new Department_choice(Department[0], -0.66, -0.5, -0.3, 0.05, Department_choice_button));
-    Department_choice_button.push(new Department_choice(Department[1], -0.22, -0.5, 0.14, 0.05, Department_choice_button));
-    Department_choice_button.push(new Department_choice(Department[2], 0.22, -0.5, 0.58, 0.05, Department_choice_button));
-    Department_choice_button.push(new Department_choice(Department[3], 0.66, -0.5, 0.24, 0.05, Department_choice_button));
-    Department_choice_button.push(new Department_choice(Department[4], -0.66, 0.0, -0.3, 0.4, Department_choice_button));
-    Department_choice_button.push(new Department_choice(Department[5], -0.22, 0.0, 0.14, 0.4, Department_choice_button));
-    Department_choice_button.push(new Department_choice(Department[6], 0.22, 0.0, 0.58, 0.4, Department_choice_button));
-    Department_choice_button.push(new Department_choice(Department[7], 0.66, 0.0, 0.24, 0.4, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[0], -0.66, -0.2, -0.3, 0.05, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[1], -0.22, -0.2, 0.14, 0.05, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[2], 0.22, -0.2, 0.58, 0.05, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[3], 0.66, -0.2, 0.24, 0.05, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[4], -0.66, 0.15, -0.3, 0.4, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[5], -0.22, 0.15, 0.14, 0.4, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[6], 0.22, 0.15, 0.58, 0.4, Department_choice_button));
+    Department_choice_button.push(new Department_choice(Department[7], 0.66, 0.15, 0.24, 0.4, Department_choice_button));
     Department_choice_button.push(new Department_choice(Department[8], -0.66, 0.5, -0.3, 0.75, Department_choice_button));
     Department_choice_button.push(new Department_choice(Department[9], -0.22, 0.5, 0.14, 0.75, Department_choice_button));
     Department_choice_button.push(new Department_choice(Department[10], 0.22, 0.5, 0.58, 0.75, Department_choice_button));
@@ -1539,6 +1697,7 @@ class select_timetable {
             }
         }
 
+<<<<<<< HEAD
         this._text_lecture_name = new PIXI.Text("", {
             fontFamily: 'Consolas',
             fontSize: 70,
@@ -1574,12 +1733,15 @@ class select_timetable {
 
         app_simulator.stage.addChild(this._text_lecture_information);
 
+=======
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
         this._timetable_graphics = new Array(10);
         for (let i = 0; i < 10; i++){
             this._timetable_graphics[i] = new Array(5);
             for (let j = 0; j < 5; j++){
                 this._timetable_graphics[i][j] = new PIXI.Graphics();
                 this._timetable_graphics[i][j].beginFill(0xFFFFFF);
+<<<<<<< HEAD
                 this._timetable_graphics[i][j].drawRect(150*(j-5), i*72-260, 120, 50);
                 this._timetable_graphics[i][j].buttonMode = true;
                 this._timetable_graphics[i][j].interactive = true;
@@ -1622,7 +1784,14 @@ class select_timetable {
         }
 
 
+=======
+                this._timetable_graphics[i][j].drawRect(150*(j-5), i*72-240, 120, 50);
+            }
+        }
+
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
         this._template_buttons = [];
+
 
         this._option_buttons = [];
         this._lecture_additional_name_control = [];
@@ -1675,7 +1844,11 @@ class select_timetable {
                             _thisclass._option_buttons.push(new PIXI.Graphics());
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].beginFill(0xBBBBBB);
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1]
+<<<<<<< HEAD
                                 .drawRect((_thisclass._option_buttons.length - 1)*150+ 20, -260, 120, 120);
+=======
+                                .drawRect(300, (_thisclass._option_buttons.length - 1)*150-240, 500, 100);
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].buttonMode = true;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].interactive = true;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].alpha = 0.8;
@@ -1693,6 +1866,7 @@ class select_timetable {
                     }
                 }
             }
+
             function option_onButtonDown(){
                 if (this._selected == 0){
                     this._selected = 1;
@@ -1759,6 +1933,7 @@ class select_timetable {
             }
             _thisclass.update_timetable_graphics();
         }
+
         function template_onButtonOut(){
             this.over = false;
             if (_thisclass._template_buttons[0].over == false
@@ -1804,6 +1979,7 @@ class select_timetable {
             .on('pointerout', confirm_onButtonOut)
 
         function confirm_onButtonDown(){
+<<<<<<< HEAD
             for (let k = 0; k < 10; k++){
                 for (let l = 0; l < 5; l++){
                     if (_thisclass._timetable[k][l][0] == "x"){
@@ -1836,6 +2012,9 @@ class select_timetable {
 =======
 >>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210
             }
+=======
+
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
         }
         function confirm_onButtonUp(){
 
@@ -1848,7 +2027,11 @@ class select_timetable {
         }
 
         app_simulator.stage.addChild(this._confirm_button);
+<<<<<<< HEAD
         app_simulator.stage.addChild(this._text_lecture_name);
+=======
+
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
     }
     show_timetable(){
@@ -1879,7 +2062,7 @@ class select_timetable {
                         color_Template[this._department][this._lecture_name_control.indexOf(this._timetable[i][j])]);
                 }
                 if (this._timetable[i][j][0] != "x"){
-                    this._timetable_graphics[i][j].drawRect(150*(j-5), i*72-260, 120, 50);
+                    this._timetable_graphics[i][j].drawRect(150*(j-5), i*72-240, 120, 50);
                 }
             }
         }
@@ -1892,12 +2075,12 @@ class select_timetable {
                     this._timetable_graphics[i][j].beginFill(
                         color_Template[this._department][this._lecture_additional_name_control.indexOf(this._timetable[i][j].slice(1))/2 + this._lecture_name_control.length]);
                 }
-                this._timetable_graphics[i][j].drawRect(150*(j-5), i*72-260, 120, 50);
-                this._timetable_graphics[i][j].my_name = this._timetable[i][j];
+                this._timetable_graphics[i][j].drawRect(150*(j-5), i*72-240, 120, 50);
             }
         }
 
     }
+<<<<<<< HEAD
 
 }
 
@@ -1928,11 +2111,27 @@ function loading_menu_to_test() {
         dropShadow: false,
         dropShadowColor: '#FFFFFF',
         dropShadowBlur: 1,
+=======
+}
+
+function loading_menu_to_test() {
+    var style = new PIXI.TextStyle({
+        fontFamily: 'Arial',
+        fontSize: 80,
+        fill: ['#ffffff'], // gradient
+        stroke: '#4a1850',
+        strokeThickness: 5,
+        dropShadow: true,
+        dropShadowColor: '#000000',
+        dropShadowBlur: 4,
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
         dropShadowAngle: Math.PI / 6,
         dropShadowDistance: 6,
-        wordWrap: false
+        wordWrap: true,
+        wordWrapWidth: 440
     });
 
+<<<<<<< HEAD
     loadingText.anchor.set(0.5);
     loadingText.x = 0;
     loadingText.y = -50;
@@ -1940,12 +2139,37 @@ function loading_menu_to_test() {
     loadingText_Tip.anchor.set(0.5);
     loadingText_Tip.x = 0;
     loadingText_Tip.y = 85;
+=======
+    let loadingText = new PIXI.Text('text goes here', style);
+    loadingText.anchor.set(0.5);
+    loadingText.x = 0;
+    loadingText.y = 0;
+
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
 
     let loading_status = new PIXI.Graphics();
+
+
+    //var bar1 = new PIXI.Graphics();
+    //bar1.lineStyle(2,color_Template[Department[Math.floor(Math.random()*12)]][1],0.3);
+    //console.log(Department[Math.floor(Math.random()*12)]);
+    //bar1.beginFill(color_Template[Department[Math.floor(Math.random()*12)]][1], 0);
+
+    //bar1.drawRect(-300,-310,600,50);
+    //app_simulator.stage.addChild(bar1);
+
+    //var graphics = new PIXI.Graphics();
+    //graphics.lineStyle(2,color_Template[Department[Math.floor(Math.random()*12)]][2],0.3);
+    //graphics.beginFill(color_Template[Department[Math.floor(Math.random()*12)]][2], 1);
+    //graphics.drawRect(-300,-310, 0, 50);
+
+    //graphics.endFill();
+    //app_simulator.stage.addChild(graphics);
+
     app_simulator.stage.addChild(loading_status);
 
-    let color_temp_0 = 0xB8C480;
-    let color_temp_1 = 0xFF5964;
+    let color_temp_0 = color_Template[Department[Math.floor(Math.random()*11)]][0];
+    let color_temp_1 = color_Template[Department[Math.floor(Math.random()*11)]][1];
 
     let t = 0;
 
@@ -1958,29 +2182,34 @@ function loading_menu_to_test() {
         loading_status.clear();
 
         loading_status.beginFill(color_temp_1, 1);
-        loading_status.drawRect(-960,520,t*1.8,22);
-        loading_status.lineStyle(10, 0x000000, 0.3);
-        loading_status.beginFill(color_temp_0, 0.6);
-        loading_status.drawRect(-400,-240,800,480);
+        loading_status.arc(0,0,410,-Math.PI/2, -Math.PI/2+t/280);
+        loading_status.beginFill(color_temp_0, 1);
+        loading_status.drawCircle(0,0,380);
 
         t+=delta*3;
-        app_simulator.stage.addChild(loadingText);
-        app_simulator.stage.addChild(loadingText_Tip);
+         app_simulator.stage.addChild(loadingText);
+        //graphics.drawRect(-300, -310, t/10, 50);
+        //console.log(a);
 
         if(t > 1800)
         {
             app_simulator.stage.removeChild(loadingText);
-            app_simulator.stage.removeChild(loadingText_Tip);
+            //app_simulator.stage.removeChild(bar1);
+            //app_simulator.stage.removeChild(graphics);
             app_simulator.stage.removeChild(loading_status);
+
             Ticker_loading_menu_to_test.stop();
             enable_character_test();
+
         }
     });
 
 }
 
+
 function loading_test_to_department_choice() {
 
+<<<<<<< HEAD
     let loadingText_2 = new PIXI.Text("학과를 선택해주세요.", {
         fontFamily: 'Consolas',
         fontSize: 50,
@@ -2019,11 +2248,15 @@ function loading_test_to_department_choice() {
     loadingText_Tip_2.x = 0;
     loadingText_Tip_2.y = 85;
 
+=======
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
     let loading_status_2 = new PIXI.Graphics();
+
+
     app_simulator.stage.addChild(loading_status_2);
 
-    let color_temp_0 = 0x79ADDC;
-    let color_temp_1 = 0xB8C480;
+    let color_temp_0 = color_Template[Department[Math.floor(Math.random()*11)]][0];
+    let color_temp_1 = color_Template[Department[Math.floor(Math.random()*11)]][1];
 
     let t = 0;
 
@@ -2036,19 +2269,20 @@ function loading_test_to_department_choice() {
         loading_status_2.clear();
 
         loading_status_2.beginFill(color_temp_1, 1);
-        loading_status_2.drawRect(-960,520,t*1.8,22);
-        loading_status_2.lineStyle(10, 0x000000, 0.3);
-        loading_status_2.beginFill(color_temp_0, 0.6);
-        loading_status_2.drawRect(-400,-240,800,480);
+        loading_status_2.arc(0,0,410,-Math.PI/2, -Math.PI/2+t/280);
+        loading_status_2.beginFill(color_temp_0, 1);
+        loading_status_2.drawCircle(0,0,380);
 
         t+=delta*3;
-        app_simulator.stage.addChild(loadingText_2);
-        app_simulator.stage.addChild(loadingText_Tip_2);
+         //app_simulator.stage.addChild(loadingText);
+        //graphics.drawRect(-300, -310, t/10, 50);
+        //console.log(a);
 
-        if(t > 1700)
+        if(t > 1800)
         {
-            app_simulator.stage.removeChild(loadingText_2);
-            app_simulator.stage.removeChild(loadingText_Tip_2);
+            //app_simulator.stage.removeChild(loadingText);
+            //app_simulator.stage.removeChild(bar1);
+            //app_simulator.stage.removeChild(graphics);
             app_simulator.stage.removeChild(loading_status_2);
 
             Ticker_loading_menu_to_test.stop();
@@ -2061,6 +2295,7 @@ function loading_test_to_department_choice() {
 
 function department_choice_to_select_timetable() {
 
+<<<<<<< HEAD
     let loadingText_3 = new PIXI.Text("시간표를 선택해주세요.", {
         fontFamily: 'Consolas',
         fontSize: 50,
@@ -2099,11 +2334,15 @@ function department_choice_to_select_timetable() {
     loadingText_Tip_3.x = 0;
     loadingText_Tip_3.y = 85;
 
+=======
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
     let loading_status_3 = new PIXI.Graphics();
+
+
     app_simulator.stage.addChild(loading_status_3);
 
-    let color_temp_0 = 0xFFFFFF;
-    let color_temp_1 = 0x1F271B;
+    let color_temp_0 = color_Template[Department[Math.floor(Math.random()*11)]][0];
+    let color_temp_1 = color_Template[Department[Math.floor(Math.random()*11)]][1];
 
     let t = 0;
 
@@ -2116,19 +2355,20 @@ function department_choice_to_select_timetable() {
         loading_status_3.clear();
 
         loading_status_3.beginFill(color_temp_1, 1);
-        loading_status_3.drawRect(-960,520,t*1.6,22);
-        loading_status_3.lineStyle(10, 0x000000, 0.3);
-        loading_status_3.beginFill(color_temp_0, 0.6);
-        loading_status_3.drawRect(-400,-240,800,480);
+        loading_status_3.arc(0,0,410,-Math.PI/2, -Math.PI/2+t/280);
+        loading_status_3.beginFill(color_temp_0, 1);
+        loading_status_3.drawCircle(0,0,380);
 
         t+=delta*3;
-        app_simulator.stage.addChild(loadingText_3);
-        app_simulator.stage.addChild(loadingText_Tip_3);
+         //app_simulator.stage.addChild(loadingText);
+        //graphics.drawRect(-300, -310, t/10, 50);
+        //console.log(a);
 
-        if(t > 1600)
+        if(t > 1800)
         {
-            app_simulator.stage.removeChild(loadingText_3);
-            app_simulator.stage.removeChild(loadingText_Tip_3);
+            //app_simulator.stage.removeChild(loadingText);
+            //app_simulator.stage.removeChild(bar1);
+            //app_simulator.stage.removeChild(graphics);
             app_simulator.stage.removeChild(loading_status_3);
 
             Ticker_department_choice_to_select_timetable.stop();
@@ -2138,6 +2378,7 @@ function department_choice_to_select_timetable() {
             let select_table = new select_timetable(thisGame.department);
             select_table.show_timetable();
             select_table.show_templates();
+<<<<<<< HEAD
 
             thisGame.timeTable = new Array(7);
             for( var i=0; i<7; i++ ) {
@@ -2164,11 +2405,16 @@ function department_choice_to_select_timetable() {
               for (let j = 0; j < 11 ; j++)
                 console.log(thisGame.timeTable[i][j]);
             model();
+=======
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
         }
     });
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210
+=======
+>>>>>>> parent of 49b817f... Merge branch 'ui_1210'
