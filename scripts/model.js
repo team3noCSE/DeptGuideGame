@@ -12,6 +12,8 @@ class Game {
       //  이번 게임의 스탯
     this.load = 0;
       // 학기 전체의 load;
+    this.eventCount = 0;
+    this.PopUpList = undefined;
   }
 }
 var thisGame = new Game();
@@ -22,6 +24,7 @@ thisDuration.meal = 2;
 thisDuration.dinguldingul = 4;
 
 thisGame.PopUpList = new Array(16);
+
 thisGame.eventCount = 0;
 
   //  얘는 랜덤하게 매일매일 성향에따라 정해지는걸로
@@ -205,17 +208,15 @@ function eventHandler(week) {
   if (thisGame.eventCount > week) return;
     for (let key in PopUpEvent){
       let val = PopUpEvent[key];
-      console.log(key);
-      console.log(val);
-      alert(thisGame.popUpList[0]);
-      if (val.priority === 3){
-        if (val.time === week || val.time === null){
-          thisGame.popUpList[thisGame.eventCount] = val;
-          alert(thisGame.popUpList[thisGame.eventCount].description);
-          thisGame.eventCount++;
-          if()
-
+      if (val.department === thisGame.department || val.department === null){
+        if (val.priority === 3 || val.time === week || val.time === null){
+          if(Math.random() < 3/16){
+            console.log(week+"주차 이벤트 :");
+            console.log(val.description);
+            thisGame.eventCount++;
+            return;
+          }
         }
-    }
+      }
     }
 }
