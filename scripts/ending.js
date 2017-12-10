@@ -1,3 +1,4 @@
+function ending(){
 class Single_Ending{ //ending_class
   constructor(
     _title,    //String
@@ -12,25 +13,29 @@ class Single_Ending{ //ending_class
 var _title, _img_name, _description;
 while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때만 break되게 한다.
   var randomize=Math.floor(Math.random()*15)+1;
-  if(randomize==1){
+  if(randomize==1&&){
+    alert("1");
     _title="님아, 그 강을 건너지 마오";
     _img_name="재수강.png";
     _description="16주 동안의 한 학기, 참 즐거웠었죠?";
     break;
   }
   else if(randomize==2){
+    alert("2");
     _title="I`ll be back";
     _img_name="illbeback.png";
     _description="끝나지 않은 수업과의 싸움...\ 언젠가 다시 돌아온다";
     break;
   }
-  else if(randomize==3){
+  else if(randomize==3&&health>0.5){
+    alert("3");
     _title="A가 없네";
     _img_name="A가없네.png";
     _description="A가 뭔지 알아요? 성실하게 수업을 들으면 받는 학점을 A라 그래요 A가 없네?";
     break;
   }
   else if(randomize==4){
+    alert("4");
     _title="휴먼굴림체";
     _img_name="휴먼굴림체.png";
     _description="당신은 이번 학기 동안 \
@@ -38,25 +43,29 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
     break;
   }
   else if(randomize==5){
+    alert("5");
       _title="양심?";
       _img_name="양심.png";
       _description="다른 학우들을 제치고\ 높은 학점을 받았군요!\ 양심의 상태가...";
       break;
   }
   else if(randomize==6){
+    alert("6");
     _title="개똥벌레";
     _img_name="개똥벌레.png";
     _description="나는야 개똥벌레~\
      친구가 없네~";
     break;
   }
-  else if(randomize==7){
+  else if(randomize==7){}
+    alert("7");
     _title="인생은 혼자다";
     _img_name="인생은혼자다.png";
     _description="인생 공수래 공수거 아니겠습니까!!";
     break;
   }
   else if(randomize==8){
+    alert("8");
     _title="노는 게 제일 좋아";
     _img_name="노는게제일좋아.png";
     _description="노는게 제일 좋아!\
@@ -219,4 +228,5 @@ function show_menu(){ //메뉴 출력
     document.getElementById("main").style.display="block";
     document.getElementById("end").style.display="block";
   }
+}
 }
