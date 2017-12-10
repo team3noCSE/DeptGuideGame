@@ -2104,7 +2104,7 @@ function loading_test_to_department_choice() {
         dropShadowDistance: 6,
         wordWrap: false
     });
-    
+
     loadingText_2.anchor.set(0.5);
 
     loadingText_2.x = 0;
@@ -2250,7 +2250,7 @@ function department_choice_to_select_timetable() {
                   if(j === 10)
                     thisGame.timeTable[i][j] = undefined;
                   else {
-                    thisGame.timeTable[i][j] = Event[select_table._timetable[j][i]];
+                    thisGame.timeTable[i][j] = Event[Timetable[j][i]];
                   }
                 }
               }
