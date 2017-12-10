@@ -357,6 +357,18 @@ class SinglePopUpEvent {
 
 let PopUpEvent = {
   "개총" : new SinglePopUpEvent("개총", null,[1, 2, 3], 2, "새로운 학기의 시작은 개총과 함께~?"),
+  "대면식" : new SinglePopUpEvent("대면식", null, [4], true, 2, "방학 끝나고 오랜만에 선후배들과 만나니 기분이 좋네요. "),
+  "밥약" : new SinglePopUpEvent("밥약", null, null, false, 2, "선배 밥 사주세요!"),
+  "엠티" : new SinglePopUpEvent("엠티", null, [1,2,3], true, 2, "그거 아세요? MT는 먹고 토하고의 줄임말이라는거?"),
+  "밤샘피방" : new SinglePopUpEvent("밤샘피방", null, null, false, 0, "밤샘으로 수업에 집중을 하나도 못하는 주인공.. 점심 대신 낮잠을 선택해 오후 수업 내내 굶주립니다."),
+  "수강신청" : new SinglePopUpEvent("수강신청", null, [13,14], true, 1, "당신의 피지컬을 발휘할 시간!! 하지만 포스텍 와이파이는 느립니다..."),
+  "동아리공연" : new SinglePopUpEvent("동아리공연", null, [5,6,12,13], false, 0, "공연 동아리에서 정기공연을 하네요. 지나가는 길에 들려서 음악감상도 하니 기분전환이 되네요."),
+  "친구동아리공연" : new SinglePopUpEvent("친구동아리공연", null, [5,6,12,13], false, 2, "친구가 동아리 공연을 보러 오라네요. 가서 친구 이름달고 왕창 먹어야지~"),
+  "연애" : new SinglePopUpEvent("연애", null, null, true, 2, " ❤ ❤ ❤"),
+  "이별" : new SinglePopUpEvent("이별", null, null, true, 2, "인생은 솔로로 살다가 솔로로 가는 것. 아쉬워하지 말아요."),
+  "보고서제출" : new SinglePopUpEvent("보고서제출", null, null, false, 1, "내일까지 보고서 제출인데 이걸 어떻게 다 쓰라는 걸까요???"),
+  "술약" : new SinglePopUpEvent("술약", null, null, false, 0, "술이 들어간다~ 쭉!쭉쭉!쭉쭉!"),
+
 
   // 과 general
   "화학레포트" : new SinglePopUpEvent("레포트", 2, null, 3, "오늘은 실험이 있는 날입니다. 어제 프리랩과 파이널랩을 손으로 쓰느라 잠을 한 숨도 못 잤어요 ㅠㅠ 10페이지 가량 쓰다보니 손도 아프고 눈도 아프고…1교시는 가서 졸았어요 ㅠㅠ 다음부터는 미리해야겠어요 "),
@@ -510,7 +522,7 @@ Event["생명과학실험원리론및실습"].addLoad(8, "풀랩 보고서를 �
 Event["생명과학실험원리론및실습"].addLoad(8, "지난 실험의 풀랩 보고서를 작성합니다. ", adjust+2);
 Event["생명과학실험원리론및실습"].addLoad(8, "풀랩 보고서를 마무리합니다. ", adjust+3);
 
-Event["생태학및야외실습"] = new SingleEvent("생태학및야외실습", 1.5 healthPerLecture, 0, true, "LIFE204"); // 3
+Event["생태학및야외실습"] = new SingleEvent("생태학및야외실습", 1.5, healthPerLecture, 0, true, "LIFE204"); // 3
 Event["생태학및야외실습"].addFinal(3);
 for(var i=1; i<5; i++) {
   var adjust = Math.floor(Math.random() * 3) - 1;
