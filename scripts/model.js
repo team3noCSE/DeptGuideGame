@@ -12,6 +12,8 @@ class Game {
       //  이번 게임의 스탯
     this.load = 0;
       // 학기 전체의 load;
+    this.eventCount = 0;
+    this.PopUpList = undefined;
   }
 }
 var thisGame = new Game();
@@ -20,6 +22,10 @@ var thisDuration = { };
   //  얘네는 성향테스트에 따라서 조정되어야 함
 thisDuration.meal = 2;
 thisDuration.dinguldingul = 4;
+
+thisGame.PopUpList = new Array(16);
+
+thisGame.eventCount = 0;
 
   //  얘는 랜덤하게 매일매일 성향에따라 정해지는걸로
 thisDuration.hobby = 4;
@@ -65,7 +71,6 @@ calculateLoad(Event["확률및통계"]);
 calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
-
 model();
 
 function model() { // 일단은 1주 진행
@@ -125,15 +130,13 @@ function model() { // 일단은 1주 진행
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
       console.log(week+"주차 / 현재 성적: "+thisGame.status.grade+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
-      eventHandler();
+      eventHandler(week);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
     }
     console.log("이번 학기의 총 로드: "+thisGame.load);
     console.log("Grade: "+completedLoad/thisGame.load);
 }
-function eventHandler(){
 
-} // 이벤트 발생 (UI랑 연결?)
 function capacityUpdate(firstPeriod){
   var wakeUpTime = 8 + 1.5 * firstPeriod;
   var tempCapacity = 24;
@@ -198,4 +201,22 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
 
   console.log(week+"주차 / 수행해야 할 로드: "+tempLoadPerWeek+"\n");
   return completedLoad;
+}
+
+function eventHandler(week) {
+  if (thisGame.eventCount === 16) return;
+  if (thisGame.eventCount > week) return;
+    for (let key in PopUpEvent){
+      let val = PopUpEvent[key];
+      if (val.department === thisGame.department || val.department === null){
+        if (val.priority === 3 || val.time === week || val.time === null){
+          if(Math.random() < 3/16){
+            console.log(week+"주차 이벤트 :");
+            console.log(val.description);
+            thisGame.eventCount++;
+            return;
+          }
+        }
+      }
+    }
 }
