@@ -1,4 +1,4 @@
-function ending(){
+
 class Single_Ending{ //ending_class
   constructor(
     _title,    //String
@@ -10,7 +10,10 @@ class Single_Ending{ //ending_class
     this.description=_description;
   }
 }
+
 var _title, _img_name, _description;
+var this_ending=new Single_Ending("","","");
+function set_ending(){
 while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때만 break되게 한다.
   var randomize=Math.floor(Math.random()*15)+1;
   if(randomize==1&&thisGame.status.grade<0.5){
@@ -109,13 +112,16 @@ while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때�
     break;
   }
 }
-var this_ending=new Single_Ending(_title,_img_name,_description); //설정된 변수로 class 설정
-var summary_first = false; //클릭을 한번이라도 했는지 안했는지 판별하는 변수
-var detail_first = true;
-var menu_first = true;
+this_ending.title=_title;
+this_ending.img_name=_img_name;
+this_ending.description=_description;
 var Result_pic=document.createElement('img'); //엔딩 사진생성
 document.getElementById("Result_pic").src="../DeptGuideGame/images/ending/"+this_ending.img_name;
 document.getElementById("Result_name").innerHTML=this_ending.title; //엔딩 제목을 밑에 출력
+}
+var summary_first = false; //클릭을 한번이라도 했는지 안했는지 판별하는 변수
+var detail_first = true;
+var menu_first = true;
 function show_summary(){ //요약보여주기
   if(!detail_first){ //세부정보창을 숨긴다
     document.getElementById("Detail").style.display="none";
@@ -220,5 +226,4 @@ function show_menu(){ //메뉴 출력
     document.getElementById("main").style.display="block";
     document.getElementById("end").style.display="block";
   }
-}
 }

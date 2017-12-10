@@ -5370,8 +5370,8 @@ var inputTxt;
 function exit() {
   for (var i = app.stage.children.length - 1; i >= 0; i--) {  app.stage.removeChild(app.stage.children[i]);};
   app.destroy(app.stage);
-  ending();
-
+  set_ending();
+  document.getElementById("Ending").style.display="block";
 }
 
 
