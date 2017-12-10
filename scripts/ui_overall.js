@@ -1842,7 +1842,7 @@ class select_timetable {
                 //
                 //
                 //
-                // 요기요!
+                //요기요!
                 //
                 //
                 //
@@ -1859,6 +1859,8 @@ class select_timetable {
                 //
                 //
             }
+            app_simulator.destroy(app_simulator.stage);
+            process();
         }
         function confirm_onButtonUp(){
 
@@ -2110,3 +2112,9 @@ select_table.show_templates();
   richText.y = 0;
   app_simulator.stage.addChild(richText);
 */
+
+
+
+
+
+
