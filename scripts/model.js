@@ -55,6 +55,7 @@ thisGame.timeTable[1][5] = Event["미분방정식"];
 thisGame.timeTable[3][5] = Event["미분방정식"];
 
 */
+console.log("요기보세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 for (var i=0; i<thisGame.timeTable.length; i++) {
   for (var j=0; j<thisGame.timeTable[i].length; j++)
     console.log(thisGame.timeTable[i][j]);
@@ -430,7 +431,7 @@ function week1()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="1주차의 로그\n\n";
     function erasedialog(eraser)
@@ -745,7 +746,7 @@ function week2 ()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="2주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1057,7 +1058,7 @@ function week3()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="3주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1368,7 +1369,7 @@ function week4()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="4주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1679,7 +1680,7 @@ function week5()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="5주차의 로그\n\n";
     function erasedialog(eraser)
@@ -1989,7 +1990,7 @@ function week6()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="6주차의 로그\n\n";
     function erasedialog(eraser)
@@ -2300,7 +2301,7 @@ function week7()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="7주차의 로그\n\n";
     function erasedialog(eraser)
@@ -2613,7 +2614,7 @@ function week8()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="8주차의 로그\n\n";
     function erasedialog(eraser)
@@ -2925,7 +2926,7 @@ function week9()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="9주차의 로그\n\n";
     function erasedialog(eraser)
@@ -3236,7 +3237,7 @@ function week10()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="10주차의 로그\n\n";
     function erasedialog(eraser)
@@ -3547,7 +3548,7 @@ function week11()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="11주차의 로그\n\n";
     function erasedialog(eraser)
@@ -3858,7 +3859,7 @@ function week12()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="12주차의 로그\n\n";
     function erasedialog(eraser)
@@ -4169,7 +4170,7 @@ function week13()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="13주차의 로그\n\n";
     function erasedialog(eraser)
@@ -4480,7 +4481,7 @@ function week14()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="14주차의 로그\n\n";
     function erasedialog(eraser)
@@ -4791,7 +4792,7 @@ function week15()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="15주차의 로그\n\n";
     function erasedialog(eraser)
@@ -5102,7 +5103,7 @@ function week16()
     var a=0;
     var b=0;
     var length=lectureList.length;
-    var deltatime=40;
+    var deltatime=20;
     var eraser;
     var totalTextList="16주차의 로그\n\n";
     function erasedialog(eraser)
