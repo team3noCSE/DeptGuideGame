@@ -2263,7 +2263,7 @@ function department_choice_to_select_timetable() {
               for (let j = 0; j < 11 ; j++) {
                 //console.log(thisGame.timeTable[i][j].name);
                 if(Event[Timetable[i][j]] !== undefined)
-                  console.log(Event[Timetable[i][j]);
+                  console.log(Event[Timetable[i][j]]);
               }
             }
             process();
