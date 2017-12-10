@@ -362,12 +362,14 @@ class SinglePopUpEvent {
     _name, // String
     _department, // 과 연관, 과와 관련 없을 경우
     _time, // boolean array (16주중 되는 시간 true)
+    _limit, // 최대 횟수
     _priority, // 성향테스트로 나온 값을 반영
     _description //
   ){
     this.name = _name;
     this.department = _department; // 과, 관련 없으면 null
     this.time = _time; // 없으면 null
+    this.limit = _limit;
     this.priority = _priority; // general 에서는 0,1,2로 구분, general이 아니면 null
     this.description = _description; // 설명
     this.eventCount = 0; // 해당 popUp이 일어난 횟수
@@ -377,7 +379,7 @@ class SinglePopUpEvent {
 //  SinglePopUpEvent pool
 // 별도 기재 없을시 중간, 기말 기간은 피해서 이벤트
 let PopUpEvent = {
-  "개총" : new SinglePopUpEvent("개총", null,[1, 2, 3], 2, "새로운 학기의 시작은 개총과 함께~?"),
+  "개총" : new SinglePopUpEvent("개총", null,[1, 2, 3], true, 2, "새로운 학기의 시작은 개총과 함께~?"),
   "대면식" : new SinglePopUpEvent("대면식", null, [4], true, 2, "방학 끝나고 오랜만에 선후배들과 만나니 기분이 좋네요. "),
   "밥약" : new SinglePopUpEvent("밥약", null, null, false, 2, "선배 밥 사주세요!"),
   "엠티" : new SinglePopUpEvent("엠티", null, [1,2,3], true, 2, "그거 아세요? MT는 먹고 토하고의 줄임말이라는거?"),
