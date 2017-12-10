@@ -1,3 +1,21 @@
+class Game {
+  constructor() {
+    this.department = -1;
+      //  이번 게임에서 선택한 학과
+    this.timeTable = undefined;
+      //  이번 게임에서 선택한 이벤트들로 구성된 시간표
+    this.status = {};
+    this.status.health = 1;
+    this.status.grade = 0;
+    //  grade = (수행한 로드)/(전체 로드)
+    this.status.relationship = 0;
+      //  이번 게임의 스탯
+    this.load = 0;
+      // 학기 전체의 load;
+  }
+}
+var thisGame = new Game();
+
 var thisDuration = { };
   //  얘네는 성향테스트에 따라서 조정되어야 함
 thisDuration.meal = 2;
@@ -33,6 +51,7 @@ thisGame.timeTable[1][5] = Event["미분방정식"];
 thisGame.timeTable[3][5] = Event["미분방정식"];
 
 var lectureList = new Array(5);
+//  동아리도 들어가야됨
 lectureList[0] = Event["현대대수학I"];
 lectureList[1] = Event["확률및통계"];
 lectureList[2] = Event["이산수학"];
@@ -53,7 +72,7 @@ model();
 
 function model() { // 일단은 1주 진행
   var capacity=0;
-
+  var loadTillNow = 0;
   var completedLoad = 0;
   //  총 수행한 로드 / grade = (총 수행한 로드)/(전체 로드)
   for (let week =0; week < 16; week++){
@@ -62,6 +81,10 @@ function model() { // 일단은 1주 진행
     var capacityPerWeek = 0;
     //  얘는 한 주 동안 남은 시간을 계산하여 과제, 공부, 체력충전으로 전환시킴
 
+    for(var i=0; i < lectureList.length; i++) {
+      console.log(lectureList[i].lectureNumber+": "+lectureList[i].name+"\n");
+      console.log(lectureList[i].load[week][1]);
+    }
     for (let day = 0; day < 7; day++){
       var firstPeriod = -1;
 
@@ -94,10 +117,15 @@ function model() { // 일단은 1주 진행
         // 남은 시간은 주간 가용시간으로 넘김
       }
       completedLoad = weekCapacityUpdate(capacityPerWeek, completedLoad, week);
+      for(var i=0; i<lectureList.length; i++) {
+        loadTillNow += lectureList[i].load[week][0];
+      }
+      thisGame.status.grade = completedLoad/loadTillNow;
       // 주간 로드 반영
 
       console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
       console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
+      console.log(week+"주차 / 현재 성적: "+thisGame.status.grade+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
       eventHandler(week);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
@@ -138,6 +166,7 @@ function timeDependency(period) {
 } // 시간에 따른 체력 변화량 조절 (오전 수업 체력 소모량 가중치 있음)
 
 function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
+  // 주간 스탯 변화량
   var tempLoadPerWeek = 0;
   for(var i=0; i<lectureList.length; i++) {
     tempLoadPerWeek += lectureList[i].load[week][0];

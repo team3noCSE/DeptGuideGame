@@ -1,4 +1,4 @@
-class Single_Ending{
+class Single_Ending{ //ending_class
   constructor(
     _title,    //String
     _img_name, //String
@@ -10,7 +10,7 @@ class Single_Ending{
   }
 }
 var _title, _img_name, _description;
-while(1){
+while(1){ //randomize의 번호가 맞고 다른 엔딩의 조건도 맞을 때만 break되게 한다.
   var randomize=Math.floor(Math.random()*15)+1;
   if(randomize==1){
     _title="님아, 그 강을 건너지 마오";
@@ -108,44 +108,66 @@ while(1){
     break;
   }
 }
-var this_ending=new Single_Ending(_title,_img_name,_description);
-var summary_first = false;
+var this_ending=new Single_Ending(_title,_img_name,_description); //설정된 변수로 class 설정
+var summary_first = false; //클릭을 한번이라도 했는지 안했는지 판별하는 변수
 var detail_first = true;
 var menu_first = true;
-var Result_pic=document.createElement('img');
+var Result_pic=document.createElement('img'); //엔딩 사진생성
 document.getElementById("Result_pic").src="../DeptGuideGame/images/ending/"+this_ending.img_name;
-document.getElementById("Result_name").innerHTML=this_ending.title;
-function show_summary(){
-  if(!detail_first){
+document.getElementById("Result_name").innerHTML=this_ending.title; //엔딩 제목을 밑에 출력
+function show_summary(){ //요약보여주기
+  if(!detail_first){ //세부정보창을 숨긴다
     document.getElementById("Detail").style.display="none";
   }
-  if(!menu_first){
+  if(!menu_first){ //메뉴창을 숨긴다.
     document.getElementById("main").style.display="none";
     document.getElementById("end").style.display="none";
   }
-  if(!summary_first){
+  if(!summary_first){ //클릭 된 바가 있기 때문에 이미 요약 화면이 생성되어 있기 때문에 display 상태만 바꾼다
     document.getElementById("Result_name").style.display="block";
     document.getElementById("Result_pic").style.display="block";
   }
 }
-function show_detail(){
-  if(!summary_first){
+function show_detail(){ //세부정보 보여주기
+  if(!summary_first){ //요약 숨기기
     document.getElementById("Result_pic").style.display="none";
     document.getElementById("Result_name").style.display="none";
   }
-  if(!menu_first){
+  if(!menu_first){ //메뉴 숨기기
     document.getElementById("main").style.display="none";
     document.getElementById("end").style.display="none";
   }
-  if(detail_first){
-    var Details=document.createElement('div');
+  if(detail_first){ //세부정보 창 생성하기
+    var Details=document.createElement('div'); //세부 정보창 element 생성
     Details.id="Detail";
     Details.style="position:absolute; left:80px; top:225px; width:1745px; height:670px; background-color:white; border:1px solid black; font-size:70px; font-family: a옛날목욕탕L,맑은 고딕;";
-    Details.appendChild(document.createTextNode(this_ending.description));
+    Details.appendChild(document.createTextNode(this_ending.description)); //엔딩 description 출력
     Details.appendChild(document.createElement("br"));
     Details.appendChild(document.createElement("br"));
-    var dept="화학";
-    Details.appendChild(document.createTextNode("당신은 "+dept+"과를 선택하였습니다."));
+    var dept="";
+    if(thisGame.department==0)
+      dept="수학";
+    else if(thisGame.department==1)
+      dept="물리학";
+    else if(thisGame.department==2)
+      dept="화학";
+    else if(thisGame.department==3)
+      dept="생명과학";
+    else if(thisGame.department==4)
+      dept="신소재공학";
+    else if(thisGame.department==5)
+      dept="기계공학";
+    else if(thisGame.department==6)
+      dept="산업경영공학";
+    else if(thisGame.department==7)
+      dept="전자전기공학";
+    else if(thisGame.department==8)
+      dept="컴퓨터공학";
+    else if(thisGame.department==9)
+      dept="화학공학";
+    else if(thisGame.department==10)
+      dept="창의IT융합공학";
+    Details.appendChild(document.createTextNode("당신은 "+dept+"과를 선택하였습니다.")); //과 정보 출력
     Details.appendChild(document.createElement("br"));
     var lectures=Array();
     var lecture1="객체";
@@ -154,46 +176,46 @@ function show_detail(){
     lectures.push(lecture1);
     lectures.push(lecture2);
     lectures.push(lecture3);
-    Details.appendChild(document.createTextNode("그리고 "+lectures+"를 수강하였습니다."));
+    Details.appendChild(document.createTextNode("그리고 "+lectures+"를 수강하였습니다.")); //수강한 과목들 출력
     Details.appendChild(document.createElement("br"));
-    Details.appendChild(document.createTextNode("그 결과, "+this_ending.title+"을 얻었습니다."));
+    Details.appendChild(document.createTextNode("그 결과, "+this_ending.title+"을 얻었습니다.")); //획득한 엔딩 제목 출력
     document.getElementById("Ending_menu").appendChild(Details);
     detail_first=false;
   }
-  else{
+  else{ //이미 생성되어 있을 경우 숨기기만 한다.
     document.getElementById("Detail").style.display="block";
   }
 }
-function show_menu(){
-  if(!summary_first){
+function show_menu(){ //메뉴 출력
+  if(!summary_first){ //요약 숨기기
     document.getElementById("Result_pic").style.display="none";
     document.getElementById("Result_name").style.display="none";
   }
-  if(!detail_first){
+  if(!detail_first){ //세부정보 숨기기
     document.getElementById("Detail").style.display="none";
   }
-  if(menu_first){
-    var main_menu=document.createElement('div');
+  if(menu_first){ //메뉴 창 설정
+    var main_menu=document.createElement('div'); //메인메뉴로 버튼 생성
     main_menu.id="main";
     main_menu.className="end_button";
     main_menu.style="left: 750px; width:600px; top:375px;";
     main_menu.innerHTML="메인 메뉴로!";
     main_menu.onclick=function(){
-      window.location.reload();
+      window.location.reload(); //새로고침을 통해서 메인메뉴로 돌아간다.
     }
     document.getElementById("Ending_menu").appendChild(main_menu);
-    var end_program=document.createElement('div');
+    var end_program=document.createElement('div'); //프로그램 종료 버튼 생성
     end_program.id="end";
     end_program.className="end_button";
     end_program.style="left: 750px; width:600px; top: 575px;";
     end_program.innerHTML="프로그램 종료!";
     end_program.onclick=function(){
-      window.close();
+      window.close(); //창을 닫아 프로그램을 종료한다.
     }
     document.getElementById("Ending_menu").appendChild(end_program);
     menu_first=false;
   }
-  else{
+  else{ //이미 생성되어 있을 경우 숨기기
     document.getElementById("main").style.display="block";
     document.getElementById("end").style.display="block";
   }
