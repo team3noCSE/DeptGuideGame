@@ -55,6 +55,12 @@ thisGame.timeTable[1][5] = Event["미분방정식"];
 thisGame.timeTable[3][5] = Event["미분방정식"];
 
 */
+for (var i=0; i<thisGame.timeTable.length; i++) {
+  for (var j=0; j<thisGame.timeTable[i].length; j++)
+    console.log(thisGame.timeTable[i][j]);
+}
+
+
 var lectureList = new Array(5);
 //  동아리도 들어가야됨
 
