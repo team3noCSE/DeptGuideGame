@@ -1831,7 +1831,10 @@ class select_timetable {
                 //
                 //
                 //
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210
             }
         }
         function confirm_onButtonUp(){
@@ -2165,3 +2168,7 @@ function department_choice_to_select_timetable() {
     });
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210

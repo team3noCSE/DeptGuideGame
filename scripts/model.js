@@ -1,4 +1,3 @@
-function process() {
 class Game {
   constructor() {
     this.department = -1;
@@ -72,8 +71,12 @@ calculateLoad(Event["확률및통계"]);
 calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
+<<<<<<< HEAD
 
 
+=======
+model();
+>>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210
 
 function model() { // 일단은 1주 진행
   var capacity=0;
@@ -205,7 +208,6 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
   return completedLoad;
 }
 
-
 function eventHandler(week) {
   // 일주일 한번 일어남, 과 관련 이벤트는 일정 확률, 이외에는 상황에 맞는 general event
 
@@ -303,6 +305,7 @@ function eventHandler(week) {
       }
     }
 }
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////UI///////////////////////////////////////////////////////////
 
 var app = new PIXI.Application(1920, 1080, {backgroundColor : 0x1099bb});
@@ -5381,3 +5384,5 @@ function week16()
 
 
 }
+=======
+>>>>>>> parent of 0dde256... Merge branch 'ui_1210' of https://github.com/team3noCSE/DeptGuideGame into ui_1210
