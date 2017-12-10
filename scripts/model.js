@@ -126,11 +126,11 @@ function model() { // 일단은 1주 진행
       thisGame.status.grade = completedLoad/loadTillNow;
       // 주간 로드 반영
 
-      console.log(week+"주차 / 현재 체력: "+thisGame.status.health+"\n");
-      console.log(week+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
-      console.log(week+"주차 / 현재 성적: "+thisGame.status.grade+"\n");
+      console.log(week+1+"주차 / 현재 체력: "+thisGame.status.health+"\n");
+      console.log(week+1+"주차 / 남은 가용시간: "+capacityPerWeek+"\n");
+      console.log(week+1+"주차 / 현재 성적: "+thisGame.status.grade+"\n");
       console.log("총 수행한 로드(누적): "+completedLoad+"\n");
-      eventHandler(week);
+      eventHandler(week+1);
       // 이벤트 발생 -> 랜덤 발생하는 알고리즘 필요
     }
     console.log("이번 학기의 총 로드: "+thisGame.load);
@@ -206,23 +206,26 @@ function weekCapacityUpdate(capacityPerWeek, completedLoad, week) {
 function eventHandler(week) {
   // 일주일 한번 일어남, 과 관련 이벤트는 일정 확률, 이외에는 상황에 맞는 general event
     for (let key in PopUpEvent){
+      // 과 관련 이벤트 loop
       let val = PopUpEvent[key];
-      if (val.department === thisGame.department){
+
+      if (val.department === thisGame.department && val.priority === 3){
          // 과 dependent 이벤트
-        if (val.priority === 3 || val.time === week || val.time === null){
-          //
+        if ( val.time === week || val.time === null){
+          // 시간이 상관없음이거나 해당하는 week인 경우
           if(Math.random() < 3/16){
+
             console.log(week+"주차 이벤트 :");
             console.log(val.description);
+
             thisGame.eventCount++;
+            val.eventCount++;
             return;
           }
-
         }
       }
-      else if (val.department === null){
-
-      }
+    }
+    if (val.department === null){
 
     }
 }
