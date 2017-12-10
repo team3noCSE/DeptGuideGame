@@ -66,7 +66,7 @@ class SingleEvent {
   }
 //  model 만드시는 분께서 capacity(남은 가용시간)를 받아 load를 업데이트 시키는 메소드도 만들어 주세요
   addQuiz(weight) {
-    //  각 과목의 로드에 매주 1개의 퀴즈를 추가
+    this.load[0][1]+="첫 주는 로드가 없습니다.";
     for(var i=1; i<16; i++) {
       if( i===7 || i===15 ) {
         continue;

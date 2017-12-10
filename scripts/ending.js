@@ -1,3 +1,4 @@
+function ending(){
 class Single_Ending{ //ending_class
   constructor(
     _title,    //String
@@ -228,4 +229,5 @@ function show_menu(){ //메뉴 출력
     document.getElementById("main").style.display="block";
     document.getElementById("end").style.display="block";
   }
+}
 }
