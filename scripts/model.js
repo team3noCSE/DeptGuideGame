@@ -74,7 +74,7 @@ calculateLoad(Event["이산수학"]);
 calculateLoad(Event["해석학I"]);
 calculateLoad(Event["미분방정식"]);
 
-
+model();
 
 function model() { // 일단은 1주 진행
   var capacity=0;

@@ -2256,7 +2256,7 @@ function department_choice_to_select_timetable() {
             for (let i = 0; i < 7; i++)
               for (let j = 0; j < 11 ; j++)
                 console.log(thisGame.timeTable[i][j]);
-            model();
+            process();
         }
     });
 
