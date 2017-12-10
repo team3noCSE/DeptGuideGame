@@ -66,7 +66,24 @@ bunny.y+=100
 app.stage.addChild(bunny);
 
 
+/*
+var leftblock = new PIXI.Graphics();
+  //leftblock.lineStyle(2, 0xFF00FF, 1);
+  leftblock.beginFill(0x1099bb, 1);
+  leftblock.drawRect(0, 100, 500, 130);
+  app.stage.addChild(leftblock);
+*/
+var rightblock = new PIXI.Graphics();
+  //rightblock.lineStyle(2, 0xFF00FF, 1);
+  rightblock.beginFill(0xfff8dc, 1);
+  rightblock.drawRect(1300, 0, 620, 240);
+  rightblock.lineStyle(4, 0xffd900, 1);
+  app.stage.addChild(rightblock);
+  rightbolck.endFill();
 
+
+///////////////ruler/////////////////
+/*
 var ruler = PIXI.Sprite.fromImage('images/ruler.png');
 // center the sprite's anchor point
 //ruler.anchor.set(0.5);
@@ -86,8 +103,8 @@ app.stage.addChild(ruler);
   ruler.x-=a;
  });
 
-
-
+*/
+///////////////////ruler//////////////
 
 
 var numberstyle = new PIXI.TextStyle({
@@ -128,9 +145,8 @@ var tempdaynumber=1;
    app.stage.addChild(dday);
   }
   tempdaynumber++;
- });
-
-
+ });  
+ 
   var thistext = new PIXI.Text(lectureList[1].name, numberstyle);
   thistext.anchor.set(0.5);
   thistext.x=300;
@@ -145,20 +161,6 @@ var graphics = new PIXI.Graphics();
   graphics.beginFill(0xFFFF99, 0.25);
   graphics.drawRect(50, 200, 700, 300);
  */
-var leftblock = new PIXI.Graphics();
-  //leftblock.lineStyle(2, 0xFF00FF, 1);
-  leftblock.beginFill(0x1099bb, 1);
-  leftblock.drawRect(0, 100, 500, 130);
-  app.stage.addChild(leftblock);
-
-var rightblock = new PIXI.Graphics();
-  //rightblock.lineStyle(2, 0xFF00FF, 1);
-  rightblock.beginFill(0x1099bb, 1);
-  rightblock.drawRect(1420, 100, 500, 130);
-  app.stage.addChild(rightblock);
-
-
-
 
 
 /*
@@ -182,7 +184,7 @@ var eventstyle = new PIXI.TextStyle({
   wordWrapWidth: 440
   });
 
-  var inputTxt = lectureList[2].name;
+var inputTxt = lectureList[2].name;
   var richText = new PIXI.Text(inputTxt,eventstyle);
   richText.anchor.set(0.5);
   richText.x = 1920/2;
