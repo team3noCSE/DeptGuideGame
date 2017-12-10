@@ -186,6 +186,9 @@ function show_detail(){ //세부정보 보여주기
     document.getElementById("Detail").style.display="block";
   }
 }
+function change_cursor(){
+  this.style.cursor="pointer";
+}
 function show_menu(){ //메뉴 출력
   if(!summary_first){ //요약 숨기기
     document.getElementById("Result_pic").style.display="none";
@@ -211,6 +214,9 @@ function show_menu(){ //메뉴 출력
     end_program.innerHTML="프로그램 종료!";
     end_program.onclick=function(){
       window.close(); //창을 닫아 프로그램을 종료한다.
+    }
+    end_program.onmouseover=function(){
+      this.style.cursor="pointer";
     }
     document.getElementById("Ending_menu").appendChild(end_program);
     menu_first=false;
