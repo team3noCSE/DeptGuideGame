@@ -2259,3 +2259,4 @@ function department_choice_to_select_timetable() {
             process();
         }
     });
+}
