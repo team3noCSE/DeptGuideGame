@@ -89,11 +89,11 @@ let question_List = {
                             ],
                             1
                         ],
-    3               :   [   '',
+    3               :   [   '공부하기 싫죠?',
                             [
-                                ['1', 'grade', 0],
-                                ['1', 'grade', 0],
-                                ['1', 'grade', 0]
+                                ['네!', 'grade', -0.03],
+                                ['아니요 좋은데요?', 'grade', +0.01],
+                                ['그럭저럭..', 'grade', 0]
                             ],
                             1
                         ],
@@ -1625,6 +1625,7 @@ class select_timetable {
         this._template_buttons = [];
 
         this._option_buttons = [];
+        this._option_text = [];
         this._lecture_additional_name_control = [];
 
         this._template_buttons.push(new PIXI.Graphics());
@@ -1635,9 +1636,60 @@ class select_timetable {
         this._template_buttons[1].beginFill(color_Template[department][2]);
         this._template_buttons[2].beginFill(color_Template[department][2]);
 
-        this._template_buttons[0].drawRect(50, -270, 500, 100);
-        this._template_buttons[1].drawRect(50, -120, 500, 100);
-        this._template_buttons[2].drawRect(50, 30, 500, 100);
+        this._template_text_1 = new PIXI.Text("기본시간표 1", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        this._template_text_1.anchor.set(0.5);
+        this._template_text_1.x = 180;
+        this._template_text_1.y = -270;
+
+        this._template_text_2 = new PIXI.Text("기본시간표 2", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        this._template_text_2.anchor.set(0.5);
+        this._template_text_2.x = 180;
+        this._template_text_2.y = -120;
+
+        this._template_text_3 = new PIXI.Text("기본시간표 3", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        this._template_text_3.anchor.set(0.5);
+        this._template_text_3.x = 180;
+        this._template_text_3.y = 30;
+
+        this._template_buttons[0].drawRect(50, -270, 100, 100);
+        this._template_buttons[1].drawRect(50, -120, 100, 100);
+        this._template_buttons[2].drawRect(50, 30, 100, 100);
 
         for (let i = 0; i < 3; i++){
             this._template_buttons[i].buttonMode = true;
@@ -1662,6 +1714,9 @@ class select_timetable {
                 _thisclass._template_buttons[i].buttonMode = false;
                 _thisclass._template_buttons[i].interactive = false;
                 app_simulator.stage.removeChild(_thisclass._template_buttons[i]);
+                app_simulator.stage.removeChild(_thisclass._template_text_1);
+                app_simulator.stage.removeChild(_thisclass._template_text_2);
+                app_simulator.stage.removeChild(_thisclass._template_text_3);
             }
 
             for (let j = 0; j < 10; j++){
@@ -1676,6 +1731,22 @@ class select_timetable {
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].beginFill(0xBBBBBB);
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1]
                                 .drawRect((_thisclass._option_buttons.length - 1)*150+ 20, -260, 120, 120);
+                            _thisclass._option_text.push(new PIXI.Text("선택 " + _thisclass._option_buttons.length, {
+                                fontFamily: 'Consolas',
+                                fontSize: 40,
+                                fill: 0x000000,
+                                stroke: 0xFFFFFF,
+                                strokeThickness: 8,
+                                dropShadow: false,
+                                dropShadowColor: '#DDDDDD',
+                                dropShadowBlur: 1,
+                                dropShadowAngle: Math.PI / 6,
+                                dropShadowDistance: 6,
+                                wordWrap: false
+                            }));
+                            _thisclass._option_text[_thisclass._option_buttons.length - 1].anchor.set(0.5);
+                            _thisclass._option_text[_thisclass._option_buttons.length - 1].x = (_thisclass._option_buttons.length - 1)*150+ 20;
+                            _thisclass._option_text[_thisclass._option_buttons.length - 1].y = -260;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].buttonMode = true;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].interactive = true;
                             _thisclass._option_buttons[_thisclass._option_buttons.length - 1].alpha = 0.8;
@@ -1689,6 +1760,7 @@ class select_timetable {
                                 .on('pointerout', option_onButtonOut)
 
                             app_simulator.stage.addChild(_thisclass._option_buttons[_thisclass._option_buttons.length - 1]);
+                            app_simulator.stage.addChild(_thisclass._option_text[_thisclass._option_buttons.length - 1]);
                         }
                     }
                 }
@@ -1716,11 +1788,14 @@ class select_timetable {
                         if (timetable_list[_thisclass._department+'_'+_thisclass._selected][j][k] == "x" + _thisclass._lecture_additional_name_control[this._my_address*2]){
                             _thisclass._timetable[j][k] =  "x" + _thisclass._lecture_additional_name_control[this._my_address*2];
                             console.log(_thisclass._timetable[j][k]);
+                            _thisclass._text_lecture_name.text = _thisclass._lecture_additional_name_control[this._my_address*2];
+                            _thisclass._text_lecture_information.text = lecture_information[_thisclass._lecture_additional_name_control[this._my_address*2]];
                         }
                     }
                 }
                 _thisclass.update_timetable_graphics();
                 console.log(_thisclass._lecture_additional_name_control[this._my_address*2]);
+
             }
             function option_onButtonOut(){
             for (let j = 0; j < 10; j++){
@@ -1733,6 +1808,8 @@ class select_timetable {
                     }
                 }
             }
+                _thisclass._text_lecture_name.text = "";
+                _thisclass._text_lecture_information.text = "";
                 _thisclass.update_timetable_graphics();
 
             }
@@ -1788,6 +1865,22 @@ class select_timetable {
         }
 
         this._confirm_button = new PIXI.Graphics();
+        this._confirm_text = new PIXI.Text("결정", {
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: 0x000000,
+            stroke: 0xFFFFFF,
+            strokeThickness: 8,
+            dropShadow: false,
+            dropShadowColor: '#DDDDDD',
+            dropShadowBlur: 1,
+            dropShadowAngle: Math.PI / 6,
+            dropShadowDistance: 6,
+            wordWrap: false
+        });
+        //this._confirm_text.anchor.set(0.5);
+        //this._confirm_e
+
         this._confirm_button.beginFill(0xBBBBBB);
         this._confirm_button.drawRect(500, 340, 200, 100);
 
@@ -1859,6 +1952,9 @@ class select_timetable {
         for (let i = 0; i < 3; i++){
             app_simulator.stage.addChild(this._template_buttons[i]);
         }
+        app_simulator.stage.addChild(this._template_text_1);
+        app_simulator.stage.addChild(this._template_text_2);
+        app_simulator.stage.addChild(this._template_text_3);
     }
     update_timetable_graphics(){
         this._lecture_name_control = [];
