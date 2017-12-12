@@ -329,6 +329,7 @@ var dialoglist=[];
             dialoglist.push(dialog);
             app.stage.addChild(dialog);
 
+            var eventstyle = new PIXI.TextStyle({
             fontFamily: 'Consolas',
             fontSize: 50,
             fill: ['#000000'],
