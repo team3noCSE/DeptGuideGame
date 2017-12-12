@@ -323,6 +323,47 @@ function eventHandler(week) {
 
         if (flag === false && val.time !== null) continue;
         if(Math.random() < 2/16){
+var dialoglist=[];
+
+            var dialog = new PIXI.Sprite.fromImage('room/dialog.png');
+            dialoglist.push(dialog);
+            app.stage.addChild(dialog);
+
+            fontFamily: 'Consolas',
+            fontSize: 50,
+            fill: ['#000000'],
+            wordWrap: true,
+            wordWrapWidth: 1500 // gradient
+             //backgroundColor:"green"
+            });
+            var eventstyle2 = new PIXI.TextStyle({
+            fontFamily: 'Consolas',
+            fontSize: 65,
+            fontWeight: 'bold',
+            fill: ['#000000'],
+            wordWrap: true,
+            wordWrapWidth: 900
+             // gradient
+             //backgroundColor:"green"
+            });
+
+            var inputTxt=val.description;
+            var richText = new PIXI.Text(inputTxt,eventstyle);
+            richText.anchor.set(0.5);
+            richText.x = 1920/2;
+            richText.y = 900;
+            app.stage.addChild(richText);
+            dialoglist.push(richText);
+
+            var inputTxt2="Event! "+val.name;
+            var richText2 = new PIXI.Text(inputTxt2,eventstyle2);
+            richText2.x = 270;
+            richText2.y = 770;
+            app.stage.addChild(richText2);
+            dialoglist.push(richText2);
+
+
+
 
           console.log(week+"주차 이벤트 :");
           console.log(val.description);
@@ -334,7 +375,7 @@ function eventHandler(week) {
             thisGame.relationship *= 0.95;
           thisGame.eventCount++;
           val.eventCount++;
-          return;
+          return dialoglist;
         }
       }
     }
